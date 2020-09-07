@@ -1,4 +1,5 @@
-## Welcome to GitHub Pages
+# Welcome to Jenkins Workshop 19-20 September 2020
+### Instalacja virtualnej maszyny
 
 You can use the [editor on GitHub](https://github.com/klimas7/jenkins.klimas7.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
