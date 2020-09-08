@@ -1,5 +1,5 @@
 ### [Materiały do pobrania](https://drive.google.com/drive/folders/1l8nAP_4hHqrliGPWCv8RHH6_SnM1-kA-?usp=sharing)
-```shell script
+```
 sha1sum
 51bb48ecdfb4ce210f1941e43eebe674fb524b91  Jenkins_workshop_5.ova
 3c6bff4eea93c387bbdf193015cda7c04833e75f  logger-plugin.hpi
