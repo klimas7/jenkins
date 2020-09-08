@@ -36,9 +36,9 @@ root:12345678
 Można się zalogować bezpośrednio w oknie powyżej lub uzywając putty lub innego kliennta ssh
 (np git Bash)
 
-### Ćwiczenie 1 
+### Ćwiczenie 1: Uruchomienie 
 ### Ćwiczenie 2
-### Ćwiczenie 3
+### Ćwiczenie 3: Odzyskanie dostępu
 ### Ćwiczenie 4
 ### Ćwiczenie 5
 ### Ćwiczenie 6
