@@ -1,6 +1,19 @@
+### 
 ### [Materiały do pobrania](https://drive.google.com/drive/folders/1l8nAP_4hHqrliGPWCv8RHH6_SnM1-kA-?usp=sharing)
+```shell script
+sha1sum
+51bb48ecdfb4ce210f1941e43eebe674fb524b91  Jenkins_workshop_5.ova
+3c6bff4eea93c387bbdf193015cda7c04833e75f  logger-plugin.hpi
+a9fa67ec8bb023cf0d99eccd47b9cca96b433500  old-data-plugin.hpi
+9d97f5492b3ba5c9cc502b3e26aa4b93a1c32ec5  old-data-plugin_v2.hpi
+```
 ### Instalacja virtualnej maszyny
+***Wymagania*** Zainstalowany [Virtual Box](https://www.virtualbox.org/wiki/Downloads)
 
+W VM VirtualBox Manager wybieramy: Plik -> Importuj urządzenie wirtualne
+
+W kolejnym oknie wybieramy pobrany obraz
+![Import](img/import_1.png)
 ### Ćwiczenie 1 
 ### Ćwiczenie 2
 ### Ćwiczenie 3
@@ -17,6 +30,12 @@
 ### Ćwiczenie 14
 ### Ćwiczenie 15
 ### Ćwiczenie 16
+
+
+
+
+
+
 
 
 You can use the [editor on GitHub](https://github.com/klimas7/jenkins.klimas7.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
