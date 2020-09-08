@@ -13,7 +13,29 @@ a9fa67ec8bb023cf0d99eccd47b9cca96b433500  old-data-plugin.hpi
 W VM VirtualBox Manager wybieramy: Plik -> Importuj urządzenie wirtualne
 
 W kolejnym oknie wybieramy pobrany obraz
+
 ![Import](img/import_1.png)
+
+W kolejnym oknie należy zwrócić uwagę na dwie opcje
+* Ilość pamięci (jezeli nie mamy za duzo to można zmniejszyć do 2G)
+* Zaznaczyć opcje: **Generate new MAC addresses ...**
+
+![Import](img/import_2.png)
+
+Po zaimportowaniu i uruchomieniu powinniśmy otrzymać
+
+![Import](img/import_3.png)
+
+Proszę zwrucić uwagę na przydzielony adress IP powinien to być w waszej sieci a nie adres localhost (127.0.0.1)!
+
+Użytkownicy:
+```
+jenkins:12345678
+root:12345678
+```
+Można się zalogować bezpośrednio w oknie powyżej lub uzywając putty lub innego kliennta ssh
+(np git Bash)
+
 ### Ćwiczenie 1 
 ### Ćwiczenie 2
 ### Ćwiczenie 3
