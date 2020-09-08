@@ -1,5 +1,22 @@
-# Welcome to Jenkins Workshop 19-20 September 2020
 ### Instalacja virtualnej maszyny
+
+### Ćwiczenie 1 
+### Ćwiczenie 2
+### Ćwiczenie 3
+### Ćwiczenie 4
+### Ćwiczenie 5
+### Ćwiczenie 6
+### Ćwiczenie 7
+### Ćwiczenie 8
+### Ćwiczenie 9
+### Ćwiczenie 10
+### Ćwiczenie 11
+### Ćwiczenie 12
+### Ćwiczenie 13
+### Ćwiczenie 14
+### Ćwiczenie 15
+### Ćwiczenie 16
+
 
 You can use the [editor on GitHub](https://github.com/klimas7/jenkins.klimas7.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
