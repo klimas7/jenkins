@@ -297,7 +297,7 @@ nav {
       }
 
       &.tag-h3 {
-
+        font-size: 0.8em;
         + .tag-h2 {
           margin-top:10px;
         }
@@ -305,7 +305,6 @@ nav {
     }
 
     a {
-      color: #666;
 
       &:hover { color: #999; }
     }
