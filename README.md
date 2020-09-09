@@ -6,7 +6,7 @@ sha1sum
 a9fa67ec8bb023cf0d99eccd47b9cca96b433500  old-data-plugin.hpi
 9d97f5492b3ba5c9cc502b3e26aa4b93a1c32ec5  old-data-plugin_v2.hpi
 ```
-### Instalacja virtualnej maszyny
+## Instalacja virtualnej maszyny
 ***Wymagania*** Zainstalowany [Virtual Box](https://www.virtualbox.org/wiki/Downloads)
 
 W VM VirtualBox Manager wybieramy: Plik -> Importuj urządzenie wirtualne
@@ -16,8 +16,8 @@ W kolejnym oknie wybieramy pobrany obraz
 ![Import](img/import_1.png)
 
 W kolejnym oknie należy zwrócić uwagę na dwie opcje
-* Ilość pamięci (jezeli nie mamy za duzo to można zmniejszyć do 2G)
-* Zaznaczyć opcje: **Generate new MAC addresses ...**
+* Ilość pamięci (jeżeli nie mamy za dużo to można zmniejszyć do 2G)
+* Wybrać opcje: **Generate new MAC addresses ...**
 
 ![Import](img/import_2.png)
 
@@ -25,7 +25,7 @@ Po zaimportowaniu i uruchomieniu powinniśmy otrzymać
 
 ![Import](img/import_3.png)
 
-Proszę zwrucić uwagę na przydzielony adress IP powinien to być w waszej sieci a nie adres localhost (127.0.0.1)!
+Proszę, zwrócić uwagę na przydzielony adres IP powinien to być w waszej sieci, a nie adres localhost (127.0.0.1)!
 
 Użytkownicy:
 ```
@@ -36,23 +36,34 @@ Można się zalogować bezpośrednio w oknie powyżej lub uzywając putty lub in
 (np git Bash)
 
 ## Temat 1: Uruchomienie 
+```
+# dnf install jenkins
+...
+==================================================================================
+ Pakiet        Architektura      Wersja                    Repozytorium       Rozm.
+==================================================================================
+Instalowanie:
+ jenkins       noarch            1.651.3-8.fc29            fedora              12 k
+
+```
 ### Ćwiczenie 1.1
 ### Ćwiczenie 1.2*
 ## Temat 2: Katalog domowy
-## Ćwiczenie 3: Odzyskanie dostępu
-### Ćwiczenie 4
-### Ćwiczenie 5
-### Ćwiczenie 6
-### Ćwiczenie 7
-### Ćwiczenie 8
-### Ćwiczenie 9
-### Ćwiczenie 10
-### Ćwiczenie 11
-### Ćwiczenie 12
-### Ćwiczenie 13
-### Ćwiczenie 14
-### Ćwiczenie 15
-### Ćwiczenie 16
+### Ćwiczenie 2.1: Odzyskanie dostępu
+
+### Temat 4
+### Temat 5
+### Temat 6
+### Temat 7
+### Temat 8
+### Temat 9
+### Temat 10
+### Temat 11
+### Temat 12
+### Temat 13
+### Temat 14
+### Temat 15
+### Temat 16
 
 
 
