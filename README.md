@@ -84,16 +84,16 @@ war=/usr/lib/jenkins/jenkins.war
 ```
 ### Ćwiczenie 2.1: Odzyskanie dostępu
 
-### Temat 4
-### Temat 5
-### Temat 6
-### Temat 7
-### Temat 8
-### Temat 9
-### Temat 10
-### Temat 11
-### Temat 12
-### Temat 13
-### Temat 14
-### Temat 15
-### Temat 16
+## Temat 4
+## Temat 5
+## Temat 6
+## Temat 7
+## Temat 8
+## Temat 9
+## Temat 10
+## Temat 11
+## Temat 12
+## Temat 13
+## Temat 14
+## Temat 15
+## Temat 16
