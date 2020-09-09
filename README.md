@@ -34,7 +34,11 @@ root:12345678
 ```
 Można się zalogować bezpośrednio w oknie powyżej lub uzywając putty lub innego kliennta ssh
 (np git Bash)
-
+```
+ssh root@192.168.0.178
+or
+ssh jenkins@192.168.0.178
+```
 ## Temat 1: Uruchomienie 
 ### Instalacja via dnf
 Definicja repozytorium i import klucza
@@ -53,7 +57,7 @@ Uruchomienie serwisu
 # systemctl enable jenkins.service
 # systemctl start jenkins.service
 ```
-Test: http://192.168.0.178:8080/ otwieramy w przeglądarce
+Test: [http://192.168.0.178:8080/](http://192.168.0.178:8080/) otwieramy w przeglądarce
 
 Firewall
 ```
@@ -61,6 +65,13 @@ Firewall
 # firewall-cmd --zone=public --add-service=http --permanent
 # firewall-cmd --reload
 # firewall-cmd --list-all
+```
+Test
+
+Usunięcie
+```
+# systemctl stop jenkins.service
+# dnf remove jenkins
 ```
 ### Ćwiczenie 1.1
 ### Ćwiczenie 1.2*
