@@ -1,4 +1,4 @@
-### [Materiały do pobrania](https://drive.google.com/drive/folders/1l8nAP_4hHqrliGPWCv8RHH6_SnM1-kA-?usp=sharing)
+## [Materiały do pobrania](https://drive.google.com/drive/folders/1l8nAP_4hHqrliGPWCv8RHH6_SnM1-kA-?usp=sharing)
 ```
 sha1sum
 51bb48ecdfb4ce210f1941e43eebe674fb524b91  Jenkins_workshop_5.ova
@@ -35,9 +35,11 @@ root:12345678
 Można się zalogować bezpośrednio w oknie powyżej lub uzywając putty lub innego kliennta ssh
 (np git Bash)
 
-### Ćwiczenie 1: Uruchomienie 
-### Ćwiczenie 2
-### Ćwiczenie 3: Odzyskanie dostępu
+## Temat 1: Uruchomienie 
+### Ćwiczenie 1.1
+### Ćwiczenie 1.2*
+## Temat 2: Katalog domowy
+## Ćwiczenie 3: Odzyskanie dostępu
 ### Ćwiczenie 4
 ### Ćwiczenie 5
 ### Ćwiczenie 6
