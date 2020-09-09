@@ -269,10 +269,10 @@ a {
 
 
 nav {
-  width: 230px;
+  width: 310px;
   position: fixed;
-  top: 220px;
-  left:50%;
+  top: 170px;
+  left:35%;
   margin-left:-580px;
   text-align: right;
 
@@ -289,7 +289,7 @@ nav {
       // position:relative;
       // right:-12px;
 
-      &.tag-h1 {
+      &.tag-h2 {
         font-size: 1.2em;
 
         a {
@@ -302,9 +302,9 @@ nav {
         }
       }
 
-      &.tag-h2 {
+      &.tag-h3 {
 
-        + .tag-h1 {
+        + .tag-h2 {
           margin-top:10px;
         }
       }
