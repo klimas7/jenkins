@@ -36,19 +36,41 @@ Można się zalogować bezpośrednio w oknie powyżej lub uzywając putty lub in
 (np git Bash)
 
 ## Temat 1: Uruchomienie 
+### Instalacja via dnf
+Definicja repozytorium i import klucza
+```
+# wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
+# rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
+```
+Instalacja
 ```
 # dnf install jenkins
-...
-==================================================================================
- Pakiet        Architektura      Wersja                    Repozytorium       Rozm.
-==================================================================================
-Instalowanie:
- jenkins       noarch            1.651.3-8.fc29            fedora              12 k
+# dnf install java
+```
+Uruchomienie serwisu
+```
+# systemctl status jenkins.service
+# systemctl enable jenkins.service
+# systemctl start jenkins.service
+```
+Test: http://192.168.0.178:8080/ otwieramy w przeglądarce
 
+Firewall
+```
+# firewall-cmd --permanent --add-service=jenkins
+# firewall-cmd --zone=public --add-service=http --permanent
+# firewall-cmd --reload
+# firewall-cmd --list-all
 ```
 ### Ćwiczenie 1.1
 ### Ćwiczenie 1.2*
 ## Temat 2: Katalog domowy
+### Instalacja via dnf
+```
+JENKINS_HOME=/var/lib/jenkins
+logfile=/var/log/jenkins/jenkins.log
+war=/usr/lib/jenkins/jenkins.war
+```
 ### Ćwiczenie 2.1: Odzyskanie dostępu
 
 ### Temat 4
