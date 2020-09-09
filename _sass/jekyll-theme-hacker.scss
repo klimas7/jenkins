@@ -269,11 +269,10 @@ a {
 
 
 nav {
-  width: 310px;
   position: fixed;
   top: 170px;
-  left:35%;
-  margin-left:-580px;
+  left:0%;
+  //margin-left:-580px;
   text-align: right;
 
   ul {
@@ -292,11 +291,7 @@ nav {
       &.tag-h2 {
         font-size: 1.2em;
 
-        a {
-          font-weight: bold;
-        }
-
-        + .tag-h2 {
+        + .tag-h1 {
 
         }
       }
