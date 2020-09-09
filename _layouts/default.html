@@ -7,26 +7,18 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <script src="https://code.jquery.com/jquery-3.3.0.min.js"
             integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
-    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    <script src="/assets/js/main.js"></script>
     {% seo %}
 </head>
 
 <body>
-DUPA13!!!!
+DUPA14!!!!
 <header>
     <div class="container">
         <a id="a-title" href="{{ '/' | relative_url }}">
             <h1>{{ site.title | default: site.github.repository_name }}</h1>
         </a>
         <h2>{{ site.description | default: site.github.project_tagline }}</h2>
-
-        <section id="downloads">
-            {% if site.show_downloads %}
-            <a href="{{ site.github.zip_url }}" class="btn">Download as .zip</a>
-            <a href="{{ site.github.tar_url }}" class="btn">Download as .tar.gz</a>
-            {% endif %}
-            <a href="{{ site.github.repository_url }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
     </div>
 </header>
 
