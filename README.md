@@ -66,13 +66,18 @@ Firewall
 # firewall-cmd --reload
 # firewall-cmd --list-all
 ```
-Test
+Test [http://192.168.0.178:8080/](http://192.168.0.178:8080/) otwieramy w przeglądarce
 
 Usunięcie
 ```
 # systemctl stop jenkins.service
 # dnf remove jenkins
 ```
+### Docker
+### Uruchomienie via jar
+### Uruchomienie ze skryptu
+ 
+
 ### Ćwiczenie 1.1
 ### Ćwiczenie 1.2*
 ## Temat 2: Katalog domowy
