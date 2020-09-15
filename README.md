@@ -74,6 +74,24 @@ Usunięcie
 # dnf remove jenkins
 ```
 ### Docker
+```
+$ docker pull jenkins/jenkins
+# check version
+$ docker image inspect docker.io/jenkins/jenkins
+# start
+$ docker run -d -v jenkins_home:/var/jenkins_home --name jenkins_workshop -p 8080:8080 -p 50000:50000 jenkins/jenkins &
+$ docker ps
+```
+Test [http://192.168.0.178:8080/](http://192.168.0.178:8080/) otwieramy w przeglądarce
+```
+$ docker exec jenkins_workshop cat /var/jenkins_home/secrets/initialAdminPassword
+```
+Stop and clean
+```
+$ docker stop jenkins_workshop
+$ docker rm jenkins_workshop
+$ docker volume rm jenkins_home
+```
 ### Uruchomienie via jar
 ### Uruchomienie ze skryptu
  
