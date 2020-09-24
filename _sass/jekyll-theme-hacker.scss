@@ -321,3 +321,9 @@ nav {
     display: none;
   }
 }
+
+@media print, screen and (max-width: 1060px) {
+  nav {
+    display: none;
+  }
+}
