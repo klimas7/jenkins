@@ -93,6 +93,10 @@ $ docker rm jenkins_workshop
 $ docker volume rm jenkins_home
 ```
 ### Uruchomienie via jar
+```
+$ cd /opt/tools/jenkins
+$ java -jar jenkins.war
+```
 ### Uruchomienie ze skryptu
  
 
