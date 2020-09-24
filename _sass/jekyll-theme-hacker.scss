@@ -27,7 +27,7 @@ body {
 /* General & 'Reset' Stuff */
 
 .container {
-  width: 90%;
+  width: 95%;
   max-width: $container-max-width;
   margin: 0 auto;
 }
@@ -322,7 +322,7 @@ nav {
   }
 }
 
-@media print, screen and (max-width: 1060px) {
+@media print, screen and (max-width: 1300px) {
   nav {
     display: none;
   }
