@@ -209,11 +209,52 @@ Signature ok
 subject=C = PL, ST = Lesser Poland, L = KRK, O = K7Soft, CN = 192.168.0.178, emailAddress = admin@k7soft.pl
 Getting Private key
 ```
-Java >=11!
+A tu w logach
 ```
 2020-10-30 11:55:00.779+0000 [id=1]     WARNING winstone.Logger#logInternal: Using the --httpsPrivateKey/--httpsCertificate 
 options currently relies on unsupported APIs in the Oracle JRE.
 Please use --httpsKeyStore and related options instead.
+```
+Create keystore
+```
+$ openssl pkcs12 -export -in cert.pem -inkey key.pem -out jenkins.p12 -name jenkins
+Enter Export Password:
+Verifying - Enter Export Password:
+
+#Password: 12345678
+
+$ keytool -importkeystore -deststorepass 12345678 -destkeypass 12345678 \
+          -destkeystore jenkins.keystore -srckeystore jenkins.p12 \ 
+          -srcstoretype PKCS12 -srcstorepass 12345678 -alias jenkins
+Importing keystore jenkins.p12 to jenkins.keystore...
+
+$ keytool -list -keystore jenkins.keystore 
+Enter keystore password:  
+Keystore type: PKCS12
+Keystore provider: SUN
+
+Your keystore contains 1 entry
+
+jenkins, 30 paź 2020, PrivateKeyEntry, 
+Certificate fingerprint (SHA-256): D9:9C:7F:85:C5:1C:D8:32:82:0A:70:8E:8E:CF:59:15:B9:22:A2:9B:5D:20:35:6E:44:D8:FE:D1:EA:15:0D:0E
+
+```
+Dodatkowo w ``jenkins.sh``
+```
+    #jenkins_options="$jenkins_options --httpPort=-1 --httpsPort=8443 --httpsCertificate=$jh/ssh/cert.pem --httpsPrivateKey=$jh/ssh/key.pem"
+    jenkins_options="$jenkins_options --httpPort=-1 --httpsPort=8443 --httpsKeyStore=$jh/ssh/jenkins.keystore --httpsKeyStorePassword=12345678"
+```
+Firewall
+```
+## disabled
+#
+# systemctl status firewalld
+# systemctl stop firewalld
+
+## or open port
+# firewall-cmd --get-active-zones
+# firewall-cmd --permanent --zone=public --add-port=8443/tcp
+# systemctl restart firewalld
 ```
 
 ### Ćwiczenie 1.1
