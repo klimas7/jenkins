@@ -273,7 +273,11 @@ Firewall
 
 ### Ćwiczenie 1.2*
 [Uruchamienie ze skryptu po https](#uruchomienie-https) 
+
+W każdym przypadku powinniśmy otrzymać stronę startową
 ![Start](img/start_1.png)
+
+
 
 ## Temat 2: Katalog domowy
 ### Instalacja via dnf
