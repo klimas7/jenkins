@@ -98,8 +98,9 @@ $ cd /opt/tools/jenkins
 $ java -jar jenkins.war &
 ```
 Test [http://192.168.0.178:8080/](http://192.168.0.178:8080/) otwieramy w przeglądarce
+
 Stop and clean
-```shell script
+```
 $ ps aux | grep java
 $ kill -9 1338 #JENKINS_PID
 # or
