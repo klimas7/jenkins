@@ -213,6 +213,14 @@ Signature ok
 subject=C = PL, ST = Lesser Poland, L = KRK, O = K7Soft, CN = 192.168.0.178, emailAddress = admin@k7soft.pl
 Getting Private key
 ```
+# ``jenkins.sh``
+```
+#use http
+#jenkins_options="$jenkins_options --httpPort=$jp"
+
+#use_https
+jenkins_options="$jenkins_options --httpPort=-1 --httpsPort=8443 --httpsCertificate=$jh/ssh/cert.pem --httpsPrivateKey=$jh/ssh/key.pem"
+```
 A tu w logach
 ```
 2020-10-30 11:55:00.779+0000 [id=1]     WARNING winstone.Logger#logInternal: Using the --httpsPrivateKey/--httpsCertificate 
@@ -261,9 +269,10 @@ Firewall
 # systemctl restart firewalld
 ```
 ### Ćwiczenie 1.1
+Uruchomienie ze skryptu
 
 ### Ćwiczenie 1.2*
-
+Uruchamienie ze skryptu po https
 ## Temat 2: Katalog domowy
 ### Instalacja via dnf
 ```
