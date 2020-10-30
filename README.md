@@ -132,7 +132,7 @@ printUsage() {
 }
 
 start() {
-    jenkins_options="--logfile=$jh/log/jenkins.log --webroot=$jh/war --daemon"
+    jenkins_options="--logfile=$jh/log/jenkins.log --webroot=$jh/war"
     jenkins_options="$jenkins_options --ajp13Port=-1 --debug=5 \ 
                     --handlerCountMax=100 --handlerCountMaxIdle=20"
     
@@ -166,6 +166,12 @@ case $command in
 esac
 
 ```
+[winstone](http://winstone.sourceforge.net/), 
+[winstone 1](http://winstone.sourceforge.net/#commandLine), 
+[ajp](https://tomcat.apache.org/connectors-doc-archive/jk2/common/AJPv13.html), 
+[headless](https://www.oracle.com/technical-resources/articles/javase/headless.html), 
+[com.sun.akuma](https://github.com/kohsuke/akuma/tree/master/src/main/java/com/sun/akuma), 
+[Jenkins initial-settings](https://www.jenkins.io/doc/book/installing/initial-settings/)
 ### Ćwiczenie 1.1
 ### Ćwiczenie 1.2*
 ## Temat 2: Katalog domowy
