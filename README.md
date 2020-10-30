@@ -109,8 +109,60 @@ $ killall java
 rm -rf ~/.jenkins
 ```
 ### Uruchomienie ze skryptu
- 
+```
+$ cd /opt/tools/jenkins/
+$ ls
+jenkins.sh  jenkins.war  ssh
+```
+```
+$ cat jenkins.sh 
+#!/bin/bash
 
+jh=/opt/tools/jenkins
+jp=8080
+mkdir -p $jh/log
+mkdir -p $jh/war
+
+command=$1
+
+printUsage() {
+    echo "Usage:"
+    echo "jenkins.sh start"
+    echo "jenkins.sh stop"
+}
+
+start() {
+    jenkins_options="--logfile=$jh/log/jenkins.log --webroot=$jh/war --daemon"
+    jenkins_options="$jenkins_options --ajp13Port=-1 --debug=5 --handlerCountMax=100 --handlerCountMaxIdle=20"
+    
+    #use http
+    jenkins_options="$jenkins_options --httpPort=$jp"
+    
+    #use_https
+    #jenkins_options="$jenkins_options --httpPort=-1 --httpsPort=8443 --httpsCertificate=$jh/ssh/cert.pem --httpsPrivateKey=$jh/ssh/key.pem"
+
+
+    java -Dcom.sun.akuma.Daemon=daemonized -Djava.awt.headless=true -DJENKINS_HOME=$jh -jar $jh/jenkins.war $jenkins_options &
+}
+
+stop() {
+    jenkinsPID=$(ps aux | grep java | grep $jh | awk '{print $2}')
+    echo "kill jenkins process PID: "$jenkinsPID
+    kill -9 $jenkinsPID 2>&1 > /dev/null
+}
+
+case $command in
+    "start")
+        start
+        ;;
+    "stop")
+        stop
+        ;;
+    *)
+        printUsage
+esac
+
+```
 ### Ćwiczenie 1.1
 ### Ćwiczenie 1.2*
 ## Temat 2: Katalog domowy
