@@ -213,7 +213,7 @@ Signature ok
 subject=C = PL, ST = Lesser Poland, L = KRK, O = K7Soft, CN = 192.168.0.178, emailAddress = admin@k7soft.pl
 Getting Private key
 ```
-# ``jenkins.sh``
+W ``jenkins.sh``
 ```
 #use http
 #jenkins_options="$jenkins_options --httpPort=$jp"
@@ -253,8 +253,8 @@ Certificate fingerprint (SHA-256): D9:9C:7F:85:C5:1C:D8:32:82:0A:70:8E:8E:CF:59:
 ```
 Dodatkowo w ``jenkins.sh``
 ```
-    #jenkins_options="$jenkins_options --httpPort=-1 --httpsPort=8443 --httpsCertificate=$jh/ssh/cert.pem --httpsPrivateKey=$jh/ssh/key.pem"
-    jenkins_options="$jenkins_options --httpPort=-1 --httpsPort=8443 --httpsKeyStore=$jh/ssh/jenkins.keystore --httpsKeyStorePassword=12345678"
+#jenkins_options="$jenkins_options --httpPort=-1 --httpsPort=8443 --httpsCertificate=$jh/ssh/cert.pem --httpsPrivateKey=$jh/ssh/key.pem"
+jenkins_options="$jenkins_options --httpPort=-1 --httpsPort=8443 --httpsKeyStore=$jh/ssh/jenkins.keystore --httpsKeyStorePassword=12345678"
 ```
 Firewall
 ```
@@ -273,6 +273,8 @@ Uruchomienie ze skryptu
 
 ### Ćwiczenie 1.2*
 Uruchamienie ze skryptu po https
+![Start](img/start_1.png)
+
 ## Temat 2: Katalog domowy
 ### Instalacja via dnf
 ```
