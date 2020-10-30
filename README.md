@@ -269,10 +269,10 @@ Firewall
 # systemctl restart firewalld
 ```
 ### Ćwiczenie 1.1
-Uruchomienie ze skryptu
+[Uruchomienie ze skryptu](#uruchomienie-ze-skryptu)
 
 ### Ćwiczenie 1.2*
-Uruchamienie ze skryptu po https
+[Uruchamienie ze skryptu po https](#uruchomienie-https) 
 ![Start](img/start_1.png)
 
 ## Temat 2: Katalog domowy
