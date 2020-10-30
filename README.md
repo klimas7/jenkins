@@ -95,7 +95,17 @@ $ docker volume rm jenkins_home
 ### Uruchomienie via jar
 ```
 $ cd /opt/tools/jenkins
-$ java -jar jenkins.war
+$ java -jar jenkins.war &
+```
+Test [http://192.168.0.178:8080/](http://192.168.0.178:8080/) otwieramy w przeglądarce
+Stop and clean
+```shell script
+$ ps aux | grep java
+$ kill -9 1338 #JENKINS_PID
+# or
+$ killall java
+
+rm -rf ~/.jenkins
 ```
 ### Uruchomienie ze skryptu
  
@@ -108,6 +118,10 @@ $ java -jar jenkins.war
 JENKINS_HOME=/var/lib/jenkins
 logfile=/var/log/jenkins/jenkins.log
 war=/usr/lib/jenkins/jenkins.war
+```
+### Instalacja via dnf
+```
+JENKINS_HOME=/home/jenkins/.jenkins
 ```
 ### Ćwiczenie 2.1: Odzyskanie dostępu
 
