@@ -172,6 +172,50 @@ esac
 [headless](https://www.oracle.com/technical-resources/articles/javase/headless.html), 
 [com.sun.akuma](https://github.com/kohsuke/akuma/tree/master/src/main/java/com/sun/akuma), 
 [Jenkins initial-settings](https://www.jenkins.io/doc/book/installing/initial-settings/)
+#### uruchomienie https
+[ssl files explanation](https://serverfault.com/questions/9708/what-is-a-pem-file-and-how-does-it-differ-from-other-openssl-generated-key-file)
+```
+cd /opt/tools/jenkins/ssh
+$ openssl genrsa -out key.pem
+Generating RSA private key, 2048 bit long modulus (2 primes)
+..............................................+++++
+..............+++++
+e is 65537 (0x010001)
+
+$ openssl req -new -key key.pem -out csr.pem
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [XX]:PL
+State or Province Name (full name) []:Lesser Poland
+Locality Name (eg, city) [Default City]:KRK
+Organization Name (eg, company) [Default Company Ltd]:K7Soft            
+Organizational Unit Name (eg, section) []:
+Common Name (eg, your name or your server's hostname) []:192.168.0.178
+Email Address []:admin@k7soft.pl
+
+Please enter the following 'extra' attributes
+to be sent with your certificate request
+A challenge password []:
+An optional company name []:
+
+#### Self-signed certificate ####
+$ openssl x509 -req -days 9999 -in csr.pem -signkey key.pem -out cert.pem
+Signature ok
+subject=C = PL, ST = Lesser Poland, L = KRK, O = K7Soft, CN = 192.168.0.178, emailAddress = admin@k7soft.pl
+Getting Private key
+```
+Java >=11!
+```
+2020-10-30 11:55:00.779+0000 [id=1]     WARNING winstone.Logger#logInternal: Using the --httpsPrivateKey/--httpsCertificate 
+options currently relies on unsupported APIs in the Oracle JRE.
+Please use --httpsKeyStore and related options instead.
+```
+
 ### Ćwiczenie 1.1
 ### Ćwiczenie 1.2*
 ## Temat 2: Katalog domowy
