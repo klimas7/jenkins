@@ -133,16 +133,19 @@ printUsage() {
 
 start() {
     jenkins_options="--logfile=$jh/log/jenkins.log --webroot=$jh/war --daemon"
-    jenkins_options="$jenkins_options --ajp13Port=-1 --debug=5 --handlerCountMax=100 --handlerCountMaxIdle=20"
+    jenkins_options="$jenkins_options --ajp13Port=-1 --debug=5 \ 
+                    --handlerCountMax=100 --handlerCountMaxIdle=20"
     
     #use http
     jenkins_options="$jenkins_options --httpPort=$jp"
     
     #use_https
-    #jenkins_options="$jenkins_options --httpPort=-1 --httpsPort=8443 --httpsCertificate=$jh/ssh/cert.pem --httpsPrivateKey=$jh/ssh/key.pem"
+    #jenkins_options="$jenkins_options --httpPort=-1 --httpsPort=8443 \ 
+                       --httpsCertificate=$jh/ssh/cert.pem  \
+                       --httpsPrivateKey=$jh/ssh/key.pem"
 
-
-    java -Dcom.sun.akuma.Daemon=daemonized -Djava.awt.headless=true -DJENKINS_HOME=$jh -jar $jh/jenkins.war $jenkins_options &
+    java -Dcom.sun.akuma.Daemon=daemonized -Djava.awt.headless=true -DJENKINS_HOME=$jh \ 
+         -jar $jh/jenkins.war $jenkins_options &
 }
 
 stop() {
