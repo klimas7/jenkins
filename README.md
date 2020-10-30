@@ -172,6 +172,10 @@ esac
 [headless](https://www.oracle.com/technical-resources/articles/javase/headless.html), 
 [com.sun.akuma](https://github.com/kohsuke/akuma/tree/master/src/main/java/com/sun/akuma), 
 [Jenkins initial-settings](https://www.jenkins.io/doc/book/installing/initial-settings/)
+```
+$ ./jenkins.sh
+```
+Test [http://192.168.0.178:8080/](http://192.168.0.178:8080/) otwieramy w przeglądarce
 #### uruchomienie https
 [ssl files explanation](https://serverfault.com/questions/9708/what-is-a-pem-file-and-how-does-it-differ-from-other-openssl-generated-key-file)
 ```
@@ -256,9 +260,10 @@ Firewall
 # firewall-cmd --permanent --zone=public --add-port=8443/tcp
 # systemctl restart firewalld
 ```
-
 ### Ćwiczenie 1.1
+
 ### Ćwiczenie 1.2*
+
 ## Temat 2: Katalog domowy
 ### Instalacja via dnf
 ```
