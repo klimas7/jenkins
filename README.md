@@ -276,7 +276,10 @@ Firewall
 
 W każdym przypadku powinniśmy otrzymać stronę startową
 ![Start](img/start_1.png)
-
+Hasło ze wskazanego pliku wklejamy w pole tekstowe
+```
+cat /opt/tools/jenkins/secrets/initialAdminPassword
+```
 
 
 ## Temat 2: Katalog domowy
@@ -303,5 +306,5 @@ JENKINS_HOME=/home/jenkins/.jenkins
 ## Temat 12
 ## Temat 13
 ## Temat 14
-## Temat 15
-## Temat 16
+## Temat 15: Pipelines
+## Temat 16: Shared Library
