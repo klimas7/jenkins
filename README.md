@@ -301,7 +301,7 @@ Hasło: 12345678
 Pełna nazwa: Administrator
 Adres email: admin@acme.com
 ```
-![Url Wizard](img/)
+![Url Wizard](img/url_wiz.png)
 ## Temat 2: Katalog domowy
 ### Instalacja via dnf
 ```
