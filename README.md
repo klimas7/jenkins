@@ -290,6 +290,18 @@ Ważne!
 * Pominięto utworzenie konta administratora. Aby się zalogować, użyj loginu 'admin' i hasła użytego podczas konfigurowania Jenkinsa.
 * Pominięto konfiguracje bazowego adresu URL Jenkinsa. Aby go skonfigurować, przejdź do strony "Zarządzaj Jenkinsem".
 
+Instalujemy sugerowane wtyczki
+![Initial plugins](img/initial_plugins.png)
+
+Admin page
+![Admin page](img/admin_page.png)
+```
+Login: admin
+Hasło: 12345678
+Pełna nazwa: Administrator
+Adres email: admin@acme.com
+```
+![Url Wizard](img/)
 ## Temat 2: Katalog domowy
 ### Instalacja via dnf
 ```
