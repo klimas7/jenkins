@@ -317,34 +317,93 @@ JENKINS_HOME=/home/jenkins/.jenkins
 ```
 Stróktura
 ```
-├── config.xml          (jenkins root configuration)
-├── *.xml
-├── hudson.plugins.git.GitTool.xml
-├── identity.key.enc
-├── jenkins.install.InstallUtil.lastExecVersion
-├── jenkins.install.UpgradeWizard.state
-├── jenkins.model.JenkinsLocationConfiguration.xml
-├── jenkins.sh
-├── jenkins.telemetry.Correlator.xml
-├── jenkins.war
-├── jobs
-├── log
-├── logs
-├── nodeMonitors.xml
-├── nodes
-├── plugins
-├── queue.xml
-├── secret.key
-├── secret.key.not-so-secret
-├── secrets
-├── ssh
-├── updates
-├── userContent
-├── users
-├── war
-├── workflow-libs
-└── workspace
-
+├── config.xml              (jenkins root configuration)
+├── *.xml                   (other site-wide configuration files)
+├── jenkins.sh              (start stop script)
+├── jenkins.war             (jenkins war :))
+├── log                     (task log directory)
+├── logs                    (logs)
+├── nodes                   (nodes configuration)
+├── plugins                 (stores plugins)
+├── secrets                 (secretes needed when migrating credentials to other servers)
+├── ssh                     (ssl configuration)
+├── updates                 (updates config)
+├── userContent             (files in this directory will be served under your http://server/userContent/)
+├── users                   (users configuration)
+│   ├── admin_4702638789067880202
+│   └── users.xml
+├── war                     (unpacked jenkins.war)
+├── workflow-libs           (shared library)
+├── jobs                    (jobs configuration and builds)
+│   ├── Job A
+│   │   ├── builds
+│   │   │   ├── 1
+│   │   │   │   ├── build.xml
+│   │   │   │   ├── changelog.xml
+│   │   │   │   └── log
+│   │   │   ├── 2
+│   │   │   │   ├── build.xml
+│   │   │   │   ├── changelog.xml
+│   │   │   │   └── log
+│   │   │   ├── legacyIds
+│   │   │   └── permalinks
+│   │   ├── config.xml
+│   │   └── nextBuildNumber
+│   └── restCounter
+│       ├── builds
+│       │   ├── 1
+│       │   │   ├── build.xml
+│       │   │   └── log
+│       │   ├── 2
+│       │   │   ├── build.xml
+│       │   │   ├── changelog.xml
+│       │   │   ├── log
+│       │   │   └── pl.klimas7$restCounter -> ../../modules/pl.klimas7$restCounter/builds/2
+│       │   ├── 3
+│       │   │   ├── build.xml
+│       │   │   ├── changelog.xml
+│       │   │   ├── log
+│       │   │   └── pl.klimas7$restCounter -> ../../modules/pl.klimas7$restCounter/builds/3
+│       │   ├── legacyIds
+│       │   └── permalinks
+│       ├── config.xml
+│       ├── modules
+│       │   └── pl.klimas7$restCounter
+│       │       ├── builds
+│       │       │   ├── 2
+│       │       │   │   ├── archive
+│       │       │   │   │   └── pl.klimas7
+│       │       │   │   │       └── restCounter
+│       │       │   │   │           └── 0.0.1-SNAPSHOT
+│       │       │   │   │               ├── restCounter-0.0.1-SNAPSHOT.jar
+│       │       │   │   │               └── restCounter-0.0.1-SNAPSHOT.pom
+│       │       │   │   ├── build.xml
+│       │       │   │   ├── junitResult.xml
+│       │       │   │   └── log
+│       │       │   ├── 3
+│       │       │   │   ├── archive
+│       │       │   │   │   └── pl.klimas7
+│       │       │   │   │       └── restCounter
+│       │       │   │   │           └── 0.0.1-SNAPSHOT
+│       │       │   │   │               ├── restCounter-0.0.1-SNAPSHOT.jar
+│       │       │   │   │               └── restCounter-0.0.1-SNAPSHOT.pom
+│       │       │   │   ├── build.xml
+│       │       │   │   ├── junitResult.xml
+│       │       │   │   └── log
+│       │       │   ├── legacyIds
+│       │       │   └── permalinks
+│       │       ├── config.xml
+│       │       └── nextBuildNumber
+│       └── nextBuildNumber
+└── workspace               (working directory for the version control system)
+    ├── Job A
+    │   └── test_job_a.txt
+    └── restCounter
+        ├── pom.xml
+        ├── README.md
+        ├── restCounter.sh
+        ├── src
+        └── target
 ```
 
 ### Ćwiczenie 2.1: Odzyskanie dostępu
