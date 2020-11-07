@@ -315,7 +315,7 @@ war=/usr/lib/jenkins/jenkins.war
 ```
 JENKINS_HOME=/home/jenkins/.jenkins
 ```
-Stróktura
+Struktura
 ```
 ├── config.xml              (jenkins root configuration)
 ├── *.xml                   (other site-wide configuration files)
