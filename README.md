@@ -278,10 +278,15 @@ W każdym przypadku powinniśmy otrzymać stronę startową
 ![Start](img/start_1.png)
 Hasło ze wskazanego pliku wklejamy w pole tekstowe
 ```
-cat /opt/tools/jenkins/secrets/initialAdminPassword
+$ cat /opt/tools/jenkins/secrets/initialAdminPassword
 ```
-
-
+Setup wizard
+![Setup wizard](img/setup_wiz.png)
+Jeżeli zamkniemy powyższe okno 
+![Setup wizard finish](img/setup_wiz_end.png)
+Ważne!
+* Pominięto utworzenie konta administratora. Aby się zalogować, użyj loginu 'admin' i hasła użytego podczas konfigurowania Jenkinsa.
+* Pominięto konfiguracje bazowego adresu URL Jenkinsa. Aby go skonfigurować, przejdź do strony "Zarządzaj Jenkinsem".
 ## Temat 2: Katalog domowy
 ### Instalacja via dnf
 ```
