@@ -315,6 +315,38 @@ war=/usr/lib/jenkins/jenkins.war
 ```
 JENKINS_HOME=/home/jenkins/.jenkins
 ```
+Stróktura
+```
+├── config.xml          (jenkins root configuration)
+├── *.xml
+├── hudson.plugins.git.GitTool.xml
+├── identity.key.enc
+├── jenkins.install.InstallUtil.lastExecVersion
+├── jenkins.install.UpgradeWizard.state
+├── jenkins.model.JenkinsLocationConfiguration.xml
+├── jenkins.sh
+├── jenkins.telemetry.Correlator.xml
+├── jenkins.war
+├── jobs
+├── log
+├── logs
+├── nodeMonitors.xml
+├── nodes
+├── plugins
+├── queue.xml
+├── secret.key
+├── secret.key.not-so-secret
+├── secrets
+├── ssh
+├── updates
+├── userContent
+├── users
+├── war
+├── workflow-libs
+└── workspace
+
+```
+
 ### Ćwiczenie 2.1: Odzyskanie dostępu
 
 ## Temat 4
@@ -330,3 +362,4 @@ JENKINS_HOME=/home/jenkins/.jenkins
 ## Temat 14
 ## Temat 15: Pipelines
 ## Temat 16: Shared Library
+## Temat 17: Bitbucket integration
