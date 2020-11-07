@@ -302,6 +302,8 @@ Pełna nazwa: Administrator
 Adres email: admin@acme.com
 ```
 ![Url Wizard](img/url_wiz.png)
+![Finish setup](img/finish_setup.png)
+
 ## Temat 2: Katalog domowy
 ### Instalacja via dnf
 ```
