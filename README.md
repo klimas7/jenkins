@@ -484,6 +484,10 @@ $ vim jenkins.sh
     java_options="-Dhudson.model.DirectoryBrowserSupport.allowSymlinkEscape=true"
     java -Dcom.sun.akuma.Daemon=daemonized -Djava.awt.headless=true -DJENKINS_HOME=$jh $java_options -jar $jh/jenkins.war $jenkins_options &
 ```
+```
+$ ./jenkins.sh start
+```
+
 ![User Content Job link 2](img/user_content_5.png)
 
 ## Temat 3 Aktualizacja i instalacja pluginów 
