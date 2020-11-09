@@ -405,10 +405,32 @@ Struktura
         ├── src
         └── target
 ```
+### Ćwiczenie 2.1: Odczytaj ponownie konfigurację z dysku
+```
+$ cd /opt/tools/jenkins/
+$ vim config.xml
+```
+```
+<?xml version='1.1' encoding='UTF-8'?>
+<hudson>
+  <disabledAdministrativeMonitors/>
+  <version>2.235.5</version>
+  <installStateName>RUNNING</installStateName>
+  <numExecutors>4</numExecutors>                <!-- z 2 na 4 --> 
+  <mode>NORMAL</mode>
+  <useSecurity>true</useSecurity>
+```
+``Jenkins -> Zarządzaj Jenkinsem -> Odczytaj ponownie konfigurację z dysku``
+![Reload configuration](img/reload_configuration.png)
+vim: 
+ * ``insert`` or ``i`` switch to insert mode
+ * ``esc`` switch to command mode
+ * ``:wq`` write and quit 
+### Ćwiczenie 2.2: Odzyskanie dostępu
+### Ćwiczenie 2.3: 
 
-### Ćwiczenie 2.1: Odzyskanie dostępu
-
-## Temat 4
+## Temat 3 Aktualizacja i instalacja pluginów 
+## Temat 4 Jenkins as Code
 ## Temat 5
 ## Temat 6
 ## Temat 7
