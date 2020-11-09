@@ -405,7 +405,7 @@ Struktura
         ├── src
         └── target
 ```
-### Ćwiczenie 2.1: Odczytaj ponownie konfigurację z dysku
+### Ćwiczenie 2.1: Odczytaj ponownie konfigurację z dysku - zmiana liczby egzekutorów
 ```
 $ cd /opt/tools/jenkins/
 $ vim config.xml
@@ -429,7 +429,32 @@ vim:
  * ``:wq`` write and quit
  
 ### Ćwiczenie 2.2: Odzyskanie dostępu
-### Ćwiczenie 2.3: 
+```
+$ cd /opt/tools/jenkins/
+$ ./jenkins.sh stop
+$ vim config.xml
+```
+```
+<hudson>
+  <disabledAdministrativeMonitors/>
+  <version>2.235.5</version>
+  <installStateName>RUNNING</installStateName>
+  <numExecutors>4</numExecutors>
+  <mode>NORMAL</mode>
+  <useSecurity>false</useSecurity>              <!-- z true na false -->
+  <authorizationStrategy class="hudson.security.FullControlOnceLoggedInAuthorizationStrategy">
+    <denyAnonymousReadAccess>true</denyAnonymousReadAccess>
+  </authorizationStrategy>
+```
+```
+$ ./jenkins.sh start
+```
+``Jenkins -> Zarządzaj Jenkinsem -> Konfiguruj ustawienia bezpieczeństwa``
+![Konfiguruj ustawienia bezpieczeństwa](img/security_1.png)
+``Jenkins -> Użytkownicy -> admin -> Konfiguracja``
+![admin -> Konfiguracja](img/security_2.png)
+
+### Ćwiczenie 2.3*: Udostępnianie wyników w userContent
 
 ## Temat 3 Aktualizacja i instalacja pluginów 
 ## Temat 4 Jenkins as Code
