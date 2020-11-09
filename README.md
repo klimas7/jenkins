@@ -463,6 +463,8 @@ $ ./jenkins.sh start
 ``Budowanie -> Dodaj krok budowania -> Uruchom powłokę``
 ![User Content Job Configuration](img/user_content_2.png)
 
+``echo "Test" > ../../userContent/${BUILD_TAG}.txt``
+
 Wynik [http://192.168.0.178:8080/userContent/](http://192.168.0.178:8080/userContent/)
 ![User Content Job Output](img/user_content_3.png)
 
