@@ -468,6 +468,22 @@ $ ./jenkins.sh start
 Wynik [http://192.168.0.178:8080/userContent/](http://192.168.0.178:8080/userContent/)
 ![User Content Job Output](img/user_content_3.png)
 
+Udostępnianie 'linkow'
+```
+$ cd /opt/tools/jenkins/
+$ ln -s /opt/tools/maven userContent/maven
+```
+![User Content Job link](img/user_content_4.png)
+[System Properties](https://www.jenkins.io/doc/book/managing/system-properties/)
+```
+$ ./jenkins.sh stop
+$ vim jenkins.sh
+```
+```
+    java_options="-Dhudson.model.DirectoryBrowserSupport.allowSymlinkEscape=true"
+    java -Dcom.sun.akuma.Daemon=daemonized -Djava.awt.headless=true -DJENKINS_HOME=$jh $java_options -jar $jh/jenkins.war $jenkins_options &
+```
+![User Content Job link 2](img/user_content_5.png)
 
 ## Temat 3 Aktualizacja i instalacja pluginów 
 ## Temat 4 Jenkins as Code
