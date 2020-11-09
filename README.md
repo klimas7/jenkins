@@ -487,7 +487,6 @@ $ vim jenkins.sh
 ![User Content Job link 2](img/user_content_5.png)
 
 ## Temat 3 Aktualizacja i instalacja pluginów 
-## Temat 4 Jenkins as Code
 ## Temat 5
 ## Temat 6
 ## Temat 7
