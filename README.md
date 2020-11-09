@@ -405,7 +405,7 @@ Struktura
         ├── src
         └── target
 ```
-### Ćwiczenie 2.1: Odczytaj ponownie konfigurację z dysku - zmiana liczby egzekutorów
+### Ćwiczenie 2.1: Zmiana liczby egzekutorów
 ```
 $ cd /opt/tools/jenkins/
 $ vim config.xml
@@ -454,7 +454,7 @@ $ ./jenkins.sh start
 ``Jenkins -> Użytkownicy -> admin -> Konfiguracja``
 ![admin -> Konfiguracja](img/security_2.png)
 
-### Ćwiczenie 2.3*: Udostępnianie wyników w userContent
+### Ćwiczenie 2.3*: UserContent
 
 ## Temat 3 Aktualizacja i instalacja pluginów 
 ## Temat 4 Jenkins as Code
