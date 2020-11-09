@@ -468,7 +468,7 @@ $ ./jenkins.sh start
 Wynik [http://192.168.0.178:8080/userContent/](http://192.168.0.178:8080/userContent/)
 ![User Content Job Output](img/user_content_3.png)
 
-Udostępnianie 'linkow'
+Udostępnianie 'linków'
 ```
 $ cd /opt/tools/jenkins/
 $ ln -s /opt/tools/maven userContent/maven
