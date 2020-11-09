@@ -474,6 +474,7 @@ $ cd /opt/tools/jenkins/
 $ ln -s /opt/tools/maven userContent/maven
 ```
 ![User Content Job link](img/user_content_4.png)
+
 [System Properties](https://www.jenkins.io/doc/book/managing/system-properties/)
 ```
 $ ./jenkins.sh stop
