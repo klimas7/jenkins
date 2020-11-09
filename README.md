@@ -406,11 +406,11 @@ Struktura
         └── target
 ```
 ### Ćwiczenie 2.1: Zmiana liczby egzekutorów
-```
+```shell script
 $ cd /opt/tools/jenkins/
 $ vim config.xml
 ```
-```
+```xml
 <?xml version='1.1' encoding='UTF-8'?>
 <hudson>
   <disabledAdministrativeMonitors/>
@@ -429,7 +429,7 @@ vim:
  * ``:wq`` write and quit
  
 ### Ćwiczenie 2.2: Odzyskanie dostępu
-```
+```shell script
 $ cd /opt/tools/jenkins/
 $ ./jenkins.sh stop
 $ vim config.xml
