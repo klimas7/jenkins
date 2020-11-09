@@ -451,6 +451,7 @@ $ ./jenkins.sh start
 ```
 ``Jenkins -> Zarządzaj Jenkinsem -> Konfiguruj ustawienia bezpieczeństwa``
 ![Konfiguruj ustawienia bezpieczeństwa](img/security_1.png)
+
 ``Jenkins -> Użytkownicy -> admin -> Konfiguracja``
 ![admin -> Konfiguracja](img/security_2.png)
 
