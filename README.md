@@ -434,7 +434,7 @@ $ cd /opt/tools/jenkins/
 $ ./jenkins.sh stop
 $ vim config.xml
 ```
-```
+```xml
 <hudson>
   <disabledAdministrativeMonitors/>
   <version>2.235.5</version>
