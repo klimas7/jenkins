@@ -457,6 +457,15 @@ $ ./jenkins.sh start
 ![admin -> Konfiguracja](img/security_2.png)
 
 ### Ćwiczenie 2.3*: UserContent
+``Jenkins -> Nowy Projekt -> Ogólny projekt (nazwa UserContent) -> OK``
+![User Content Job](img/user_content_1.png)
+
+``Budowanie -> Dodaj krok budowania -> Uruchom powłokę``
+![User Content Job Configuration](img/user_content_2.png)
+
+Wynik [http://192.168.0.178:8080/userContent/](http://192.168.0.178:8080/userContent/)
+![User Content Job Output](img/user_content_3.png)
+
 
 ## Temat 3 Aktualizacja i instalacja pluginów 
 ## Temat 4 Jenkins as Code
