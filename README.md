@@ -422,10 +422,12 @@ $ vim config.xml
 ```
 ``Jenkins -> Zarządzaj Jenkinsem -> Odczytaj ponownie konfigurację z dysku``
 ![Reload configuration](img/reload_configuration.png)
+
 vim: 
  * ``insert`` or ``i`` switch to insert mode
  * ``esc`` switch to command mode
- * ``:wq`` write and quit 
+ * ``:wq`` write and quit
+ 
 ### Ćwiczenie 2.2: Odzyskanie dostępu
 ### Ćwiczenie 2.3: 
 
