@@ -406,7 +406,7 @@ Struktura
         └── target
 ```
 ### Ćwiczenie 2.1: Zmiana liczby egzekutorów
-```shell script
+```
 $ cd /opt/tools/jenkins/
 $ vim config.xml
 ```
@@ -429,7 +429,7 @@ vim:
  * ``:wq`` write and quit
  
 ### Ćwiczenie 2.2: Odzyskanie dostępu
-```shell script
+```
 $ cd /opt/tools/jenkins/
 $ ./jenkins.sh stop
 $ vim config.xml
@@ -453,6 +453,7 @@ $ ./jenkins.sh start
 ![Konfiguruj ustawienia bezpieczeństwa](img/security_1.png)
 
 ``Jenkins -> Użytkownicy -> admin -> Konfiguracja``
+
 ![admin -> Konfiguracja](img/security_2.png)
 
 ### Ćwiczenie 2.3*: UserContent
