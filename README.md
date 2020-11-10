@@ -39,7 +39,7 @@ ssh root@192.168.0.178
 or
 ssh jenkins@192.168.0.178
 ```
-##1: Uruchomienie 
+## 1: Uruchomienie 
 ### Instalacja via dnf
 Definicja repozytorium i import klucza
 ```
@@ -304,7 +304,7 @@ Adres email: admin@acme.com
 ![Url Wizard](img/url_wiz.png)
 ![Finish setup](img/finish_setup.png)
 
-##2: Katalog domowy
+## 2: Katalog domowy
 ### Instalacja via dnf
 ```
 JENKINS_HOME=/var/lib/jenkins
@@ -490,7 +490,7 @@ $ ./jenkins.sh start
 
 ![User Content Job link 2](img/user_content_5.png)
 
-##3: Aktualizacja i instalacja wtyczek
+## 3: Aktualizacja i instalacja wtyczek
 Aktualizacja Jenkinsa - dostępna ze strony głównej
 ![Update Jenkins](img/update_1.png)
 
