@@ -13,31 +13,45 @@ var sectionHeight = function() {
 $(window).resize(sectionHeight);
 
 $(function() {
-    let subMenu = "";
+    let menu = "";
+    let currentLevel = "2";
     $("section h2, section h3").each(function(){
         let level = this.nodeName.toLowerCase().substr(1, 1);
         let aTag = "<a href='#" + $(this).text().toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g,'') + "'>" + $(this).text() + "</a>"
+        let liTag = "<li class='tag-h" + level + "'>" + aTag + "</li>";
 
-        if (level === "2") {
-            if (subMenu.length > 0) {
-                subMenu += "</ul>"
-            }
-            $("nav ul").append("<li class='tag-h" + level + "'>" + aTag + subMenu + "</li>");
-            subMenu = "";
+        if (currentLevel === level) {
+            menu += liTag;
         }
-        else if (level === "3") {
-            if (subMenu.length === 0) {
-                subMenu += "<ul>"
-            }
-            subMenu += "<li class='tag-h" + level + "'>" + aTag + "</li>"
+        else if (level > currentLevel) {
+            menu += "<ul>" + liTag;
         }
+        else if (level < currentLevel) {
+            menu += liTag + "</ul>"
+        }
+
+        currentLevel = level;
+        // if (level === "2") {
+        //     if (subMenu.length > 0) {
+        //         subMenu += "</ul>"
+        //     }
+        //     $("nav ul").append("<li class='tag-h" + level + "'>" + aTag + subMenu + "</li>");
+        //     subMenu = "";
+        // }
+        // else if (level === "3") {
+        //     if (subMenu.length === 0) {
+        //         subMenu += "<ul>"
+        //     }
+        //     subMenu +=
+        // }
 
 
 
         $(this).attr("id",$(this).text().toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g,''));
-        $("nav ul li:first-child a").parent().addClass("active");
-
     });
+
+    $("nav ul").append(menu);
+    $("nav ul li:first-child a").parent().addClass("active");
 
     $("nav ul li").on("click", "a", function(event) {
         var position = $($(this).attr("href")).offset().top - 190;
