@@ -498,6 +498,11 @@ lub ``Jenkins -> Zarządzaj Jenkinsem``
 ![Update Jenkins 2](img/update_2.png)
 ![Update Jenkins 3](img/update_3.png)
 
+Powrót do poprzedniej wersji ``Jenkins -> Zarządzaj Jenkinsem``
+![Downgrade Jenkins](img/update_4.png)
+
+Aktualizacja pluginów ``Menedżer wtyczek`` ``Jenkins -> Zarządzaj Jenkinsem -> Zarządzaj wtyczkami``
+![Update plugins](img/update_plugins_1.png)
 
 ## Temat 5
 ## Temat 6
