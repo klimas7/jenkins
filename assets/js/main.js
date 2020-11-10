@@ -24,10 +24,12 @@ $(function() {
             menu += liTag;
         }
         else if (level > currentLevel) {
+            menu = menu.substr(0, menu.length - 5)
             menu += "<ul>" + liTag;
         }
         else if (level < currentLevel) {
             menu += liTag + "</ul>"
+            menu += "</li>"
         }
 
         currentLevel = level;
