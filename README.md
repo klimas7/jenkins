@@ -490,7 +490,15 @@ $ ./jenkins.sh start
 
 ![User Content Job link 2](img/user_content_5.png)
 
-## Temat 3 Aktualizacja i instalacja pluginów 
+## Temat 3 Aktualizacja i instalacja pluginów
+Aktualizacja Jenkinsa - dostępna ze strony głównej
+![Update Jenkins](img/update_1.png)
+
+lub ``Jenkins -> Zarządzaj Jenkinsem``
+![Update Jenkins 2](img/update_2.png)
+![Update Jenkins 3](img/update_3.png)
+
+
 ## Temat 5
 ## Temat 6
 ## Temat 7
