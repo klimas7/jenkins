@@ -21,11 +21,11 @@ $(function() {
 
         console.log("level: " + level + " cl: " + currentLevel);
 
-        if (level === 2) {
+        if (level === "2") {
             $("nav ul").append("<li class='tag-h" + level + "'>" + aTag + subMenu + "</li>");
             subMenu = "";
         }
-        else if (level === 3) {
+        else if (level === "3") {
             subMenu += "<li class='tag-h" + level + "'>" + aTag + "</li>"
         }
 
