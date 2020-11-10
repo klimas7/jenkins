@@ -13,16 +13,20 @@ var sectionHeight = function() {
 $(window).resize(sectionHeight);
 
 $(function() {
-    $("section h1, section h2").each(function(){
-        let h = this.nodeName.toLowerCase();
-        console.log("h: " + h);
-        $("nav ul").append("<li class='tag-" + h + "'>" +
+    let currentLevel = 2;
+    $("section h2, section h3").each(function(){
+        let level = this.nodeName.toLowerCase().substr(1, 1);
+        console.log("level: " + level + " cl: " + currentLevel);
+
+        $("nav ul").append("<li class='tag-h" + level + "'>" +
             "<a href='#" + $(this).text().toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g,'') + "'>" + $(this).text() + "</a>" +
             "</li>");
 
 
         $(this).attr("id",$(this).text().toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g,''));
         $("nav ul li:first-child a").parent().addClass("active");
+
+        currentLevel = level;
     });
 
     $("nav ul li").on("click", "a", function(event) {
