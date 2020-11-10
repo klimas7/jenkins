@@ -14,13 +14,21 @@ $(window).resize(sectionHeight);
 
 $(function() {
     let currentLevel = 2;
+    let subMenu = "";
     $("section h2, section h3").each(function(){
         let level = this.nodeName.toLowerCase().substr(1, 1);
+        let aTag = "<a href='#" + $(this).text().toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g,'') + "'>" + $(this).text() + "</a>"
+
         console.log("level: " + level + " cl: " + currentLevel);
 
-        $("nav ul").append("<li class='tag-h" + level + "'>" +
-            "<a href='#" + $(this).text().toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g,'') + "'>" + $(this).text() + "</a>" +
-            "</li>");
+        if (level === 2) {
+            $("nav ul").append("<li class='tag-h" + level + "'>" + aTag + subMenu + "</li>");
+            subMenu = "";
+        }
+        else if (level === 3) {
+            subMenu += "<li class='tag-h" + level + "'>" + aTag + "</li>"
+        }
+
 
 
         $(this).attr("id",$(this).text().toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g,''));

@@ -531,3 +531,4 @@ old-data-plugin.hpi
 ## Temat 15: Pipelines
 ## Temat 16: Shared Library
 ## Temat 17: Bitbucket integration
+## Koniec
