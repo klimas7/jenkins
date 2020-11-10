@@ -490,7 +490,7 @@ $ ./jenkins.sh start
 
 ![User Content Job link 2](img/user_content_5.png)
 
-## Temat 3 Aktualizacja i instalacja pluginów
+## Temat 3 Aktualizacja i instalacja wtyczek
 Aktualizacja Jenkinsa - dostępna ze strony głównej
 ![Update Jenkins](img/update_1.png)
 
@@ -501,13 +501,17 @@ lub ``Jenkins -> Zarządzaj Jenkinsem``
 Powrót do poprzedniej wersji ``Jenkins -> Zarządzaj Jenkinsem``
 ![Downgrade Jenkins](img/update_4.png)
 
-Aktualizacja pluginów ``Menedżer wtyczek`` ``Jenkins -> Zarządzaj Jenkinsem -> Zarządzaj wtyczkami``
+Aktualizacja wtyczek ``Menedżer wtyczek`` ``Jenkins -> Zarządzaj Jenkinsem -> Zarządzaj wtyczkami``
 ![Update plugins](img/update_plugins_1.png)
 ![Update plugins](img/update_plugins_3.png)
 ![Update plugins](img/update_plugins_2.png)
 
+Instalacja wtyczek z poza repozytorium
+``Jenkins -> Zarządzaj Jenkinsem -> Zarządzaj wtyczkami`` ``Menedżer wtyczek -> Zaawansowane``
+![Instal plugin](img/update_plugins_4.png)
+
 ### Ćwiczenie 3.1: Aktualizacja
-Zainstaluj aktualizacje Jenkinsa, pluginów oraz 2 pluginy ręcznie
+Zainstaluj aktualizacje Jenkinsa, pluginów oraz 2 pluginy z poza repozytorium
 ```
 logger-plugin.hpi
 old-data-plugin.hpi
