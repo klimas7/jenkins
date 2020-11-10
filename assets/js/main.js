@@ -28,8 +28,7 @@ $(function() {
             menu += "<ul>" + liTag;
         }
         else if (level < currentLevel) {
-            menu += liTag + "</ul>"
-            menu += "</li>"
+            menu += "</ul></li>" + liTag;
         }
 
         currentLevel = level;
