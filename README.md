@@ -503,6 +503,16 @@ Powrót do poprzedniej wersji ``Jenkins -> Zarządzaj Jenkinsem``
 
 Aktualizacja pluginów ``Menedżer wtyczek`` ``Jenkins -> Zarządzaj Jenkinsem -> Zarządzaj wtyczkami``
 ![Update plugins](img/update_plugins_1.png)
+![Update plugins](img/update_plugins_3.png)
+![Update plugins](img/update_plugins_2.png)
+
+### Ćwiczenie 3.1: Aktualizacja
+Zainstaluj aktualizacje Jenkinsa, pluginów oraz 2 pluginy ręcznie
+```
+logger-plugin.hpi
+old-data-plugin.hpi
+``` 
+
 
 ## Temat 5
 ## Temat 6
