@@ -30,7 +30,7 @@ $(function() {
             level3Content = " parent-id='" + parentId + "' style='display: none' "
         }
 
-        let liTag = "<li class='tag-h" + level + "' id='" + id + "'" + level3Content + ">" + aTag + "</li>";
+        let liTag = "<li class='tag-h" + level + "' menu-id='" + id + "'" + level3Content + ">" + aTag + "</li>";
 
         if (currentLevel === level) {
             menu += liTag;
