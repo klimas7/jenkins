@@ -568,8 +568,8 @@ Dodanie nowej bibliotegi do Jenkinsa
 * Project repository: https://github.com/klimas7/jenkins-shared-lib.git
 * Credentials: (leave blank)
 
-Nowy projekt wykorzystujący przygotowaną bibliotekę 
-``Jenkins -> Nowy Projekt -> Pipeline (JenkinsSharedLib)``
+Nowy projekt wykorzystujący przygotowaną bibliotekę  
+``Jenkins -> Nowy Projekt -> Pipeline (JenkinsSharedLib)``  
 Proste wykorzystanie
 ```
 @Library('jenkins-shared-lib')_
