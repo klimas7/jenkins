@@ -516,10 +516,12 @@ Zainstaluj aktualizacje Jenkinsa, pluginów oraz 2 pluginy z poza repozytorium
 logger-plugin.hpi
 old-data-plugin.hpi
 ``` 
-
-
-## Temat 5
-## Temat 6
+## 4 Status Information
+### 4.1 Informacje o systemie
+### 4.2 Informacje o Jenkinsie
+### 4.3 Statystyki obciążenia
+## 5 Troubleshooting
+```Jenkins -> Zarządzaj Jenkinsem -> Troubleshooting -> Zarządzanie starymi danymi```
 ## Temat 7
 ## Temat 8
 ## Temat 9
