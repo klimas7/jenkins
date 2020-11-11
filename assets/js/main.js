@@ -27,7 +27,7 @@ $(function() {
         }
         let level3Content = "";
         if (level === "3") {
-            level3Content = "parent-id='" + parentId + "' style='display: none'"
+            level3Content = " parent-id='" + parentId + "' style='display: none' "
         }
 
         let liTag = "<li class='tag-h" + level + "' id='" + id + "'" + level3Content + ">" + aTag + "</li>";
