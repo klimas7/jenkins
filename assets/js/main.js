@@ -16,6 +16,7 @@ $(function() {
     let menu = "";
     let currentLevel = "2";
     let parentId;
+
     $("section h2, section h3").each(function(){
         let level = this.nodeName.toLowerCase().substr(1, 1);
         let id = $(this).text().toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g,'');
@@ -24,8 +25,12 @@ $(function() {
         if (level === "2") {
             parentId = id;
         }
+        let level3Content = "";
+        if (level === "3") {
+            level3Content = "parent-id='" + parentId + "' style='display: none'"
+        }
 
-        let liTag = "<li class='tag-h" + level + "' " + (level === "3" ? "parent-id='" + parentId + "'" : "") + " id='" + id + "'>" + aTag + "</li>";
+        let liTag = "<li class='tag-h" + level + "' id='" + id + "'" + level3Content + ">" + aTag + "</li>";
 
         if (currentLevel === level) {
             menu += liTag;
