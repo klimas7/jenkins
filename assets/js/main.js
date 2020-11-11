@@ -15,10 +15,17 @@ $(window).resize(sectionHeight);
 $(function() {
     let menu = "";
     let currentLevel = "2";
+    let parentId;
     $("section h2, section h3").each(function(){
         let level = this.nodeName.toLowerCase().substr(1, 1);
-        let aTag = "<a href='#" + $(this).text().toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g,'') + "'>" + $(this).text() + "</a>"
-        let liTag = "<li class='tag-h" + level + "'>" + aTag + "</li>";
+        let id = $(this).text().toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g,'');
+        let aTag = "<a href='#" + id + "'>" + $(this).text() + "</a>"
+
+        if (level === "2") {
+            parentId = id;
+        }
+
+        let liTag = "<li class='tag-h" + level + "' " + (level === "3" ? "parent-id=" + parentId  : "") + "id=" + id + ">" + aTag + "</li>";
 
         if (currentLevel === level) {
             menu += liTag;
@@ -32,21 +39,6 @@ $(function() {
         }
 
         currentLevel = level;
-        // if (level === "2") {
-        //     if (subMenu.length > 0) {
-        //         subMenu += "</ul>"
-        //     }
-        //     $("nav ul").append("<li class='tag-h" + level + "'>" + aTag + subMenu + "</li>");
-        //     subMenu = "";
-        // }
-        // else if (level === "3") {
-        //     if (subMenu.length === 0) {
-        //         subMenu += "<ul>"
-        //     }
-        //     subMenu +=
-        // }
-
-
 
         $(this).attr("id",$(this).text().toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g,''));
     });
