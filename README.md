@@ -530,5 +530,33 @@ old-data-plugin.hpi
 ## Temat 14
 ## Temat 15: Pipelines
 ## Temat 16: Shared Library
+Pozwalają wyodrębnić oraz wspódzielić wspólne części pomiędzy wieloma potokami. Elementy takie mogą być zamknięte w bibiotece 
+przechowywanej w repozytorium kodu.
+
+Strktura
+```
+├── README.md
+├── src                                 (Groovy source files), as standard java structure, is add to the classpath )
+│   └── pl
+│       └── klimas7
+│           └── jenkins
+│               ├── Deployer.groovy
+│               └── Rectangle.groovy
+├── vars                                (Exposed variables)
+│   ├── checkStatus.groovy
+│   ├── deploy.groovy
+│   ├── disableThrottling.groovy
+│   ├── enableThrottling.groovy
+│   └── printBuildinfo.groovy
+└── resources                           (resource files)
+    └── pl
+        └── klimas7
+            └── jenkins
+                └── static_content.json
+    
+```
+``src`` Standardowy katalog znany z projektów javy. Jest dodawany do classpath w trakcie wykonania potoku
+
+``vars`` Definicje zmiennych ktore są dostępne w potoku
 ## Temat 17: Bitbucket integration
 ## Koniec
