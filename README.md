@@ -556,6 +556,14 @@ Strktura
     
 ```
 ``src`` Standardowy katalog znany z projektów javy. Jest dodawany do classpath w trakcie wykonania potoku  
-``vars`` Definicje zmiennych ktore są dostępne w potoku
+``vars`` Definicje zmiennych ktore są dostępne w potoku  
+Przykład [jenkins-shared-lib](https://github.com/klimas7/jenkins-shared-lib)  
+Dodanie nowej bibliotegi do Jenkinsa
+``Jenkins -> Zarządzaj Jenkinsem -> Skonfiguruj system -> Global Pipeline Libraries``
+![Shared lib](img/shared-lib-1.png)  
+### Ćwiczenie 16.1 Wykorzystać przygotowaną bibliotekę w przykładowym potoku
+Prosty skrypt bez parametrow
+### Ćwiczenie 16.2* Wykorzystać przygotowaną bibliotekę w przykładowym potoku
+Pełen skrypt z użyciem konwencji potoku i parametrow
 ## Temat 17: Bitbucket integration
 ## Koniec
