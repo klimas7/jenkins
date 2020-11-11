@@ -55,7 +55,11 @@ $(function() {
         var position = $($(this).attr("href")).offset().top - 190;
         $("html, body").animate({scrollTop: position}, 400);
         $("nav ul li a").parent().removeClass("active");
-        $(this).parent().addClass("active");
+        let parent = $(this).parent();
+
+        parent.addClass("active");
+        let menuId = parent.attr("menu-Id");
+        console.log(menuId);
         event.preventDefault();
     });
 
