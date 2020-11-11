@@ -25,7 +25,7 @@ $(function() {
             parentId = id;
         }
 
-        let liTag = "<li class='tag-h" + level + "' " + (level === "3" ? "parent-id=" + parentId  : "") + "id=" + id + ">" + aTag + "</li>";
+        let liTag = "<li class='tag-h" + level + "' " + (level === "3" ? "parent-id='" + parentId + "'" : "") + " id='" + id + "'>" + aTag + "</li>";
 
         if (currentLevel === level) {
             menu += liTag;
