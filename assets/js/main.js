@@ -59,7 +59,8 @@ $(function() {
 
         parent.addClass("active");
         let menuId = parent.attr("menu-Id");
-        console.log(menuId);
+        $('li[parent-id]').hide();
+        $('li[parent-id="' + menuId + '"]').show();
         event.preventDefault();
     });
 
