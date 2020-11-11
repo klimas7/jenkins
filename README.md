@@ -536,7 +536,7 @@ przechowywanej w repozytorium kodu.
 Strktura
 ```
 ├── README.md
-├── src                                 (Groovy source files), as standard java structure, is add to the classpath )
+├── src                                 (Groovy source files)
 │   └── pl
 │       └── klimas7
 │           └── jenkins
@@ -555,8 +555,7 @@ Strktura
                 └── static_content.json
     
 ```
-``src`` Standardowy katalog znany z projektów javy. Jest dodawany do classpath w trakcie wykonania potoku
-
+``src`` Standardowy katalog znany z projektów javy. Jest dodawany do classpath w trakcie wykonania potoku  
 ``vars`` Definicje zmiennych ktore są dostępne w potoku
 ## Temat 17: Bitbucket integration
 ## Koniec
