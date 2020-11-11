@@ -57,10 +57,13 @@ $(function() {
         $("nav ul li a").parent().removeClass("active");
         let parent = $(this).parent();
 
+        parent.hasClass()
         parent.addClass("active");
         let menuId = parent.attr("menu-Id");
-        $('li[parent-id]').hide();
-        $('li[parent-id="' + menuId + '"]').show();
+        if (parent.hasClass("tag-h2")) {
+            $('li[parent-id]').hide();
+            $('li[parent-id="' + menuId + '"]').show();
+        }
         event.preventDefault();
     });
 
