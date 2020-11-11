@@ -558,12 +558,91 @@ Strktura
 ``src`` Standardowy katalog znany z projektów javy. Jest dodawany do classpath w trakcie wykonania potoku  
 ``vars`` Definicje zmiennych ktore są dostępne w potoku  
 Przykład [jenkins-shared-lib](https://github.com/klimas7/jenkins-shared-lib)  
-Dodanie nowej bibliotegi do Jenkinsa
+Dodanie nowej bibliotegi do Jenkinsa  
 ``Jenkins -> Zarządzaj Jenkinsem -> Skonfiguruj system -> Global Pipeline Libraries``
 ![Shared lib](img/shared-lib-1.png)  
-### Ćwiczenie 16.1 Wykorzystać przygotowaną bibliotekę w przykładowym potoku
-Prosty skrypt bez parametrow
-### Ćwiczenie 16.2* Wykorzystać przygotowaną bibliotekę w przykładowym potoku
-Pełen skrypt z użyciem konwencji potoku i parametrow
+* Name: jenkins-shared-lib
+* Default version: master
+* Retrieval method: Modern SCM
+* Select the Git type
+* Project repository: https://github.com/klimas7/jenkins-shared-lib.git
+* Credentials: (leave blank)
+Nowy projekt wykorzystujący przygotowaną bibliotekę
+``Jenkins -> Nowy Projekt -> Pipeline (JenkinsSharedLib)``
+Proste wykorzystanie
+```
+@Library('jenkins-shared-lib')_
+
+stage('Print Build Info') {
+    printBuildinfo {
+        name = "Sample Name"
+    }
+} stage('Disable throttling') {
+    disableThrottling()
+} stage('Deploy') {
+    deploy()
+} stage('Enable throtling') {
+    enableThrottling()
+} stage('Check Status') {
+    checkStatus()
+}
+```
+Hint! ``@Library('jenkins-shared-lib')_`` ``_`` nie jest pomyłką  
+Przykład z parametrami
+```
+@Library('jenkins-shared-lib')_
+
+pipeline {
+    parameters {
+        string defaultValue: 'One default', description: '', name: 'param1', trim: false
+        string defaultValue: 'Two default', description: '', name: 'param2', trim: false
+    }
+    agent any
+    
+    stages {
+        stage('Print Build Info') {
+            steps {
+                script {
+                    printBuildinfo {
+                        name = "Sample Name"
+                    }
+                }
+            }
+        }
+        stage('Disable throttling') {
+            steps {
+                script {
+                    disableThrottling()
+                }
+            }
+        }
+        stage('Deploy') {
+            steps {
+                script { 
+                    deploy()
+                }
+            }
+        }
+        stage('Enable throtling') {
+            steps {
+                script {
+                    enableThrottling()
+                }
+            }
+        }
+        stage('Check Status') {
+            steps {
+                script {
+                    checkStatus()
+                }
+            }
+        }
+    }
+}
+```
+### Ćwiczenie 16.1 
+Wykorzystać przygotowaną bibliotekę w przykładowym potoku, prosty skrypt bez parametrow
+### Ćwiczenie 16.2*
+Wykorzystać przygotowaną bibliotekę w przykładowym potoku, pełen skrypt z użyciem konwencji potoku i parametrow
 ## Temat 17: Bitbucket integration
 ## Koniec
