@@ -529,6 +529,7 @@ random=$(( ( RANDOM % 70 )  + 1 ))
 echo "Job sleep $random"
 sleep $random
 ```
+
 Kolejne 3 można stworzyć używając funkcji ``Kopiuj z``
 ``Jenkins -> Nowy Projekt -> Kopiuj z``
 ![Copy Job 1](img/copy_1.png)
