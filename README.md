@@ -517,9 +517,27 @@ logger-plugin.hpi
 old-data-plugin.hpi
 ``` 
 ## 4 Status Information
-### 4.1 Informacje o systemie
-### 4.2 Informacje o Jenkinsie
-### 4.3 Statystyki obciążenia
+### 4.1 Cwiczenie
+Tworzymy 4 projekty (joby)
+``Jenkins -> Nowy Projekt -> Ogólny projekt (JobShedule[1..4])``  
+Opcje
+* Wykonuj zadania współbieżnie, jeśli zajdzie potrzeba
+* Buduj cyklicznie ``* * * * *`` (co minute)
+* ``Budowanie -> Uruchom powłoke``
+```
+random=$(( ( RANDOM % 70 )  + 1 ))
+echo "Job sleep $random"
+sleep $random
+```
+Kolejne 3 można stworzyć używając funkcji ``Kopiuj z``
+``Jenkins -> Nowy Projekt -> Kopiuj z``
+![Copy Job 1](img/copy_1.png)
+![Copy Job 2](img/copy_2.png)
+![Copy Job 3](img/copy_3.png)
+
+### 4.2 Informacje o systemie
+### 4.3 Informacje o Jenkinsie
+### 4.4 Statystyki obciążenia
 ## 5 Troubleshooting
 ```Jenkins -> Zarządzaj Jenkinsem -> Troubleshooting -> Zarządzanie starymi danymi```
 ## Temat 7
