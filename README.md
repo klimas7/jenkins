@@ -537,7 +537,17 @@ Kolejne 3 można stworzyć używając funkcji ``Kopiuj z``
 ![Copy Job 3](img/copy_3.png)
 
 ### 4.2 Informacje o systemie
+Dostępne informacje:
+* jvm properties
+* system properties
+* plugin version
+* Memory Usage (new!)
+* Thread dump
 ### 4.3 Informacje o Jenkinsie
+Dostępne informacje:
+* Zewnętrzne biblioteki oraz ich licencje
+* Statyczne zasoby
+* Wtyczki i ich licencje
 ### 4.4 Statystyki obciążenia
 ## 5 Troubleshooting
 ```Jenkins -> Zarządzaj Jenkinsem -> Troubleshooting -> Zarządzanie starymi danymi```
