@@ -543,14 +543,19 @@ Dostępne informacje:
 * plugin version
 * Memory Usage (new!)
 * Thread dump
+
 ### 4.3 Informacje o Jenkinsie
 Dostępne informacje:
 * Zewnętrzne biblioteki oraz ich licencje
 * Statyczne zasoby
 * Wtyczki i ich licencje
+
 ### 4.4 Statystyki obciążenia
+### 4.5 Dziennik systemowy
+Zrodła wtyczki [logger-plugin](https://github.com/klimas7/logger-plugin)
 ## 5 Troubleshooting
 ```Jenkins -> Zarządzaj Jenkinsem -> Troubleshooting -> Zarządzanie starymi danymi```
+Zrodła wtyczki [OldDataPlugin](https://github.com/klimas7/OldDataPlugin/commits/master)
 ## Temat 7
 ## Temat 8
 ## Temat 9
