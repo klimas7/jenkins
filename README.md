@@ -650,7 +650,7 @@ Start:
 * Próg wejścia w podejściu Declarative jest dużo mniejszy, główny powód dla którego został wprowadzony
 * Scripted jest dużo bardziej elastyczny
 * Declarative jest bardziej formalny
-* Declarative walidowany jest na starcie
+* Declarative walidowany jest na starcie  
 ### 15.3: First pipeline!
 ``Jenkins -> Nowy Projekt _> Pipeline (P_1)``
 ![Pipeline 1](img/pipeline_1.png)  
@@ -713,7 +713,7 @@ ssh -l admin -p 8081 localhost declarative-linter < Jenkinsfile
 Pozwalają wyodrębnić oraz wspódzielić wspólne części pomiędzy wieloma potokami. Elementy takie mogą być zamknięte w bibiotece 
 przechowywanej w repozytorium kodu.
 
-Strktura
+Struktura
 ```
 ├── README.md
 ├── src                                 (Groovy source files)
