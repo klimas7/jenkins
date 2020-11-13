@@ -624,16 +624,16 @@ Restart
 ![Old Data 3](img/oldData_3.png)  
 ![Old Data 4](img/oldData_4.png)  
 ### 5.1: Ćwiczenie Wykonać powyższy przkład
-## 6: Skonfiguruj system
-## 7: Globalne narzędzia do konfiguracji
-## 8: Zarządzanie węzłami (nodes)
-## 9: Konfiguruj ustawienia bezpieczeństwa 
-## 10: Konsola skryptow
-## 11: CLI
-## 12: Rest and xml api
-## 13: Ogólny projekt (Freestyle project)
-## 14: Maven project
-## 15: Pipelines
+## X 6: Skonfiguruj system
+## X 7: Globalne narzędzia do konfiguracji
+## X 8: Zarządzanie węzłami (nodes)
+## X 9: Konfiguruj ustawienia bezpieczeństwa 
+## X 10: Konsola skryptow
+## X 11: CLI
+## X 12: Rest and xml api
+## X 13: Ogólny projekt (Freestyle project)
+## X 14: Maven project
+## X 15: Pipelines
 ### 15.1: In-process Script Approval
 ## 16: Shared Library
 Pozwalają wyodrębnić oraz wspódzielić wspólne części pomiędzy wieloma potokami. Elementy takie mogą być zamknięte w bibiotece 
@@ -751,5 +751,5 @@ pipeline {
 Wykorzystać przygotowaną bibliotekę w przykładowym potoku, prosty skrypt bez parametrow
 ### 16.2: Ćwiczenie*
 Wykorzystać przygotowaną bibliotekę w przykładowym potoku, pełen skrypt z użyciem konwencji potoku i parametrow
-## 17: Bitbucket integration
+## X 17: Bitbucket integration
 ## Koniec
