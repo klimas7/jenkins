@@ -517,7 +517,7 @@ logger-plugin.hpi
 old-data-plugin.hpi
 ``` 
 ## 4: Status Information
-### 4.1: Cwiczenie
+### 4.1: Ćwiczenie
 Tworzymy 4 projekty (joby)
 ``Jenkins -> Nowy Projekt -> Ogólny projekt (JobShedule[1..4])``  
 Opcje
@@ -599,7 +599,7 @@ Log: WARNING code: 900
 ## 5: Troubleshooting
 ```Jenkins -> Zarządzaj Jenkinsem -> Troubleshooting -> Zarządzanie starymi danymi```  
 Mechanizm zabezpieczający Jenkinsa przed zmiananmi w konfiguracji np. wtyczek. Administrator powinien świadomie przeglądnąć zmiany i ewentualnie podjąć odpowiednie działania.
-* Wyciszyć powiadomienie.
+* wyciszyć powiadomienie.
 * przywrócić poprzednią wersje wtyczki (jenkinsa)  
 
   
@@ -623,6 +623,7 @@ Instalujemy kolejną wersje plugina oldData ``old-data-plugin_v2.hpi`` [Materia�
 Restart  
 ![Old Data 3](img/oldData_3.png)  
 ![Old Data 4](img/oldData_4.png)  
+### 5.1: Ćwiczenie Wykonać powyższy przkład
 ## Temat 7
 ## Temat 8
 ## Temat 9
