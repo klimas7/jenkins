@@ -598,7 +598,11 @@ Log: WARNING code: 900
 
 ## 5: Troubleshooting
 ```Jenkins -> Zarządzaj Jenkinsem -> Troubleshooting -> Zarządzanie starymi danymi```  
-Mechanizm zabezpieczający Jenkinsa przed zmiananmi w konfiguracji np. wtyczek. Administrator powinien świadomie zatwierdzić zmiany.  
+Mechanizm zabezpieczający Jenkinsa przed zmiananmi w konfiguracji np. wtyczek. Administrator powinien świadomie przeglądnąć zmiany i ewentualnie podjąć odpowiednie działania.
+* Wyciszyć powiadomienie.
+* przywrócić poprzednią wersje wtyczki (jenkinsa)  
+
+  
 Przykład zmian w pluginie: 
 Źródła wtyczki [OldDataPlugin](https://github.com/klimas7/OldDataPlugin/commits/master)  
 Towrzymy projekt ogólny ``OldData`` w którym użyjemy kroku budowania ``Old Data``  
