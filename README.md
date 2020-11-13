@@ -630,11 +630,12 @@ Restart
 ## 9: Konfiguruj ustawienia bezpieczeństwa 
 ## 10: Konsola skryptow
 ## 11: CLI
-## 12: Ogólny projekt (Freestyle project)
-## 13: Maven project
-## 14: Pipelines
-### 14.1: In-process Script Approval
-## 15: Shared Library
+## 12: Rest and xml api
+## 13: Ogólny projekt (Freestyle project)
+## 14: Maven project
+## 15: Pipelines
+### 15.1: In-process Script Approval
+## 16: Shared Library
 Pozwalają wyodrębnić oraz wspódzielić wspólne części pomiędzy wieloma potokami. Elementy takie mogą być zamknięte w bibiotece 
 przechowywanej w repozytorium kodu.
 
@@ -746,9 +747,9 @@ pipeline {
     }
 }
 ```
-### 15.1: Ćwiczenie 
+### 16.1: Ćwiczenie 
 Wykorzystać przygotowaną bibliotekę w przykładowym potoku, prosty skrypt bez parametrow
-### 15.2: Ćwiczenie*
+### 16.2: Ćwiczenie*
 Wykorzystać przygotowaną bibliotekę w przykładowym potoku, pełen skrypt z użyciem konwencji potoku i parametrow
 ## 17: Bitbucket integration
 ## Koniec
