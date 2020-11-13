@@ -647,6 +647,7 @@ Start:
 * Próg wejścia w podejściu Declarative jest dużo mniejszy, główny powód dla którego został wprowadzony
 * Scripted jest dużo bardziej elastyczny
 * Declarative jest bardziej formalny
+
 ### 15.y: In-process Script Approval
 ### 15.z: Walidation
 ```
