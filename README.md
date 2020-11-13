@@ -633,8 +633,14 @@ Restart
 ## X 12: Rest and xml api
 ## X 13: Ogólny projekt (Freestyle project)
 ## X 14: Maven project
-## X 15: Pipelines
-### 15.1: In-process Script Approval
+## 15: Pipelines
+Start:
+* http://{jenkins_host}:{jenkins_port}/job/{job_name}/pipeline-syntax/
+* https://www.jenkins.io/doc/book/pipeline/
+
+### 15.1: Ćwiczenie, Zainstalować wtyczki ``Blue Ocean (BlueOcean Aggregator)`` 
+### 15.2: Scripted vs Declarative Pipeline
+### 15.y: In-process Script Approval
 ## 16: Shared Library
 Pozwalają wyodrębnić oraz wspódzielić wspólne części pomiędzy wieloma potokami. Elementy takie mogą być zamknięte w bibiotece 
 przechowywanej w repozytorium kodu.
