@@ -643,11 +643,39 @@ Start:
 ![Blue Ocean 1](img/blueOcean_1.png)  
 ### 15.2: Scripted vs Declarative Pipeline
 * Groovy jako podstawa
-* Brak funkcjonalnych różnic - w obu podejściach można zrealizować te same funkcjonalności
+* Brak funkcjonalnych różnic, w obu podejściach można zrealizować te same funkcjonalności
 * Próg wejścia w podejściu Declarative jest dużo mniejszy, główny powód dla którego został wprowadzony
 * Scripted jest dużo bardziej elastyczny
 * Declarative jest bardziej formalny
-
+### 15.3: First pipeline!
+``Jenkins -> Nowy Projekt _> Pipeline (P_1)``
+![Pipeline 1](img/pipeline_1.png)  
+```
+properties([
+            parameters([
+                string(defaultValue: 'test_a', description: '', name: 'TEST', trim: false)
+            ])
+          ])
+node {
+    stage('First stage') {
+        echo "Sii Power People"
+    }
+    stage("Environments") {
+        echo env.PATH
+        echo env.BUILD_ID
+        echo env.JOB_URL
+    }
+    stage('Parameters') {
+        echo params.TEST
+    }
+    stage('currentBuild') {
+        echo currentBuild.displayName
+        echo currentBuild.currentResult
+        //currentBuild.currentResult = 'FAILURE'
+        //error 'Cos poszło nie tak'
+    }
+}
+```
 ### 15.y: In-process Script Approval
 ### 15.z: Walidation
 ```
