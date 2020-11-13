@@ -598,7 +598,27 @@ Log: WARNING code: 900
 
 ## 5: Troubleshooting
 ```Jenkins -> Zarządzaj Jenkinsem -> Troubleshooting -> Zarządzanie starymi danymi```  
-Źródła wtyczki [OldDataPlugin](https://github.com/klimas7/OldDataPlugin/commits/master)
+Mechanizm zabezpieczający Jenkinsa przed zmiananmi w konfiguracji np. wtyczek. Administrator powinien świadomie zatwierdzić zmiany.  
+Przykład zmian w pluginie: 
+Źródła wtyczki [OldDataPlugin](https://github.com/klimas7/OldDataPlugin/commits/master)  
+Towrzymy projekt ogólny ``OldData`` w którym użyjemy kroku budowania ``Old Data``  
+``Jenkins -> Nowy Projekt -> Ogólny projekt (OldData)``  
+``Budowanie -> Old Data`` ``First, Second `` mogą być dowolne  
+![Old Data 1](img/oldData_1.png)  
+Save, Uruchom  
+```
+Uruchomiono przez użytkownika Administrator
+Running as SYSTEM
+Building in workspace /opt/tools/jenkins/workspace/OldData
+First: One Second: Two
+Finished: SUCCESS
+```
+Instalujemy kolejną wersje plugina oldData ``old-data-plugin_v2.hpi`` [Materiały](#materiay-do-pobrania)  
+``Jenkins -> Zarządzaj Jenkinsem -> Zarządzaj wtyczkami -> Zawansowane -> Prześlij wtyczkę (old-data-plugin_v2.hpi)``  
+![Old Data 2](img/oldData_2.png)  
+Restart  
+![Old Data 3](img/oldData_3.png)  
+![Old Data 4](img/oldData_4.png)  
 ## Temat 7
 ## Temat 8
 ## Temat 9
@@ -607,8 +627,8 @@ Log: WARNING code: 900
 ## Temat 12
 ## Temat 13
 ## Temat 14
-## Temat 15: Pipelines
-## Temat 16: Shared Library
+## 15: Pipelines
+## 16: Shared Library
 Pozwalają wyodrębnić oraz wspódzielić wspólne części pomiędzy wieloma potokami. Elementy takie mogą być zamknięte w bibiotece 
 przechowywanej w repozytorium kodu.
 
