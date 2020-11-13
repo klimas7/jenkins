@@ -554,13 +554,13 @@ Dostępne informacje:
 ### 4.5: Dziennik systemowy
 Źródła wtyczki [logger-plugin](https://github.com/klimas7/logger-plugin)
 #### 4.5.1: Ćwiczenie
-Towrzymy projekt ogólny ``Logger`` w którym użyjemy kroku budowania ``Logger example``
+Towrzymy projekt ogólny ``Logger`` w którym użyjemy kroku budowania ``Logger example``  
 ``Jenkins -> Nowy Projekt -> Ogólny projekt (Logger)``  
-``Budowanie --> Logger example``  
+``Budowanie -> Logger example``  
 ![Logger 1](img/logger_1.png)  
 Zapisz, Uruchom  
-Sprawdzamy co otrzymaliśmy w logach
-``Jenkins -> Zarządzaj Jenkinsem -> Dziennik systemwy -> Wszystkie zdarzenia Jenkinsa``
+Sprawdzamy co otrzymaliśmy w logach  
+``Jenkins -> Zarządzaj Jenkinsem -> Dziennik systemwy -> Wszystkie zdarzenia Jenkinsa``  
 ![Logger 2](img/logger_2.png)  
 ```
 lis 13, 2020 6:24:18 PM INFO io.jenkins.plugins.LoggerBuilder printLog
@@ -573,10 +573,10 @@ Log: WARNING code: 900
 Dodanie dedykowanego loggera
 ``Jenkins -> Zarządzaj Jenkinsem -> Dziennik systemwy -> Dodaj nowy rejestrator logów``  
 Nazwa: ``Logger``  
-![Logger 3](img/logger_3.png) 
-Loggers: ``Logger: io.jenkins.plugins`` ``Log level: ALL``
+![Logger 3](img/logger_3.png)  
+Loggers: ``Logger: io.jenkins.plugins`` ``Log level: ALL``  
 ![Logger 4](img/logger_4.png)   
-Save, Uruchom ponownie projet ``Logger`` w nowo dodanym logerze
+Save, Uruchom ponownie projet ``Logger`` w nowo dodanym logerze  
 ```
 lis 13, 2020 6:42:06 PM ALL io.jenkins.plugins.LoggerBuilder
 Log: ALL code: -2147483648
