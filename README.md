@@ -681,7 +681,7 @@ node {
 }
 ```
 
-``Jenkins -> Nowy Projekt _> Pipeline (P_2)``
+``Jenkins -> Nowy Projekt -> Pipeline (P_2)``
 ```
 pipeline {
     agent any
@@ -705,6 +705,8 @@ pipeline {
     }
 }
 ```
+W przypadku deklaratywnego stylu mamy do dyzpozycji ponowne uruchomienie pipelinu z dowolnago etapu.  
+![Pipeline 2 Restart](img/pipeline_2.png)  
 ### 15.y: In-process Script Approval
 ### 15.z: Walidacja
 ```
