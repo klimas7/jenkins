@@ -405,7 +405,7 @@ Struktura
         ├── src
         └── target
 ```
-### Ćwiczenie 2.1: Zmiana liczby egzekutorów
+### 2.1 Ćwiczenie: Zmiana liczby egzekutorów
 ```
 $ cd /opt/tools/jenkins/
 $ vim config.xml
@@ -428,7 +428,7 @@ vim:
  * ``esc`` switch to command mode
  * ``:wq`` write and quit
  
-### Ćwiczenie 2.2: Odzyskanie dostępu
+### 2.2 Ćwiczenie: Odzyskanie dostępu
 ```
 $ cd /opt/tools/jenkins/
 $ ./jenkins.sh stop
@@ -456,7 +456,7 @@ $ ./jenkins.sh start
 
 ![admin -> Konfiguracja](img/security_2.png)
 
-### Ćwiczenie 2.3*: UserContent
+### 2.3: Ćwiczenie* UserContent
 ``Jenkins -> Nowy Projekt -> Ogólny projekt (nazwa UserContent) -> OK``
 ![User Content Job](img/user_content_1.png)
 
@@ -516,8 +516,8 @@ Zainstaluj aktualizacje Jenkinsa, pluginów oraz 2 pluginy z poza repozytorium
 logger-plugin.hpi
 old-data-plugin.hpi
 ``` 
-## 4 Status Information
-### 4.1 Cwiczenie
+## 4: Status Information
+### 4.1: Cwiczenie
 Tworzymy 4 projekty (joby)
 ``Jenkins -> Nowy Projekt -> Ogólny projekt (JobShedule[1..4])``  
 Opcje
@@ -536,7 +536,7 @@ Kolejne 3 można stworzyć używając funkcji ``Kopiuj z``
 ![Copy Job 2](img/copy_2.png)
 ![Copy Job 3](img/copy_3.png)
 
-### 4.2 Informacje o systemie
+### 4.2: Informacje o systemie
 Dostępne informacje:
 * jvm properties
 * system properties
@@ -544,18 +544,61 @@ Dostępne informacje:
 * Memory Usage (new!)
 * Thread dump
 
-### 4.3 Informacje o Jenkinsie
+### 4.3: Informacje o Jenkinsie
 Dostępne informacje:
 * Zewnętrzne biblioteki oraz ich licencje
 * Statyczne zasoby
 * Wtyczki i ich licencje
 
-### 4.4 Statystyki obciążenia
-### 4.5 Dziennik systemowy
-Zrodła wtyczki [logger-plugin](https://github.com/klimas7/logger-plugin)
-## 5 Troubleshooting
-```Jenkins -> Zarządzaj Jenkinsem -> Troubleshooting -> Zarządzanie starymi danymi```
-Zrodła wtyczki [OldDataPlugin](https://github.com/klimas7/OldDataPlugin/commits/master)
+### 4.4: Statystyki obciążenia
+### 4.5: Dziennik systemowy
+Źródła wtyczki [logger-plugin](https://github.com/klimas7/logger-plugin)
+#### 4.5.1: Ćwiczenie
+Towrzymy projekt ogólny ``Logger`` w którym użyjemy kroku budowania ``Logger example``
+``Jenkins -> Nowy Projekt -> Ogólny projekt (Logger)``  
+``Budowanie --> Logger example``  
+![Logger 1](img/logger_1.png)  
+Zapisz, Uruchom  
+Sprawdzamy co otrzymaliśmy w logach
+``Jenkins -> Zarządzaj Jenkinsem -> Dziennik systemwy -> Wszystkie zdarzenia Jenkinsa``
+![Logger 2](img/logger_2.png)  
+```
+lis 13, 2020 6:24:18 PM INFO io.jenkins.plugins.LoggerBuilder printLog
+Log: INFO code: 800
+lis 13, 2020 6:24:18 PM SEVERE io.jenkins.plugins.LoggerBuilder printLog
+Log: SEVERE code: 1000
+lis 13, 2020 6:24:18 PM WARNING io.jenkins.plugins.LoggerBuilder printLog
+Log: WARNING code: 900
+```
+Dodanie dedykowanego loggera
+``Jenkins -> Zarządzaj Jenkinsem -> Dziennik systemwy -> Dodaj nowy rejestrator logów``  
+Nazwa: ``Logger``  
+![Logger 3](img/logger_3.png) 
+Loggers: ``Logger: io.jenkins.plugins`` ``Log level: ALL``
+![Logger 4](img/logger_4.png)   
+Save, Uruchom ponownie projet ``Logger`` w nowo dodanym logerze
+```
+lis 13, 2020 6:42:06 PM ALL io.jenkins.plugins.LoggerBuilder
+Log: ALL code: -2147483648
+lis 13, 2020 6:42:06 PM CONFIG io.jenkins.plugins.LoggerBuilder
+Log: CONFIG code: 700
+lis 13, 2020 6:42:06 PM FINE io.jenkins.plugins.LoggerBuilder
+Log: FINE code: 500
+lis 13, 2020 6:42:06 PM FINER io.jenkins.plugins.LoggerBuilder
+Log: FINER code: 400
+lis 13, 2020 6:42:06 PM FINEST io.jenkins.plugins.LoggerBuilder
+Log: FINEST code: 300
+lis 13, 2020 6:42:06 PM INFO io.jenkins.plugins.LoggerBuilder printLog
+Log: INFO code: 800
+lis 13, 2020 6:42:06 PM SEVERE io.jenkins.plugins.LoggerBuilder printLog
+Log: SEVERE code: 1000
+lis 13, 2020 6:42:06 PM WARNING io.jenkins.plugins.LoggerBuilder printLog
+Log: WARNING code: 900
+```
+
+## 5: Troubleshooting
+```Jenkins -> Zarządzaj Jenkinsem -> Troubleshooting -> Zarządzanie starymi danymi```  
+Źródła wtyczki [OldDataPlugin](https://github.com/klimas7/OldDataPlugin/commits/master)
 ## Temat 7
 ## Temat 8
 ## Temat 9
