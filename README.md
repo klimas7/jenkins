@@ -635,7 +635,7 @@ Restart
 ## X 14: Maven project
 ## 15: Pipelines
 
-Your Job is Your Code
+**_Your Job is Your Code_**
 
 Start:
 * Local pipeline syntax: http://{jenkins_host}:{jenkins_port}/job/{job_name}/pipeline-syntax/
@@ -650,9 +650,10 @@ Start:
 * Próg wejścia w podejściu Declarative jest dużo mniejszy, główny powód dla którego został wprowadzony
 * Scripted jest dużo bardziej elastyczny
 * Declarative jest bardziej formalny
-* Declarative walidowany jest na starcie  
+* Declarative walidowany jest na starcie
+
 ### 15.3: First pipeline!
-``Jenkins -> Nowy Projekt _> Pipeline (P_1)``
+``Jenkins -> Nowy Projekt -> Pipeline (P_1)``
 ![Pipeline 1](img/pipeline_1.png)  
 ```
 properties([
