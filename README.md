@@ -624,16 +624,17 @@ Restart
 ![Old Data 3](img/oldData_3.png)  
 ![Old Data 4](img/oldData_4.png)  
 ### 5.1: Ćwiczenie Wykonać powyższy przkład
-## Temat 7
-## Temat 8
-## Temat 9
-## Temat 10
-## Temat 11
-## Temat 12
-## Temat 13
-## Temat 14
-## 15: Pipelines
-## 16: Shared Library
+## 6: Skonfiguruj system
+## 7: Globalne narzędzia do konfiguracji
+## 8: Zarządzanie węzłami (nodes)
+## 9: Konfiguruj ustawienia bezpieczeństwa 
+## 10: Konsola skryptow
+## 11: CLI
+## 12: Ogólny projekt (Freestyle project)
+## 13: Maven project
+## 14: Pipelines
+### 14.1: In-process Script Approval
+## 15: Shared Library
 Pozwalają wyodrębnić oraz wspódzielić wspólne części pomiędzy wieloma potokami. Elementy takie mogą być zamknięte w bibiotece 
 przechowywanej w repozytorium kodu.
 
@@ -745,9 +746,9 @@ pipeline {
     }
 }
 ```
-### Ćwiczenie 16.1 
+### 15.1: Ćwiczenie 
 Wykorzystać przygotowaną bibliotekę w przykładowym potoku, prosty skrypt bez parametrow
-### Ćwiczenie 16.2*
+### 15.2: Ćwiczenie*
 Wykorzystać przygotowaną bibliotekę w przykładowym potoku, pełen skrypt z użyciem konwencji potoku i parametrow
-## Temat 17: Bitbucket integration
+## 17: Bitbucket integration
 ## Koniec
