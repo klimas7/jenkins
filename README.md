@@ -641,6 +641,10 @@ Start:
 ### 15.1: Ćwiczenie, Zainstalować wtyczki ``Blue Ocean (BlueOcean Aggregator)`` 
 ### 15.2: Scripted vs Declarative Pipeline
 ### 15.y: In-process Script Approval
+### 15.z: Walidation
+```
+ssh -l admin -p 8081 localhost declarative-linter < Jenkinsfile
+```
 ## 16: Shared Library
 Pozwalają wyodrębnić oraz wspódzielić wspólne części pomiędzy wieloma potokami. Elementy takie mogą być zamknięte w bibiotece 
 przechowywanej w repozytorium kodu.
