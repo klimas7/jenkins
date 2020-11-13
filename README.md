@@ -635,10 +635,12 @@ Restart
 ## X 14: Maven project
 ## 15: Pipelines
 Start:
-* http://{jenkins_host}:{jenkins_port}/job/{job_name}/pipeline-syntax/
-* https://www.jenkins.io/doc/book/pipeline/
+* Local pipeline syntax: http://{jenkins_host}:{jenkins_port}/job/{job_name}/pipeline-syntax/
+* Documentation: [https://www.jenkins.io/doc/book/pipeline/](https://www.jenkins.io/doc/book/pipeline/)
 
-### 15.1: Ćwiczenie, Zainstalować wtyczki ``Blue Ocean (BlueOcean Aggregator)`` 
+### 15.1: Ćwiczenie, Zainstalować wtyczki ``Blue Ocean``
+``Blue Ocean (BlueOcean Aggregator)``  
+![Blue Ocean 1](img/blueOcean_1.png)  
 ### 15.2: Scripted vs Declarative Pipeline
 ### 15.y: In-process Script Approval
 ### 15.z: Walidation
