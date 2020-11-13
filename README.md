@@ -634,6 +634,9 @@ Restart
 ## X 13: Ogólny projekt (Freestyle project)
 ## X 14: Maven project
 ## 15: Pipelines
+
+Your Job is Your Code
+
 Start:
 * Local pipeline syntax: http://{jenkins_host}:{jenkins_port}/job/{job_name}/pipeline-syntax/
 * Documentation: [https://www.jenkins.io/doc/book/pipeline/](https://www.jenkins.io/doc/book/pipeline/)
@@ -647,6 +650,7 @@ Start:
 * Próg wejścia w podejściu Declarative jest dużo mniejszy, główny powód dla którego został wprowadzony
 * Scripted jest dużo bardziej elastyczny
 * Declarative jest bardziej formalny
+* Declarative walidowany jest na starcie
 ### 15.3: First pipeline!
 ``Jenkins -> Nowy Projekt _> Pipeline (P_1)``
 ![Pipeline 1](img/pipeline_1.png)  
@@ -671,13 +675,37 @@ node {
     stage('currentBuild') {
         echo currentBuild.displayName
         echo currentBuild.currentResult
-        //currentBuild.currentResult = 'FAILURE'
         //error 'Cos poszło nie tak'
     }
 }
 ```
+
+``Jenkins -> Nowy Projekt _> Pipeline (P_2)``
+```
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
+```
 ### 15.y: In-process Script Approval
-### 15.z: Walidation
+### 15.z: Walidacja
 ```
 ssh -l admin -p 8081 localhost declarative-linter < Jenkinsfile
 ```
