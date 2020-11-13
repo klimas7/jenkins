@@ -626,8 +626,12 @@ Restart
 ### 5.1: Ćwiczenie Wykonać powyższy przkład
 ## X 6: Skonfiguruj system
 ## X 7: Globalne narzędzia do konfiguracji
-## X 8: Zarządzanie węzłami (nodes)
-## X 9: Konfiguruj ustawienia bezpieczeństwa 
+## X 8: Konfiguruj ustawienia bezpieczeństwa
+### 8.1: Jenkins users
+### 8.2: LDAP
+### 8.3: Matrix-based security
+### 8.4: Project-based Matrix Authorization Strateg 
+## X 9: Zarządzanie węzłami (nodes)
 ## X 10: Konsola skryptow
 ## X 11: CLI
 ## X 12: Rest and xml api
