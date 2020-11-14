@@ -717,6 +717,7 @@ pipeline {
 W przypadku deklaratywnego stylu mamy do dyspozycji ponowne uruchomienie pipelinu z dowolnego etapu.  
 ![Pipeline 2 Restart](img/pipeline_2.png)
 ![Pipeline 3 Restart](img/pipeline_3.png)
+``Jenkins -> Nowy Projekt -> Pipeline (P_(3,4))``
 ```groovy
 pipeline {
     agent any
@@ -749,6 +750,97 @@ node {
 }
 ``` 
 Declarative owszem jest walidowany na starcie, ale nie każdy przypadek.
+### Agent: ``none, any, label, docker`
+* ``any`` pipeline może wykonany na dowolnym dostępnym agencie zgodnie z ustalonymi regułami
+* ``none`` pipeline wykonywany jest na żadnym agencie 
+``Jenkins -> Nowy Projekt -> Pipeline (P_5)``
+```groovy
+pipeline {
+    agent none
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+    }
+}
+
+//next
+
+pipeline {
+    agent none
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+                sh 'touch test.txt' //! próba utworzenia pliku spowoduje błąd
+            }
+        }
+    }
+}
+```
+Jeżeli w pipeline nie jest wykonywana żadna interakcja z agentem (zapis, odczyt itp.) wtedy taki pipeline może być uruchomiony z sukcesem
+* ``docker`` jako agent użyty jest dowolny obraz dockerowy
+``Jenkins -> Nowy Projekt -> Pipeline (P_6)``
+```groovy
+pipeline {
+    agent {
+        docker {
+            image 'maven:3-alpine'
+        }
+    }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'mvn -v'
+            }
+        }
+    }
+}
+
+//next
+
+pipeline {
+    agent {
+        docker {
+            image 'maven:3.6.0-jdk-12-alpine'
+            args '-v $HOME/.m2:/root/.m2'
+        }
+    }
+    stages {
+        stage('Git'){
+            steps {
+                git branch: 'master', url: 'https://github.com/klimas7/restCounter.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+    }
+}
+```
+* ``label`` agent przydzielany zgodnie z etykietą
+``Jenkins -> Nowy Projekt -> Pipeline (P_7)``
+```groovy
+pipeline {
+    agent {
+        label 'Linux_1'
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+    }
+}
+```
 ### 15.y: In-process Script Approval
 ### 15.z: Walidacja
 ```
