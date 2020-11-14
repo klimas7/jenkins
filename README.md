@@ -717,6 +717,7 @@ pipeline {
 W przypadku deklaratywnego stylu mamy do dyspozycji ponowne uruchomienie pipelinu z dowolnego etapu.  
 ![Pipeline 2 Restart](img/pipeline_2.png)
 ![Pipeline 3 Restart](img/pipeline_3.png)
+
 ``Jenkins -> Nowy Projekt -> Pipeline (P_(3,4))``
 ```groovy
 pipeline {
@@ -750,7 +751,7 @@ node {
 }
 ``` 
 Declarative owszem jest walidowany na starcie, ale nie każdy przypadek.
-### Agent
+### 15.4 Agent
 * ``any`` pipeline może wykonany na dowolnym dostępnym agencie zgodnie z ustalonymi regułami
 * ``none`` pipeline wykonywany jest na żadnym agencie  
 
@@ -845,6 +846,37 @@ pipeline {
 }
 ```
 ### 15.y: In-process Script Approval
+``Jenkins -> Nowy Projekt -> Pipeline (P_X)``
+```groovy
+pipeline {
+    agent {
+        label 'Linux_1'
+    }
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    readFile()
+                }
+            }
+        }
+    }
+}
+
+
+def readFile() {
+    def fileContents = new File('/work/tag.txt').text
+    echo fileContents
+}
+```
+```
+[Pipeline] {
+Scripts not permitted to use new java.io.File java.lang.String. Administrators can decide whether to approve or reject this signature.
+[Pipeline] }
+```
+``Jenkins -> Zarządzaj Jenkinsem -> In-process Script Approval``  
+![In approval 1](img/in_approval_1.png)
+![In approval 2](img/in_approval_2.png)
 ### 15.z: Walidacja
 ```
 ssh -l admin -p 8081 localhost declarative-linter < Jenkinsfile
