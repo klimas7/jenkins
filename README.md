@@ -877,6 +877,7 @@ Scripts not permitted to use new java.io.File java.lang.String. Administrators c
 ``Jenkins -> Zarządzaj Jenkinsem -> In-process Script Approval``  
 ![In approval 1](img/in_approval_1.png)
 ![In approval 2](img/in_approval_2.png)
+![In approval 3](img/in_approval_3.png)
 ### 15.z: Walidacja
 ```
 ssh -l admin -p 8081 localhost declarative-linter < Jenkinsfile
