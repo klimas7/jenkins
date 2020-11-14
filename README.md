@@ -554,7 +554,7 @@ Dostępne informacje:
 ### 4.5: Dziennik systemowy
 Źródła wtyczki [logger-plugin](https://github.com/klimas7/logger-plugin)
 #### 4.5.1: Ćwiczenie
-Towrzymy projekt ogólny ``Logger`` w którym użyjemy kroku budowania ``Logger example``  
+Tworzymy projekt ogólny ``Logger`` w którym użyjemy kroku budowania ``Logger example``  
 ``Jenkins -> Nowy Projekt -> Ogólny projekt (Logger)``  
 ``Budowanie -> Logger example``  
 ![Logger 1](img/logger_1.png)  
@@ -600,7 +600,7 @@ Log: WARNING code: 900
 ```Jenkins -> Zarządzaj Jenkinsem -> Troubleshooting -> Zarządzanie starymi danymi```  
 Mechanizm zabezpieczający Jenkinsa przed zmiananmi w konfiguracji np. wtyczek. Administrator powinien świadomie przeglądnąć zmiany i ewentualnie podjąć odpowiednie działania.
 * wyciszyć powiadomienie.
-* przywrócić poprzednią wersje wtyczki (jenkinsa)  
+* przywrócić poprzednią wersję wtyczki (jenkinsa).  
 
   
 Przykład zmian w pluginie: 
@@ -650,7 +650,7 @@ Start:
 ![Blue Ocean 1](img/blueOcean_1.png)  
 ### 15.2: Scripted vs Declarative Pipeline
 * Groovy jako podstawa
-* Brak funkcjonalnych różnic, w obu podejściach można zrealizować te same funkcjonalności
+* Brak funkcjonalnych różnic, w obu podejściach można zrealizować te same funkcjonalności.
 * Próg wejścia w podejściu Declarative jest dużo mniejszy, główny powód dla którego został wprowadzony
 * Scripted jest dużo bardziej elastyczny
 * Declarative jest bardziej formalny
@@ -659,7 +659,7 @@ Start:
 ### 15.3: First pipeline!
 ``Jenkins -> Nowy Projekt -> Pipeline (P_1)``
 ![Pipeline 1](img/pipeline_1.png)  
-```
+```groovy
 properties([
             parameters([
                 string(defaultValue: 'test_a', description: '', name: 'TEST', trim: false)
@@ -686,7 +686,7 @@ node {
 ```
 
 ``Jenkins -> Nowy Projekt -> Pipeline (P_2)``
-```
+```groovy
 pipeline {
     agent any
 
@@ -709,8 +709,26 @@ pipeline {
     }
 }
 ```
-W przypadku deklaratywnego stylu mamy do dyzpozycji ponowne uruchomienie pipelinu z dowolnago etapu.  
+W przypadku deklaratywnego stylu mamy do dyspozycji ponowne uruchomienie pipelinu z dowolnego etapu.  
 ![Pipeline 2 Restart](img/pipeline_2.png)  
+```groovy
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+    }
+}
+``` 
 ### 15.y: In-process Script Approval
 ### 15.z: Walidacja
 ```
