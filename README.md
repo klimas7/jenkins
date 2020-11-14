@@ -750,9 +750,9 @@ node {
 }
 ``` 
 Declarative owszem jest walidowany na starcie, ale nie każdy przypadek.
-### Agent: ``none, any, label, docker`
+### Agent
 * ``any`` pipeline może wykonany na dowolnym dostępnym agencie zgodnie z ustalonymi regułami
-* ``none`` pipeline wykonywany jest na żadnym agencie 
+* ``none`` pipeline wykonywany jest na żadnym agencie  
 ``Jenkins -> Nowy Projekt -> Pipeline (P_5)``
 ```groovy
 pipeline {
