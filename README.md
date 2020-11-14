@@ -827,6 +827,7 @@ pipeline {
 }
 ```
 * ``label`` agent przydzielany zgodnie z etykietą
+
 ``Jenkins -> Nowy Projekt -> Pipeline (P_7)``
 ```groovy
 pipeline {
