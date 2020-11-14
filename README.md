@@ -753,6 +753,7 @@ Declarative owszem jest walidowany na starcie, ale nie każdy przypadek.
 ### Agent
 * ``any`` pipeline może wykonany na dowolnym dostępnym agencie zgodnie z ustalonymi regułami
 * ``none`` pipeline wykonywany jest na żadnym agencie  
+
 ``Jenkins -> Nowy Projekt -> Pipeline (P_5)``
 ```groovy
 pipeline {
@@ -784,6 +785,7 @@ pipeline {
 ```
 Jeżeli w pipeline nie jest wykonywana żadna interakcja z agentem (zapis, odczyt itp.) wtedy taki pipeline może być uruchomiony z sukcesem
 * ``docker`` jako agent użyty jest dowolny obraz dockerowy
+
 ``Jenkins -> Nowy Projekt -> Pipeline (P_6)``
 ```groovy
 pipeline {
