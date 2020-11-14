@@ -1,4 +1,5 @@
-## Do pobrania [Google drive](https://drive.google.com/drive/folders/1l8nAP_4hHqrliGPWCv8RHH6_SnM1-kA-?usp=sharing)
+## Do pobrania 
+[Google drive](https://drive.google.com/drive/folders/1l8nAP_4hHqrliGPWCv8RHH6_SnM1-kA-?usp=sharing)
 ```
 sha1sum
 51bb48ecdfb4ce210f1941e43eebe674fb524b91  Jenkins_workshop_5.ova
@@ -714,7 +715,8 @@ pipeline {
 }
 ```
 W przypadku deklaratywnego stylu mamy do dyspozycji ponowne uruchomienie pipelinu z dowolnego etapu.  
-![Pipeline 2 Restart](img/pipeline_2.png)  
+![Pipeline 2 Restart](img/pipeline_2.png)
+![Pipeline 3 Restart](img/pipeline_3.png)
 ```groovy
 pipeline {
     agent any
@@ -728,11 +730,25 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
+                //echo 1
+                //message 'Test'
             }
         }
     }
 }
+//vs
+node {
+    stage('Build') {
+        echo "Build ..."
+    }
+    stage("Test") {
+        echo "Testing .."
+        //echo 1
+        //message 'Test'
+    }
+}
 ``` 
+Declarative owszem jest walidowany na starcie, ale nie każdy przypadek.
 ### 15.y: In-process Script Approval
 ### 15.z: Walidacja
 ```
