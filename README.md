@@ -1,4 +1,4 @@
-## [Materiały do pobrania](https://drive.google.com/drive/folders/1l8nAP_4hHqrliGPWCv8RHH6_SnM1-kA-?usp=sharing)
+## Do pobrania [Google drive](https://drive.google.com/drive/folders/1l8nAP_4hHqrliGPWCv8RHH6_SnM1-kA-?usp=sharing)
 ```
 sha1sum
 51bb48ecdfb4ce210f1941e43eebe674fb524b91  Jenkins_workshop_5.ova
@@ -6,22 +6,22 @@ sha1sum
 a9fa67ec8bb023cf0d99eccd47b9cca96b433500  old-data-plugin.hpi
 9d97f5492b3ba5c9cc502b3e26aa4b93a1c32ec5  old-data-plugin_v2.hpi
 ```
-## Instalacja virtualnej maszyny
+## Instalacja wirtualnej maszyny
 ***Wymagania*** Zainstalowany [Virtual Box](https://www.virtualbox.org/wiki/Downloads)
 
-W VM VirtualBox Manager wybieramy: Plik -> Importuj urządzenie wirtualne
+W VM VirtualBox Manager wybieramy: Plik -> Importuj urządzenie wirtualne.
 
-W kolejnym oknie wybieramy pobrany obraz
+W kolejnym oknie wybieramy pobrany obraz.
 
 ![Import](img/import_1.png)
 
-W kolejnym oknie należy zwrócić uwagę na dwie opcje
+W kolejnym oknie należy zwrócić uwagę na dwie opcje.
 * Ilość pamięci (jeżeli nie mamy za dużo to można zmniejszyć do 2G)
 * Wybrać opcje: **Generate new MAC addresses ...**
 
 ![Import](img/import_2.png)
 
-Po zaimportowaniu i uruchomieniu powinniśmy otrzymać
+Po zaimportowaniu i uruchomieniu powinniśmy otrzymać.
 
 ![Import](img/import_3.png)
 
@@ -32,8 +32,8 @@ Użytkownicy:
 jenkins:12345678
 root:12345678
 ```
-Można się zalogować bezpośrednio w oknie powyżej lub uzywając putty lub innego kliennta ssh
-(np git Bash)
+Można się zalogować bezpośrednio w oknie powyżej, używając programu putty lub innego klienta ssh
+(np. git Bash).
 ```
 ssh root@192.168.0.178
 or
@@ -272,7 +272,7 @@ Firewall
 [Uruchomienie ze skryptu](#uruchomienie-ze-skryptu)
 
 ### Ćwiczenie 1.2*
-[Uruchamienie ze skryptu po https](#uruchomienie-https) 
+[Uruchomienie ze skryptu po https](#uruchomienie-https) 
 
 W każdym przypadku powinniśmy otrzymać stronę startową
 ![Start](img/start_1.png)
@@ -288,7 +288,7 @@ Jeżeli zamkniemy powyższe okno
 
 Ważne!
 * Pominięto utworzenie konta administratora. Aby się zalogować, użyj loginu 'admin' i hasła użytego podczas konfigurowania Jenkinsa.
-* Pominięto konfiguracje bazowego adresu URL Jenkinsa. Aby go skonfigurować, przejdź do strony "Zarządzaj Jenkinsem".
+* Pominięto konfiguracje bazowego adresu URL Jenkinsa. Aby go skonfigurować, przejdź do strony ``Zarządzaj Jenkinsem``.
 
 Instalujemy sugerowane wtyczki
 ![Initial plugins](img/initial_plugins.png)
@@ -419,6 +419,8 @@ $ vim config.xml
   <numExecutors>4</numExecutors>                <!-- z 2 na 4 --> 
   <mode>NORMAL</mode>
   <useSecurity>true</useSecurity>
+  <!-- ... -->
+</hudson>
 ```
 ``Jenkins -> Zarządzaj Jenkinsem -> Odczytaj ponownie konfigurację z dysku``
 ![Reload configuration](img/reload_configuration.png)
@@ -445,6 +447,8 @@ $ vim config.xml
   <authorizationStrategy class="hudson.security.FullControlOnceLoggedInAuthorizationStrategy">
     <denyAnonymousReadAccess>true</denyAnonymousReadAccess>
   </authorizationStrategy>
+  <!-- ... -->
+</hubson>
 ```
 ```
 $ ./jenkins.sh start
@@ -491,7 +495,7 @@ $ ./jenkins.sh start
 ![User Content Job link 2](img/user_content_5.png)
 
 ## 3: Aktualizacja i instalacja wtyczek
-Aktualizacja Jenkinsa - dostępna ze strony głównej
+Aktualizacja Jenkinsa dostępna ze strony głównej
 ![Update Jenkins](img/update_1.png)
 
 lub ``Jenkins -> Zarządzaj Jenkinsem``
@@ -506,12 +510,12 @@ Aktualizacja wtyczek ``Menedżer wtyczek`` ``Jenkins -> Zarządzaj Jenkinsem -> 
 ![Update plugins](img/update_plugins_3.png)
 ![Update plugins](img/update_plugins_2.png)
 
-Instalacja wtyczek z poza repozytorium
+Instalacja wtyczek spoza repozytorium
 ``Jenkins -> Zarządzaj Jenkinsem -> Zarządzaj wtyczkami`` ``Menedżer wtyczek -> Zaawansowane``
-![Instal plugin](img/update_plugins_4.png)
+![Install plugin](img/update_plugins_4.png)
 
 ### Ćwiczenie 3.1: Aktualizacja
-Zainstaluj aktualizacje Jenkinsa, pluginów oraz 2 pluginy z poza repozytorium
+Zainstaluj aktualizacje Jenkinsa, wtyczek oraz dwie wtyczki spoza repozytorium
 ```
 logger-plugin.hpi
 old-data-plugin.hpi
@@ -576,7 +580,7 @@ Nazwa: ``Logger``
 ![Logger 3](img/logger_3.png)  
 Loggers: ``Logger: io.jenkins.plugins`` ``Log level: ALL``  
 ![Logger 4](img/logger_4.png)   
-Save, Uruchom ponownie projet ``Logger`` w nowo dodanym logerze  
+Save, Uruchom ponownie projekt ``Logger`` w nowo dodanym logerze  
 ```
 lis 13, 2020 6:42:06 PM ALL io.jenkins.plugins.LoggerBuilder
 Log: ALL code: -2147483648
@@ -598,14 +602,14 @@ Log: WARNING code: 900
 
 ## 5: Troubleshooting
 ```Jenkins -> Zarządzaj Jenkinsem -> Troubleshooting -> Zarządzanie starymi danymi```  
-Mechanizm zabezpieczający Jenkinsa przed zmiananmi w konfiguracji np. wtyczek. Administrator powinien świadomie przeglądnąć zmiany i ewentualnie podjąć odpowiednie działania.
+Mechanizm zabezpieczający Jenkinsa przed zmianami w konfiguracji np. wtyczek. Administrator powinien świadomie przeglądnąć zmiany i ewentualnie podjąć odpowiednie działania.
 * wyciszyć powiadomienie.
 * przywrócić poprzednią wersję wtyczki (jenkinsa).  
 
   
 Przykład zmian w pluginie: 
 Źródła wtyczki [OldDataPlugin](https://github.com/klimas7/OldDataPlugin/commits/master)  
-Towrzymy projekt ogólny ``OldData`` w którym użyjemy kroku budowania ``Old Data``  
+Tworzymy projekt ogólny ``OldData`` w którym użyjemy kroku budowania ``Old Data``  
 ``Jenkins -> Nowy Projekt -> Ogólny projekt (OldData)``  
 ``Budowanie -> Old Data`` ``First, Second `` mogą być dowolne  
 ![Old Data 1](img/oldData_1.png)  
@@ -617,13 +621,13 @@ Building in workspace /opt/tools/jenkins/workspace/OldData
 First: One Second: Two
 Finished: SUCCESS
 ```
-Instalujemy kolejną wersje plugina oldData ``old-data-plugin_v2.hpi`` [Materiały](#materiay-do-pobrania)  
+Instalujemy kolejną wersję wtyczki oldData ``old-data-plugin_v2.hpi`` [Materiały](#do-pobrania)  
 ``Jenkins -> Zarządzaj Jenkinsem -> Zarządzaj wtyczkami -> Zawansowane -> Prześlij wtyczkę (old-data-plugin_v2.hpi)``  
 ![Old Data 2](img/oldData_2.png)  
-Restart  
+Restart.  
 ![Old Data 3](img/oldData_3.png)  
 ![Old Data 4](img/oldData_4.png)  
-### 5.1: Ćwiczenie Wykonać powyższy przkład
+### 5.1: Ćwiczenie Wykonać powyższy przykład.
 ## X 6: Skonfiguruj system
 ## X 7: Globalne narzędzia do konfiguracji
 ## X 8: Konfiguruj ustawienia bezpieczeństwa
@@ -632,7 +636,7 @@ Restart
 ### 8.3: Matrix-based security
 ### 8.4: Project-based Matrix Authorization Strateg 
 ## X 9: Zarządzanie węzłami (nodes)
-## X 10: Konsola skryptow
+## X 10: Konsola skryptów
 ## X 11: CLI
 ## X 12: Rest and xml api
 ## X 13: Ogólny projekt (Freestyle project)
@@ -651,10 +655,10 @@ Start:
 ### 15.2: Scripted vs Declarative Pipeline
 * Groovy jako podstawa
 * Brak funkcjonalnych różnic, w obu podejściach można zrealizować te same funkcjonalności.
-* Próg wejścia w podejściu Declarative jest dużo mniejszy, główny powód dla którego został wprowadzony
-* Scripted jest dużo bardziej elastyczny
-* Declarative jest bardziej formalny
-* Declarative walidowany jest na starcie
+* Próg wejścia w podejściu Declarative jest dużo mniejszy, główny powód, dla którego został wprowadzony.
+* Scripted jest dużo bardziej elastyczny.
+* Declarative jest bardziej formalny.
+* Declarative walidowany jest na starcie*.
 
 ### 15.3: First pipeline!
 ``Jenkins -> Nowy Projekt -> Pipeline (P_1)``
@@ -735,8 +739,8 @@ pipeline {
 ssh -l admin -p 8081 localhost declarative-linter < Jenkinsfile
 ```
 ## 16: Shared Library
-Pozwalają wyodrębnić oraz wspódzielić wspólne części pomiędzy wieloma potokami. Elementy takie mogą być zamknięte w bibiotece 
-przechowywanej w repozytorium kodu.
+Pozwalają wyodrębnić oraz współdzielić wspólne części pomiędzy wieloma potokami.
+Elementy takie mogą być zamknięte w bibliotece przechowywanej w repozytorium kodu.
 
 Struktura
 ```
@@ -760,10 +764,10 @@ Struktura
                 └── static_content.json
     
 ```
-``src`` Standardowy katalog znany z projektów javy. Jest dodawany do classpath w trakcie wykonania potoku  
-``vars`` Definicje zmiennych ktore są dostępne w potoku  
-Przykład [jenkins-shared-lib](https://github.com/klimas7/jenkins-shared-lib)  
-Dodanie nowej bibliotegi do Jenkinsa  
+``src`` Standardowy katalog znany z projektów javy. Jest dodawany do classpath w trakcie wykonania potoku.  
+``vars`` Definicje zmiennych, które są dostępne w potoku.  
+Przykład [jenkins-shared-lib](https://github.com/klimas7/jenkins-shared-lib).  
+Dodanie nowej biblioteki do Jenkinsa.  
 ``Jenkins -> Zarządzaj Jenkinsem -> Skonfiguruj system -> Global Pipeline Libraries``
 ![Shared lib](img/shared-lib-1.png)  
 * Name: jenkins-shared-lib
@@ -773,7 +777,7 @@ Dodanie nowej bibliotegi do Jenkinsa
 * Project repository: https://github.com/klimas7/jenkins-shared-lib.git
 * Credentials: (leave blank)
 
-Nowy projekt wykorzystujący przygotowaną bibliotekę  
+Nowy projekt wykorzystujący przygotowaną bibliotekę.  
 ``Jenkins -> Nowy Projekt -> Pipeline (JenkinsSharedLib)``  
 Proste wykorzystanie
 ```
@@ -793,7 +797,7 @@ stage('Print Build Info') {
     checkStatus()
 }
 ```
-Hint! ``@Library('jenkins-shared-lib')_`` ``_`` nie jest pomyłką  
+Hint! ``@Library('jenkins-shared-lib')_`` ``_`` nie jest pomyłką.  
 Przykład z parametrami
 ```
 @Library('jenkins-shared-lib')_
@@ -847,8 +851,8 @@ pipeline {
 }
 ```
 ### 16.1: Ćwiczenie 
-Wykorzystać przygotowaną bibliotekę w przykładowym potoku, prosty skrypt bez parametrow
+Wykorzystać przygotowaną bibliotekę w przykładowym potoku, prosty skrypt bez parametrów.
 ### 16.2: Ćwiczenie*
-Wykorzystać przygotowaną bibliotekę w przykładowym potoku, pełen skrypt z użyciem konwencji potoku i parametrow
+Wykorzystać przygotowaną bibliotekę w przykładowym potoku, pełen skrypt z użyciem konwencji potoku i parametrów.
 ## X 17: Bitbucket integration
 ## Koniec
