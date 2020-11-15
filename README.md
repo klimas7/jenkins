@@ -752,8 +752,18 @@ Dostęp do Jenkinsa z linii komend można zrealizować na 2 sposoby:
 ### 11.1: ssh
 W pierwszej kolejności należy odblokować serwer ssh wbudowany w Jenkinsa (np. na porcie 8081).  
 ``Jenkins -> Zarządzaj Jenkinsem -> (Security) -> Konfiguruj ustawienia bezpieczeństwa -> SSH Server``  
-![SSH Server](img/cli_ssh_1.png)
-
+![SSH Server](img/cli_ssh_1.png)  
+Wybrany port należy odblokować w firewallu.  
+```
+# firewall-cmd --permanent --zone=public --add-port=8081/tcp
+# systemctl restart firewalld
+```
+Na naszym lokalnym komputerze możemy wykonać
+```
+$ ssh -l admin -p 8081 192.168.0.178 help
+## Jendak w wyniku najprawdopodobniej otrzymamy
+admin@192.168.0.178: Permission denied (publickey).
+```
 ### 11.2: jenkins-cli.jar
 
 ### 11.3: Ćwiczenie, na podstawie powyższych informacji stworzyć ...
