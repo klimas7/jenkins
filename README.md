@@ -656,11 +656,12 @@ Availability:
 * Bring this agent online when in demand, and take offline when idle
 
 ### 7.1 Uruchomienie via JNLP
-``JNLP`` [Java Network Launch Protocol](https://docs.oracle.com/javase/tutorial/deployment/deploymentInDepth/jnlp.html)
-W pierwszej kolejności należy w ustawieniach bezpieczeństwa odblokować port dla agentów
+``JNLP`` [Java Network Launch Protocol](https://docs.oracle.com/javase/tutorial/deployment/deploymentInDepth/jnlp.html)  
+W pierwszej kolejności należy w ustawieniach bezpieczeństwa odblokować port dla agentów  
 ``Jenkins -> Zarządzaj Jenkinsem -> Konfiguruj ustawienia bezpieczeństwa -> Agents``  
 ``TCP port for inbound agents -> Fixed: 8082``  
-Dodatkowo port należy odblokować w zaporze sieciowej  
+![Node 7](img/node_7.png)  
+Dodatkowo port należy odblokować w zaporze sieciowej
 ```bash
 firewall-cmd --permanent --zone=public --add-port=8082/tcp
 systemctl restart firewalld
