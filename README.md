@@ -780,7 +780,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCzsDiyJ+4WZAwaYDVz43Zrm6RCxPTzFWXnUfuBdAx6
 ``Jenkins -> Użytkownicy -> admin -> Konfiguracja -> SSH Public Keys``  
 ![SSH Public Keys](img/cli_ssh_2.png)  
 Hint: Możemy dodać dowolną ilość kluczy  
-```
+```bash
 $ ssh -l admin -p 8081 192.168.0.178 help
   add-job-to-view
     Adds jobs to view.
