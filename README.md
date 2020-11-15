@@ -632,7 +632,7 @@ Restart.
 [//]: # Komentarz
 ## X 6: Skonfiguruj system
 
-## 9: Zarządzanie węzłami (nodes)
+## 7: Zarządzanie węzłami (nodes)
 Dobre praktyki:
 * Węzeł będący masterem powinien myć jak najmniej obciążony
 * Liczba wykonawców (executors) powinna być dostosowana do zasobów danego węzła
@@ -650,9 +650,9 @@ Metoda uruchomienia:
 * Launch agents via SSH
 * Launch agent via execution of command on the master
 
-### 9.1 Uruchomienie via JNLP
-### 9.2 Uruchomienie via SSH
-### 9.3 Ćwiczenie,
+### 7.1 Uruchomienie via JNLP
+### 7.2 Uruchomienie via SSH
+### 7.3 Ćwiczenie
 Utworzyć 2 dodatkowe węzły na naszej wirtualnej maszynie przy wykorzystaniu ssh
 * **Linux_1**, etykiety: Linux, big_ram, katalog: /work/node1
 * **Windows**, etykiety: windows, katalog: /work/node2
@@ -664,13 +664,13 @@ $ mkdir -p /work/node{1,2}
 
 
 
-## X 7: Globalne narzędzia do konfiguracji
+## X 8: Globalne narzędzia do konfiguracji
 
-## X 8: Konfiguruj ustawienia bezpieczeństwa
-### 8.1: Jenkins users
-### 8.2: LDAP
-### 8.3: Matrix-based security
-### 8.4: Project-based Matrix Authorization Strateg 
+## X 9: Konfiguruj ustawienia bezpieczeństwa
+### 9.1: Jenkins users
+### 9.2: LDAP
+### 9.3: Matrix-based security
+### 9.4: Project-based Matrix Authorization Strateg 
 
 ## 10: Konsola skryptów
 Kolejnym z przydatnych narzędzi dostępnych w Jenkinsie jest konsola skryptów.  
