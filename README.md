@@ -629,14 +629,16 @@ Restart.
 ![Old Data 3](img/oldData_3.png)  
 ![Old Data 4](img/oldData_4.png)  
 ### 5.1: Ćwiczenie Wykonać powyższy przykład.
+[//]: # Komentarz
 ## X 6: Skonfiguruj system
+## X 9: Zarządzanie węzłami (nodes)
 ## X 7: Globalne narzędzia do konfiguracji
 ## X 8: Konfiguruj ustawienia bezpieczeństwa
 ### 8.1: Jenkins users
 ### 8.2: LDAP
 ### 8.3: Matrix-based security
 ### 8.4: Project-based Matrix Authorization Strateg 
-## X 9: Zarządzanie węzłami (nodes)
+
 ## 10: Konsola skryptów
 Kolejnym z przydatnych narzędzi dostępnych w Jenkinsie jest konsola skryptów.  
 ``Jenkins -> Zarządzaj Jenkinsem -> (Tools and Actions) -> Konsola skryptów``
