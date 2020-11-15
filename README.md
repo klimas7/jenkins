@@ -764,6 +764,22 @@ $ ssh -l admin -p 8081 192.168.0.178 help
 ## Jendak w wyniku najprawdopodobniej otrzymamy
 admin@192.168.0.178: Permission denied (publickey).
 ```
+Nasz klucz publiczny należy dodać do listy kluczy wybranego użytkownika. W naszym przypadku może to być admin.
+```
+#Geracja kluczy rsa jeżeli wcześniej nie mieliśmy
+$ ssh-keygen
+$ ll ~/.ssh/
+razem 12
+-rw-------. 1 jenkins jenkins 1843 11-15 10:08 id_rsa
+-rw-r--r--. 1 jenkins jenkins  411 11-15 10:08 id_rsa.pub
+-rw-r--r--. 1 jenkins jenkins  571 11-15 09:55 known_hosts
+
+$ cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCzsDiyJ+4WZAwaYDVz43Zrm6RCxPTzFWXnUfuBdAx6BmM98gxnveU0k+AbiiF739ZTDKxmWHyBmgGKVMzrSYoldKAPvTii4X/FtQfdsUrvl3gL9E+UM2MJ3k+yaYS88RmfDH7TTYBAwvFYqP3+F7F9tX+Te2Purf/ZwU+r5ekPMP4gtkO9Pi1XtzdOAW2vDHrXm2QJqOQPa8Ppx6SalrLOnlCjo5RtpEIBhjTN3WkwhRYHxDZedTZE0YFyn8fNna4UlZiEhPaLRu6utykDTyfOOhFiONYj9naNzv0/wIAYgYAFreD5CCNZEVMKIYwuKlS9Tb0gyzpDQYBjNGAvks2v jenkins@localhost.localdomain
+```
+``Jenkins -> Użytkownicy -> admin -> Konfiguracja -> SSH Public Keys``  
+![SSH Public Keys](img/cli_ssh_2.png)  
+Hint: Możemy dodać dowolną ilość kluczy
 ### 11.2: jenkins-cli.jar
 
 ### 11.3: Ćwiczenie, na podstawie powyższych informacji stworzyć ...
