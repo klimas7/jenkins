@@ -779,7 +779,14 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCzsDiyJ+4WZAwaYDVz43Zrm6RCxPTzFWXnUfuBdAx6
 ```
 ``Jenkins -> Użytkownicy -> admin -> Konfiguracja -> SSH Public Keys``  
 ![SSH Public Keys](img/cli_ssh_2.png)  
-Hint: Możemy dodać dowolną ilość kluczy
+Hint: Możemy dodać dowolną ilość kluczy  
+```
+$ ssh -l admin -p 8081 192.168.0.178 help
+  add-job-to-view
+    Adds jobs to view.
+  build
+    Builds a job, and optionally waits until its completion.
+```
 ### 11.2: jenkins-cli.jar
 
 ### 11.3: Ćwiczenie. 
