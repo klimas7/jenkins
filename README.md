@@ -740,7 +740,13 @@ jobs.findAll{ !it.buildDiscarder}.each {
 
 return "OK"
 ```
-## X 11: CLI
+### 10.1: Ćwiczenie, wypróbować powyższe przykłady
+## 11: CLI
+``CLI`` Command Line Interface. Dostęp do Jenkinsa z linii komend można zrealizować na 2 sposoby:
+* ssh
+* Klient dostarczony w postaci pliku [jenkins-cli.jar](http://192.168.0.178:8080/jnlpJars/jenkins-cli.jar)
+``Jenkins -> Zarządzaj Jenkinsem -> (Tools and Actions) -> Wiersz poleceń Jenkinsa``
+ 
 ## X 12: Rest and xml api
 ## X 13: Ogólny projekt (Freestyle project)
 ## X 14: Maven project
