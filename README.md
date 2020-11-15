@@ -312,7 +312,7 @@ JENKINS_HOME=/var/lib/jenkins
 logfile=/var/log/jenkins/jenkins.log
 war=/usr/lib/jenkins/jenkins.war
 ```
-### Instalacja via dnf
+### Instalacja via jar
 ```bash
 JENKINS_HOME=/home/jenkins/.jenkins
 ```
@@ -743,7 +743,6 @@ return "OK"
 ### 10.1: Ćwiczenie, wypróbować powyższe przykłady
 ## 11: CLI
 ``CLI`` Command Line Interface. 
-``Jenkins -> Zarządzaj Jenkinsem -> (Tools and Actions) -> Wiersz poleceń Jenkinsa``
 
 Dostęp do Jenkinsa z linii komend można zrealizować na 2 sposoby:
 * ssh
@@ -788,7 +787,26 @@ $ ssh -l admin -p 8081 192.168.0.178 help
     Builds a job, and optionally waits until its completion.
 ```
 ### 11.2: jenkins-cli.jar
+Pobieramy ``jenkins-cli.jar`` ze strony naszego Jenkinsa
+``Jenkins -> Zarządzaj Jenkinsem -> (Tools and Actions) -> Wiersz poleceń Jenkinsa``
+```bash
+$ java -jar jenkins-cli.jar -s http://192.168.0.178:8080/
 
+ERROR: You must authenticate to access this Jenkins.
+Jenkins CLI
+
+$ java -jar jenkins-cli.jar -s http://192.168.0.178:8080/ -auth admin:12345678
+  add-job-to-view
+    Adds jobs to view.
+  build
+    Builds a job, and optionally waits until its completion.
+```
+
+Jeżeli nie chcemy używać hasła możemy użyć tokena przypisanego do danego użytkownika
+``Jenkins -> Użytkownicy -> admin -> Konfiguracja -> API Token``
+![Api token](img/cli_client_jar_1.png)
+ 
+11dca37b8c0e7ef0b2c62aca996f931f81
 ### 11.3: Ćwiczenie. 
 Na podstawie powyższych informacji stworzyć ...
 
