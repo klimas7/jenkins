@@ -656,7 +656,19 @@ Availability:
 * Bring this agent online when in demand, and take offline when idle
 
 ### 7.1 Uruchomienie via JNLP
+``JNLP`` [Java Network Launch Protocol](https://docs.oracle.com/javase/tutorial/deployment/deploymentInDepth/jnlp.html)
+W pierwszej kolejności należy w ustawieniach bezpieczeństwa odblokować port dla agentów
+``Jenkins -> Zarządzaj Jenkinsem -> Konfiguruj ustawienia bezpieczeństwa -> Agents``  
+``TCP port for inbound agents -> Fixed: 8082``  
+Dodatkowo port należy odblokować w zaporze sieciowej  
+```bash
+firewall-cmd --permanent --zone=public --add-port=8082/tcp
+systemctl restart firewalld
+``` 
 
+Odnośniki: [java11-preview-availability](https://jenkins.io/blog/2018/12/14/java11-preview-availability/), 
+[JENKINS-52282](https://issues.jenkins-ci.org/browse/JENKINS-52282), 
+[Jenkins PR](https://github.com/jenkinsci/jenkins/pull/3766)
 ### 7.2 Uruchomienie via SSH
 ### 7.3 Node Monitoring
 ![Node 6](img/node_6.png)
@@ -672,7 +684,7 @@ $ mkdir -p /work/node{1,2}
 Tworzymy pierwszy węzeł  
 ![Node 3](img/node_3.png)  
 Tworzymy drugi jako kopię pierwszego  
-![Node 4](img/node_4.png)
+![Node 4](img/node_4.png)  
 Z odpowiednimi modyfikacjami  
 ![Node 5](img/node_5.png)
 ## X 8: Globalne narzędzia do konfiguracji
