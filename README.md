@@ -638,7 +638,7 @@ Restart.
 ### 8.4: Project-based Matrix Authorization Strateg 
 ## X 9: Zarządzanie węzłami (nodes)
 ## 10: Konsola skryptów
-Kolejnym z przydatnych narzędzi dostępnych w Jenkinsie jest konsola skryptów.
+Kolejnym z przydatnych narzędzi dostępnych w Jenkinsie jest konsola skryptów.  
 ``Jenkins -> Zarządzaj Jenkinsem -> (Tools and Actions) -> Konsola skryptów``
 ![Groovy 1](img/groovy_1.png)
 ```groovy
