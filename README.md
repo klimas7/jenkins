@@ -650,20 +650,26 @@ Metoda uruchomienia:
 * Launch agents via SSH
 * Launch agent via execution of command on the master
 
+Availability:
+* Keep this agent online as much as possible
+* Bring this agent online according to a schedule
+* Bring this agent online when in demand, and take offline when idle
+
 ### 7.1 Uruchomienie via JNLP
+
 ### 7.2 Uruchomienie via SSH
 ### 7.3 Ćwiczenie
 Utworzyć 2 dodatkowe węzły na naszej wirtualnej maszynie przy wykorzystaniu ssh
-* **Linux_1**, etykiety: Linux, big_ram, katalog: /work/node1
+* **Linux_1**; etykiety: linux, big_ram; katalog: /work/node1
 * **Windows**, etykiety: windows, katalog: /work/node2
 
 ```bash
 #Tworzymy katalogi dla naszych węzłów
 $ mkdir -p /work/node{1,2}
 ```
-
-
-
+![Node 3](img/node_3.png)
+![Node 4](img/node_4.png)
+![Node 5](img/node_5.png)
 ## X 8: Globalne narzędzia do konfiguracji
 
 ## X 9: Konfiguruj ustawienia bezpieczeństwa
