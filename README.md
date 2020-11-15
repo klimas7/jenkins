@@ -666,14 +666,49 @@ Dodatkowo port należy odblokować w zaporze sieciowej
 firewall-cmd --permanent --zone=public --add-port=8082/tcp
 systemctl restart firewalld
 ``` 
-
+![Node 8](img/node_8.png)  
+``Jenkins -> Węzły -> Linux_2``  
+![Node 9](img/node_9.png)  
+```bash
+$ java -jar agent.jar -jnlpUrl http://192.168.0.178:8080/computer/Linux_2/slave-agent.jnlp -secret f9b49c94b7e9cae76ffb0b63be0f34a9e7ac52c14aec447a2d27a90ced8180d3 -workDir "/tmp/linux_2"
+lis 15, 2020 11:52:30 PM org.jenkinsci.remoting.engine.WorkDirManager initializeWorkDir
+INFO: Using /tmp/linux_2/remoting as a remoting work directory
+lis 15, 2020 11:52:30 PM org.jenkinsci.remoting.engine.WorkDirManager setupLogging
+INFO: Both error and output logs will be printed to /tmp/linux_2/remoting
+lis 15, 2020 11:52:30 PM hudson.remoting.jnlp.Main createEngine
+INFO: Setting up agent: Linux_2
+lis 15, 2020 11:52:30 PM hudson.remoting.jnlp.Main$CuiListener <init>
+INFO: Jenkins agent is running in headless mode.
+lis 15, 2020 11:52:30 PM hudson.remoting.Engine startEngine
+INFO: Using Remoting version: 4.5
+lis 15, 2020 11:52:30 PM org.jenkinsci.remoting.engine.WorkDirManager initializeWorkDir
+INFO: Using /tmp/linux_2/remoting as a remoting work directory
+lis 15, 2020 11:52:30 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Locating server among [http://192.168.0.178:8080/]
+lis 15, 2020 11:52:30 PM org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver resolve
+INFO: Remoting server accepts the following protocols: [JNLP4-connect, Ping]
+lis 15, 2020 11:52:30 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Agent discovery successful
+  Agent address: 192.168.0.178
+  Agent port:    8082
+  Identity:      c9:b8:2c:81:18:d8:6a:ef:19:e8:d8:91:84:7a:ba:64
+lis 15, 2020 11:52:30 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Handshaking
+lis 15, 2020 11:52:30 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Connecting to 192.168.0.178:8082
+lis 15, 2020 11:52:30 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Trying protocol: JNLP4-connect
+lis 15, 2020 11:52:30 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Remote identity confirmed: c9:b8:2c:81:18:d8:6a:ef:19:e8:d8:91:84:7a:ba:64
+lis 15, 2020 11:52:31 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Connected
+```
 Odnośniki: [java11-preview-availability](https://jenkins.io/blog/2018/12/14/java11-preview-availability/), 
 [JENKINS-52282](https://issues.jenkins-ci.org/browse/JENKINS-52282), 
 [Jenkins PR](https://github.com/jenkinsci/jenkins/pull/3766)
-### 7.2 Uruchomienie via SSH
 ### 7.3 Node Monitoring
 ![Node 6](img/node_6.png)
-### 7.4 Ćwiczenie
+### 7.4 Uruchomienie via SSH, Ćwiczenie
 Utworzyć 2 dodatkowe węzły na naszej wirtualnej maszynie przy wykorzystaniu ssh
 * **Linux_1**; etykiety: linux, big_ram; katalog: /work/node1
 * **Windows**, etykiety: windows, katalog: /work/node2
