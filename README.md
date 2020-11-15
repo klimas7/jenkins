@@ -631,8 +631,17 @@ Restart.
 ### 5.1: Ćwiczenie Wykonać powyższy przykład.
 [//]: # Komentarz
 ## X 6: Skonfiguruj system
+
 ## X 9: Zarządzanie węzłami (nodes)
+Dobre praktyki:
+* Węzeł będący masterem powinien myć jak najmniej obciążony
+* Liczba wykonawców (executors) powinna być dostosowana do zasobów danego węzła
+
+``Jenkins -> Zarządzaj Jenkinsem -> Zarządzaj węzłami``
+![Node 1](img/node_1.png)
+
 ## X 7: Globalne narzędzia do konfiguracji
+
 ## X 8: Konfiguruj ustawienia bezpieczeństwa
 ### 8.1: Jenkins users
 ### 8.2: LDAP
