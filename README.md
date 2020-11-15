@@ -712,7 +712,7 @@ props = nodeProperties.getAll(hudson.slaves.EnvironmentVariablesNodeProperty.cla
 
 
 if ( props.size() != 1 ) {
-    println("error: unexpected number of environment variable containers: " + nodes.size() + " expected: 1")
+    println("error: unexpected number of environment variable containers: " + props.size() + " expected: 1")
 } else {
     envVars = props.get(0).getEnvVars();
 
