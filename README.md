@@ -632,7 +632,7 @@ Restart.
 [//]: # Komentarz
 ## X 6: Skonfiguruj system
 
-## X 9: Zarządzanie węzłami (nodes)
+## 9: Zarządzanie węzłami (nodes)
 Dobre praktyki:
 * Węzeł będący masterem powinien myć jak najmniej obciążony
 * Liczba wykonawców (executors) powinna być dostosowana do zasobów danego węzła
@@ -640,7 +640,30 @@ Dobre praktyki:
 ``Jenkins -> Zarządzaj Jenkinsem -> Zarządzaj węzłami``
 ![Node 1](img/node_1.png)  
 Dodając nowy węzeł mamy możliwość dodania kolejnego lub utworzenie kopii już istniejącego.
-![Node 2](img/node_2.png) 
+![Node 2](img/node_2.png)  
+Plan wykorzystania:
+* Wykorzystuj ten węzeł tak bardzo, jak to tylko możliwe
+* Uruchamiaj te projekty, które mają etykietę pasującą do tego węzła
+
+Metoda uruchomienia:
+* Launch agent by connecting it to the master (JNLP)
+* Launch agents via SSH
+* Launch agent via execution of command on the master
+
+### 9.1 Uruchomienie via JNLP
+### 9.2 Uruchomienie via SSH
+### 9.3 Ćwiczenie,
+Utworzyć 2 dodatkowe węzły na naszej wirtualnej maszynie przy wykorzystaniu ssh
+* **Linux_1**, etykiety: Linux, big_ram, katalog: /work/node1
+* **Windows**, etykiety: windows, katalog: /work/node2
+
+```bash
+#Tworzymy katalogi dla naszych węzłów
+$ mkdir -p /work/node{1,2}
+```
+
+
+
 ## X 7: Globalne narzędzia do konfiguracji
 
 ## X 8: Konfiguruj ustawienia bezpieczeństwa
