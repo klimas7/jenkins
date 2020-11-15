@@ -638,8 +638,9 @@ Dobre praktyki:
 * Liczba wykonawców (executors) powinna być dostosowana do zasobów danego węzła
 
 ``Jenkins -> Zarządzaj Jenkinsem -> Zarządzaj węzłami``
-![Node 1](img/node_1.png)
-
+![Node 1](img/node_1.png)  
+Dodając nowy węzeł mamy możliwość dodania kolejnego lub utworzenie kopii już istniejącego.
+![Node 2](img/node_2.png) 
 ## X 7: Globalne narzędzia do konfiguracji
 
 ## X 8: Konfiguruj ustawienia bezpieczeństwa
