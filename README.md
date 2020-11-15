@@ -658,7 +658,9 @@ Availability:
 ### 7.1 Uruchomienie via JNLP
 
 ### 7.2 Uruchomienie via SSH
-### 7.3 Ćwiczenie
+### 7.3 Node Monitoring
+![Node 6](img/node_6.png)
+### 7.4 Ćwiczenie
 Utworzyć 2 dodatkowe węzły na naszej wirtualnej maszynie przy wykorzystaniu ssh
 * **Linux_1**; etykiety: linux, big_ram; katalog: /work/node1
 * **Windows**, etykiety: windows, katalog: /work/node2
@@ -667,8 +669,11 @@ Utworzyć 2 dodatkowe węzły na naszej wirtualnej maszynie przy wykorzystaniu s
 #Tworzymy katalogi dla naszych węzłów
 $ mkdir -p /work/node{1,2}
 ```
-![Node 3](img/node_3.png)
+Tworzymy pierwszy węzeł  
+![Node 3](img/node_3.png)  
+Tworzymy drugi jako kopię pierwszego  
 ![Node 4](img/node_4.png)
+Z odpowiednimi modyfikacjami  
 ![Node 5](img/node_5.png)
 ## X 8: Globalne narzędzia do konfiguracji
 
