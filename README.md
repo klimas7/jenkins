@@ -782,7 +782,8 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCzsDiyJ+4WZAwaYDVz43Zrm6RCxPTzFWXnUfuBdAx6
 Hint: Możemy dodać dowolną ilość kluczy
 ### 11.2: jenkins-cli.jar
 
-### 11.3: Ćwiczenie, na podstawie powyższych informacji stworzyć ...
+### 11.3: Ćwiczenie. 
+Na podstawie powyższych informacji stworzyć ...
 
 ## X 12: Rest and xml api
 ## X 13: Ogólny projekt (Freestyle project)
