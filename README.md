@@ -805,8 +805,14 @@ $ java -jar jenkins-cli.jar -s http://192.168.0.178:8080/ -auth admin:12345678
 Jeżeli nie chcemy używać hasła możemy użyć tokena przypisanego do danego użytkownika
 ``Jenkins -> Użytkownicy -> admin -> Konfiguracja -> API Token``
 ![Api token](img/cli_client_jar_1.png)
- 
-11dca37b8c0e7ef0b2c62aca996f931f81
+```bash
+$ java -jar jenkins-cli.jar -s http://192.168.0.178:8080/ -auth admin:116f410f45f00c7b533ddc889e978fec37 help
+  add-job-to-view
+    Adds jobs to view.
+  build
+    Builds a job, and optionally waits until its completion.
+```
+
 ### 11.3: Ćwiczenie. 
 Na podstawie powyższych informacji stworzyć ...
 
