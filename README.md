@@ -637,7 +637,109 @@ Restart.
 ### 8.3: Matrix-based security
 ### 8.4: Project-based Matrix Authorization Strateg 
 ## X 9: Zarządzanie węzłami (nodes)
-## X 10: Konsola skryptów
+## 10: Konsola skryptów
+Kolejnym z przydatnych narzędzi dostępnych w Jenkinsie jest konsola skryptów.
+``Jenkins -> Zarządzaj Jenkinsem -> (Tools and Actions) -> Konsola skryptów``
+![Groovy 1](img/groovy_1.png)
+```groovy
+// Wyświetlenie dostępnych wtyczek 
+println(Jenkins.instance.pluginManager.plugins)
+```
+```groovy
+// Pobranie treści wybranej strony
+println 'http://www.google.com'.toURL().text
+```
+[Jenkins javadoc](https://javadoc.jenkins.io/)
+```groovy
+// Wypisanie wszystkich zmiennych globalnych na masterze i agentach
+import jenkins.*
+import jenkins.model.*
+import hudson.*
+import hudson.model.*
+
+jenkins = Jenkins.getInstance()
+nodeProperties = jenkins.getGlobalNodeProperties()
+props = nodeProperties.getAll(hudson.slaves.EnvironmentVariablesNodeProperty.class)
+
+for (prop in props) {
+    prop.getEnvVars().each{ println "${it}"; }
+}
+
+//Agents
+
+slaves = Jenkins.getInstance().slaves
+for (slave in slaves) {
+    props = slave.nodeProperties.getAll(hudson.slaves.EnvironmentVariablesNodeProperty.class)
+    println slave.name
+    for (prop in props) {
+        prop.getEnvVars().each{ println "${it}"; }
+    }
+}
+
+
+println "OK";
+```
+```groovy
+//Wypisanie tych projektów które nie mają ustawionego logRotator
+jenkins = Jenkins.getInstance()
+def jobs = jenkins.getItems(hudson.model.FreeStyleProject.class) //hudson.maven.MavenModuleSet.class
+
+jobs.findAll{ !it.logRotator}.each {
+    println it.name;
+}
+
+return "OK"
+```
+```groovy
+//Dodanie zmiennych globalnych
+import jenkins.*
+import jenkins.model.*
+import hudson.*
+import hudson.model.*
+
+def addVariable(String key, String value, Map envVars){
+    String oldValue = envVars.get(key);
+    if (oldValue != null) {
+        println "Global variable exists: " + key + " -> " + oldValue + " Update this!";
+    }
+    envVars.put(key, value)
+    println "Add/Update global variable: " + key + " -> " + value;
+}
+
+jenkins = Jenkins.getInstance()
+nodeProperties = jenkins.getGlobalNodeProperties()
+props = nodeProperties.getAll(hudson.slaves.EnvironmentVariablesNodeProperty.class)
+
+
+if ( props.size() != 1 ) {
+    println("error: unexpected number of environment variable containers: " + nodes.size() + " expected: 1")
+} else {
+    envVars = props.get(0).getEnvVars();
+
+    addVariable("TEST_SCRIPT", "Test_script", envVars)
+
+    jenkins.save();
+}
+
+
+println "OK";
+```
+```groovy
+//Ustawienie logRotator w nie mają logRotator
+import hudson.tasks.*
+
+jenkins = Jenkins.getInstance()
+def jobs = jenkins.getItems(hudson.model.FreeStyleProject.class) //hudson.maven.MavenModuleSet.class
+
+
+jobs.findAll{ !it.buildDiscarder}.each {
+    println it.name;
+    println it.setBuildDiscarder(new LogRotator(-1, 20, -1, -1) )
+    it.save()
+}
+
+return "OK"
+```
 ## X 11: CLI
 ## X 12: Rest and xml api
 ## X 13: Ogólny projekt (Freestyle project)
