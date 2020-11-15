@@ -787,7 +787,7 @@ $ ssh -l admin -p 8081 192.168.0.178 help
     Builds a job, and optionally waits until its completion.
 ```
 ### 11.2: jenkins-cli.jar
-Pobieramy ``jenkins-cli.jar`` ze strony naszego Jenkinsa
+Pobieramy ``jenkins-cli.jar`` ze strony naszego Jenkinsa  
 ``Jenkins -> Zarządzaj Jenkinsem -> (Tools and Actions) -> Wiersz poleceń Jenkinsa``
 ```bash
 $ java -jar jenkins-cli.jar -s http://192.168.0.178:8080/
@@ -802,7 +802,7 @@ $ java -jar jenkins-cli.jar -s http://192.168.0.178:8080/ -auth admin:12345678
     Builds a job, and optionally waits until its completion.
 ```
 
-Jeżeli nie chcemy używać hasła możemy użyć tokena przypisanego do danego użytkownika
+Jeżeli nie chcemy używać hasła możemy użyć tokena przypisanego do danego użytkownika  
 ``Jenkins -> Użytkownicy -> admin -> Konfiguracja -> API Token``
 ![Api token](img/cli_client_jar_1.png)
 ```bash
@@ -812,9 +812,97 @@ $ java -jar jenkins-cli.jar -s http://192.168.0.178:8080/ -auth admin:116f410f45
   build
     Builds a job, and optionally waits until its completion.
 ```
-
-### 11.3: Ćwiczenie. 
-Na podstawie powyższych informacji stworzyć ...
+```bash
+# W tym przypadku musimy mieć zarejestrowany klucz publiczny 
+$ java -jar jenkins-cli.jar -s http://192.168.0.178:8080/ -ssh -user admin
+lis 15, 2020 6:41:35 PM io.jenkins.cli.shaded.org.apache.sshd.common.util.security.AbstractSecurityProviderRegistrar getOrCreateProvider
+INFO: getOrCreateProvider(EdDSA) created instance of io.jenkins.cli.shaded.net.i2p.crypto.eddsa.EdDSASecurityProvider
+  add-job-to-view
+    Adds jobs to view.
+  build
+    Builds a job, and optionally waits until its completion.
+```
+```
+$ java -jar jenkins-cli.jar -s http://192.168.0.178:8080/ -ssh -user admin list-jobs
+$ java -jar jenkins-cli.jar -s http://192.168.0.178:8080/ -ssh -user admin get-job 'Job A'
+```
+tworzymy nowy job ``CLI_Invoke`` na podstawie pustego szablonu (tworzymy plik template_job.xml) 
+```xmla
+<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <hudson.plugins.jira.JiraProjectProperty plugin="jira@3.1.3"/>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders/>
+  <publishers/>
+  <buildWrappers/>
+</project>
+```
+```bash
+$ java -jar jenkins-cli.jar -s http://192.168.0.178:8080/ -auth admin:116f410f45f00c7b533ddc889e978fec37 create-job CLI_Invoke < template_job.xml
+$ java -jar jenkins-cli.jar -s http://192.168.0.178:8080/ -auth admin:116f410f45f00c7b533ddc889e978fec37 build CLI_Invoke
+$ java -jar jenkins-cli.jar -s http://192.168.0.178:8080/ -auth admin:116f410f45f00c7b533ddc889e978fec37 console CLI_Invoke 1
+```
+```xml 
+<!-- update_job.xml -->
+<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <hudson.plugins.jira.JiraProjectProperty plugin="jira@3.1.3"/>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>param</name>
+          <description></description>
+          <defaultValue>default value</defaultValue>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>echo &quot;${param}&quot;</command>
+      <configuredLocalRules/>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>
+```
+```
+$ java -jar jenkins-cli.jar -s http://192.168.0.178:8080/ -auth admin:116f410f45f00c7b533ddc889e978fec37 update-job CLI_Invoke < update_job.xml
+$ java -jar jenkins-cli.jar -s http://192.168.0.178:8080/ -auth admin:116f410f45f00c7b533ddc889e978fec37 build CLI_Invoke
+$ java -jar jenkins-cli.jar -s http://192.168.0.178:8080/ -auth admin:116f410f45f00c7b533ddc889e978fec37 console CLI_Invoke 2
+$ java -jar jenkins-cli.jar -s http://192.168.0.178:8080/ -auth admin:116f410f45f00c7b533ddc889e978fec37 build CLI_Invoke -p param='111 222'
+$ java -jar jenkins-cli.jar -s http://192.168.0.178:8080/ -auth admin:116f410f45f00c7b533ddc889e978fec37 console CLI_Invoke 3
+```
+### 11.3: curl
+Dodatkowo cześć rzeczy możemy wykonać wywołując odpowiedni url  
+```bash
+curl -X POST 'http://admin:116f410f45f00c7b533ddc889e978fec37@192.168.0.178:8080/job/CLI_Invoke/buildWithParameters?param=abc'
+```
+### 11.4: Ćwiczenie. 
+Na podstawie powyższych informacji stworzyć nowy projekt ``CLI_Invoke`` wykonać jego aktualizacje oraz uruchomić z parametrami, jak i bez.
 
 ## X 12: Rest and xml api
 ## X 13: Ogólny projekt (Freestyle project)
