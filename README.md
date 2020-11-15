@@ -744,9 +744,17 @@ return "OK"
 ## 11: CLI
 ``CLI`` Command Line Interface. Dostęp do Jenkinsa z linii komend można zrealizować na 2 sposoby:
 * ssh
-* Klient dostarczony w postaci pliku [jenkins-cli.jar](http://192.168.0.178:8080/jnlpJars/jenkins-cli.jar)
+* Klient dostarczony w postaci pliku [jenkins-cli.jar](http://192.168.0.178:8080/jnlpJars/jenkins-cli.jar)  
 ``Jenkins -> Zarządzaj Jenkinsem -> (Tools and Actions) -> Wiersz poleceń Jenkinsa``
- 
+### 11.1: ssh
+W pierwszej kolejności należy odblokować serwer ssh wbudowany w Jenkinsa (np. na porcie 8081).  
+``Jenkins -> Zarządzaj Jenkinsem -> (Security) -> Konfiguruj ustawienia bezpieczeństwa -> SSH Server``  
+![SSH Server](img/cli_ssh_1.png)
+
+### 11.2: jenkins-cli.jar
+
+### 11.3: Ćwiczenie, na podstawie powyższych informacji stworzyć ...
+
 ## X 12: Rest and xml api
 ## X 13: Ogólny projekt (Freestyle project)
 ## X 14: Maven project
