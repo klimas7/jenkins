@@ -912,7 +912,8 @@ Przykłady
 * [Projekt](http://192.168.0.178:8080/job/CLI_Invoke/api/json?pretty=true)
 * [Build](http://192.168.0.178:8080/job/CLI_Invoke/4/api/json?pretty=true)
 
-[Dokumentacja](https://www.jenkins.io/doc/book/using/remote-access-api/)
+[Dokumentacja](https://www.jenkins.io/doc/book/using/remote-access-api/)  
+![Api](img/api_1.png)
 ## X 13: Ogólny projekt (Freestyle project)
 ## X 14: Maven project
 ## 15: Pipelines
