@@ -905,7 +905,14 @@ curl -X POST 'http://admin:116f410f45f00c7b533ddc889e978fec37@192.168.0.178:8080
 ### 11.4: Ćwiczenie. 
 Na podstawie powyższych informacji stworzyć nowy projekt ``CLI_Invoke`` wykonać jego aktualizacje oraz uruchomić z parametrami, jak i bez.
 
-## X 12: Rest and xml api
+## 12: Rest and xml api
+Praktycznie każdą informację, którą mamy prezentowaną w Jenkinsie możemy również zaprezentować w formacie ``json`` lub ``xml``  
+Przykłady 
+* [Strona główna](http://192.168.0.178:8080/api/json?pretty=true)
+* [Projekt](http://192.168.0.178:8080/job/CLI_Invoke/api/json?pretty=true)
+* [Build](http://192.168.0.178:8080/job/CLI_Invoke/4/api/json?pretty=true)
+
+[Dokumentacja](https://www.jenkins.io/doc/book/using/remote-access-api/)
 ## X 13: Ogólny projekt (Freestyle project)
 ## X 14: Maven project
 ## 15: Pipelines
