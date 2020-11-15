@@ -1,6 +1,6 @@
 ## Do pobrania 
 [Google drive](https://drive.google.com/drive/folders/1l8nAP_4hHqrliGPWCv8RHH6_SnM1-kA-?usp=sharing)
-```
+```bash
 sha1sum
 51bb48ecdfb4ce210f1941e43eebe674fb524b91  Jenkins_workshop_5.ova
 3c6bff4eea93c387bbdf193015cda7c04833e75f  logger-plugin.hpi
@@ -29,13 +29,13 @@ Po zaimportowaniu i uruchomieniu powinniśmy otrzymać.
 Proszę, zwrócić uwagę na przydzielony adres IP powinien to być w waszej sieci, a nie adres localhost (127.0.0.1)!
 
 Użytkownicy:
-```
+```bash
 jenkins:12345678
 root:12345678
 ```
 Można się zalogować bezpośrednio w oknie powyżej, używając programu putty lub innego klienta ssh
 (np. git Bash).
-```
+```bash
 ssh root@192.168.0.178
 or
 ssh jenkins@192.168.0.178
@@ -43,17 +43,17 @@ ssh jenkins@192.168.0.178
 ## 1: Uruchomienie 
 ### Instalacja via dnf
 Definicja repozytorium i import klucza
-```
+```bash
 # wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
 # rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
 ```
 Instalacja
-```
+```bash
 # dnf install jenkins
 # dnf install java
 ```
 Uruchomienie serwisu
-```
+```bash
 # systemctl status jenkins.service
 # systemctl enable jenkins.service
 # systemctl start jenkins.service
@@ -61,7 +61,7 @@ Uruchomienie serwisu
 Test: [http://192.168.0.178:8080/](http://192.168.0.178:8080/) otwieramy w przeglądarce
 
 Firewall
-```
+```bash
 # firewall-cmd --permanent --add-service=jenkins
 # firewall-cmd --zone=public --add-service=http --permanent
 # firewall-cmd --reload
@@ -70,12 +70,12 @@ Firewall
 Test [http://192.168.0.178:8080/](http://192.168.0.178:8080/) otwieramy w przeglądarce
 
 Usunięcie
-```
+```bash
 # systemctl stop jenkins.service
 # dnf remove jenkins
 ```
 ### Docker
-```
+```bash
 $ docker pull jenkins/jenkins
 # check version
 $ docker image inspect docker.io/jenkins/jenkins
@@ -84,24 +84,24 @@ $ docker run -d -v jenkins_home:/var/jenkins_home --name jenkins_workshop -p 808
 $ docker ps
 ```
 Test [http://192.168.0.178:8080/](http://192.168.0.178:8080/) otwieramy w przeglądarce
-```
+```bash
 $ docker exec jenkins_workshop cat /var/jenkins_home/secrets/initialAdminPassword
 ```
 Stop and clean
-```
+```bash
 $ docker stop jenkins_workshop
 $ docker rm jenkins_workshop
 $ docker volume rm jenkins_home
 ```
 ### Uruchomienie via jar
-```
+```bash
 $ cd /opt/tools/jenkins
 $ java -jar jenkins.war &
 ```
 Test [http://192.168.0.178:8080/](http://192.168.0.178:8080/) otwieramy w przeglądarce
 
 Stop and clean
-```
+```bash
 $ ps aux | grep java
 $ kill -9 1338 #JENKINS_PID
 # or
@@ -110,12 +110,12 @@ $ killall java
 rm -rf ~/.jenkins
 ```
 ### Uruchomienie ze skryptu
-```
+```bash
 $ cd /opt/tools/jenkins/
 $ ls
 jenkins.sh  jenkins.war  ssh
 ```
-```
+```bash
 $ cat jenkins.sh 
 #!/bin/bash
 
@@ -173,13 +173,13 @@ esac
 [headless](https://www.oracle.com/technical-resources/articles/javase/headless.html), 
 [com.sun.akuma](https://github.com/kohsuke/akuma/tree/master/src/main/java/com/sun/akuma), 
 [Jenkins initial-settings](https://www.jenkins.io/doc/book/installing/initial-settings/)
-```
+```bash
 $ ./jenkins.sh
 ```
 Test [http://192.168.0.178:8080/](http://192.168.0.178:8080/) otwieramy w przeglądarce
 #### uruchomienie https
 [ssl files explanation](https://serverfault.com/questions/9708/what-is-a-pem-file-and-how-does-it-differ-from-other-openssl-generated-key-file)
-```
+```bash
 cd /opt/tools/jenkins/ssh
 $ openssl genrsa -out key.pem
 Generating RSA private key, 2048 bit long modulus (2 primes)
@@ -215,7 +215,7 @@ subject=C = PL, ST = Lesser Poland, L = KRK, O = K7Soft, CN = 192.168.0.178, ema
 Getting Private key
 ```
 W ``jenkins.sh``
-```
+```bash
 #use http
 #jenkins_options="$jenkins_options --httpPort=$jp"
 
@@ -223,13 +223,13 @@ W ``jenkins.sh``
 jenkins_options="$jenkins_options --httpPort=-1 --httpsPort=8443 --httpsCertificate=$jh/ssh/cert.pem --httpsPrivateKey=$jh/ssh/key.pem"
 ```
 A tu w logach
-```
+```bash
 2020-10-30 11:55:00.779+0000 [id=1]     WARNING winstone.Logger#logInternal: Using the --httpsPrivateKey/--httpsCertificate 
 options currently relies on unsupported APIs in the Oracle JRE.
 Please use --httpsKeyStore and related options instead.
 ```
 Create keystore
-```
+```bash
 $ openssl pkcs12 -export -in cert.pem -inkey key.pem -out jenkins.p12 -name jenkins
 Enter Export Password:
 Verifying - Enter Export Password:
@@ -253,12 +253,12 @@ Certificate fingerprint (SHA-256): D9:9C:7F:85:C5:1C:D8:32:82:0A:70:8E:8E:CF:59:
 
 ```
 Dodatkowo w ``jenkins.sh``
-```
+```bash
 #jenkins_options="$jenkins_options --httpPort=-1 --httpsPort=8443 --httpsCertificate=$jh/ssh/cert.pem --httpsPrivateKey=$jh/ssh/key.pem"
 jenkins_options="$jenkins_options --httpPort=-1 --httpsPort=8443 --httpsKeyStore=$jh/ssh/jenkins.keystore --httpsKeyStorePassword=12345678"
 ```
 Firewall
-```
+```bash
 ## disabled
 #
 # systemctl status firewalld
@@ -278,7 +278,7 @@ Firewall
 W każdym przypadku powinniśmy otrzymać stronę startową
 ![Start](img/start_1.png)
 Hasło ze wskazanego pliku wklejamy w pole tekstowe
-```
+```bash
 $ cat /opt/tools/jenkins/secrets/initialAdminPassword
 ```
 Setup wizard
@@ -296,7 +296,7 @@ Instalujemy sugerowane wtyczki
 
 Admin page
 ![Admin page](img/admin_page.png)
-```
+```bash
 Login: admin
 Hasło: 12345678
 Pełna nazwa: Administrator
@@ -307,17 +307,17 @@ Adres email: admin@acme.com
 
 ## 2: Katalog domowy
 ### Instalacja via dnf
-```
+```bash
 JENKINS_HOME=/var/lib/jenkins
 logfile=/var/log/jenkins/jenkins.log
 war=/usr/lib/jenkins/jenkins.war
 ```
 ### Instalacja via dnf
-```
+```bash
 JENKINS_HOME=/home/jenkins/.jenkins
 ```
 Struktura
-```
+```bash
 ├── config.xml              (jenkins root configuration)
 ├── *.xml                   (other site-wide configuration files)
 ├── jenkins.sh              (start stop script)
@@ -407,7 +407,7 @@ Struktura
         └── target
 ```
 ### 2.1 Ćwiczenie: Zmiana liczby egzekutorów
-```
+```bash
 $ cd /opt/tools/jenkins/
 $ vim config.xml
 ```
@@ -432,7 +432,7 @@ vim:
  * ``:wq`` write and quit
  
 ### 2.2 Ćwiczenie: Odzyskanie dostępu
-```
+```bash
 $ cd /opt/tools/jenkins/
 $ ./jenkins.sh stop
 $ vim config.xml
@@ -451,7 +451,7 @@ $ vim config.xml
   <!-- ... -->
 </hubson>
 ```
-```
+```bash
 $ ./jenkins.sh start
 ```
 ``Jenkins -> Zarządzaj Jenkinsem -> Konfiguruj ustawienia bezpieczeństwa``
@@ -474,22 +474,22 @@ Wynik [http://192.168.0.178:8080/userContent/](http://192.168.0.178:8080/userCon
 ![User Content Job Output](img/user_content_3.png)
 
 Udostępnianie 'linków'
-```
+```bash
 $ cd /opt/tools/jenkins/
 $ ln -s /opt/tools/maven userContent/maven
 ```
 ![User Content Job link](img/user_content_4.png)
 
 [System Properties](https://www.jenkins.io/doc/book/managing/system-properties/)
-```
+```bash
 $ ./jenkins.sh stop
 $ vim jenkins.sh
 ```
-```
+```bash
     java_options="-Dhudson.model.DirectoryBrowserSupport.allowSymlinkEscape=true"
     java -Dcom.sun.akuma.Daemon=daemonized -Djava.awt.headless=true -DJENKINS_HOME=$jh $java_options -jar $jh/jenkins.war $jenkins_options &
 ```
-```
+```bash
 $ ./jenkins.sh start
 ```
 
@@ -529,7 +529,7 @@ Opcje
 * Wykonuj zadania współbieżnie, jeśli zajdzie potrzeba
 * Buduj cyklicznie ``* * * * *`` (co minute)
 * ``Budowanie -> Uruchom powłoke``
-```
+```bash
 random=$(( ( RANDOM % 70 )  + 1 ))
 echo "Job sleep $random"
 sleep $random
@@ -754,18 +754,18 @@ W pierwszej kolejności należy odblokować serwer ssh wbudowany w Jenkinsa (np.
 ``Jenkins -> Zarządzaj Jenkinsem -> (Security) -> Konfiguruj ustawienia bezpieczeństwa -> SSH Server``  
 ![SSH Server](img/cli_ssh_1.png)  
 Wybrany port należy odblokować w firewallu.  
-```
+```bash
 # firewall-cmd --permanent --zone=public --add-port=8081/tcp
 # systemctl restart firewalld
 ```
 Na naszym lokalnym komputerze możemy wykonać
-```
+```bash
 $ ssh -l admin -p 8081 192.168.0.178 help
 ## Jendak w wyniku najprawdopodobniej otrzymamy
 admin@192.168.0.178: Permission denied (publickey).
 ```
 Nasz klucz publiczny należy dodać do listy kluczy wybranego użytkownika. W naszym przypadku może to być admin.
-```
+```bash
 #Geracja kluczy rsa jeżeli wcześniej nie mieliśmy
 $ ssh-keygen
 $ ll ~/.ssh/
@@ -1040,7 +1040,7 @@ Pozwalają wyodrębnić oraz współdzielić wspólne części pomiędzy wieloma
 Elementy takie mogą być zamknięte w bibliotece przechowywanej w repozytorium kodu.
 
 Struktura
-```
+```bash
 ├── README.md
 ├── src                                 (Groovy source files)
 │   └── pl
@@ -1077,7 +1077,7 @@ Dodanie nowej biblioteki do Jenkinsa.
 Nowy projekt wykorzystujący przygotowaną bibliotekę.  
 ``Jenkins -> Nowy Projekt -> Pipeline (JenkinsSharedLib)``  
 Proste wykorzystanie
-```
+```groovy
 @Library('jenkins-shared-lib')_
 
 stage('Print Build Info') {
@@ -1096,7 +1096,7 @@ stage('Print Build Info') {
 ```
 Hint! ``@Library('jenkins-shared-lib')_`` ``_`` nie jest pomyłką.  
 Przykład z parametrami
-```
+```groovy
 @Library('jenkins-shared-lib')_
 
 pipeline {
