@@ -703,6 +703,9 @@ INFO: Remote identity confirmed: c9:b8:2c:81:18:d8:6a:ef:19:e8:d8:91:84:7a:ba:64
 lis 15, 2020 11:52:31 PM hudson.remoting.jnlp.Main$CuiListener status
 INFO: Connected
 ```
+
+![Node 10](img/node_10.png)
+
 Odnośniki: [java11-preview-availability](https://jenkins.io/blog/2018/12/14/java11-preview-availability/), 
 [JENKINS-52282](https://issues.jenkins-ci.org/browse/JENKINS-52282), 
 [Jenkins PR](https://github.com/jenkinsci/jenkins/pull/3766)
