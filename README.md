@@ -1246,6 +1246,69 @@ pipeline {
     }
 }
 ```
+### 15.5: tools
+``Jenkins -> Nowy Projekt -> Pipeline (P_8)``
+```groovy
+pipeline {
+    agent any
+    tools {
+        maven 'mvn'
+        jdk 'jdk8'
+    }
+    stages {
+        stage('Stag1'){
+            steps {
+                sh 'java -version'
+                sh 'mvn -version'
+            }
+        }
+    }
+}
+//vs
+pipeline {
+    agent any
+    tools {
+        maven 'mvn'
+        jdk 'jdk8'
+    }
+    stages {
+        stage('Stage 1'){
+            steps {
+                sh 'java -version'
+            }
+        }
+        stage('Stage 2'){
+            tools {
+                jdk 'jdk12'
+            }
+            steps {
+                sh 'java -version'
+            }
+        }
+    }
+}
+```
+``Jenkins -> Nowy Projekt -> Pipeline (P_8_a)``
+```groovy
+node {
+    stage("Stage 1") {
+        def javaHome = tool name: 'jdk12', type: 'jdk'
+        sh "${javaHome}/bin/java -version"
+        
+        def mavenHome = tool name: 'mvn', type: 'maven'
+        sh "${mavenHome}/bin/mvn -version"
+        
+        withEnv(["PATH+JAVA=${tool name: 'jdk12', type: 'jdk'}/bin", 
+                 "PATH+MAVEN=${tool name: 'mvn', type: 'maven'}/bin"]) {
+            sh 'java -version'
+            sh 'mvn -version'   
+        }        
+    }
+}
+```
+### 15.6: Options
+``Jenkins -> Nowy Projekt -> Pipeline (P_9)``
+
 ### 15.y: In-process Script Approval
 ``Jenkins -> Nowy Projekt -> Pipeline (P_X)``
 ```groovy
