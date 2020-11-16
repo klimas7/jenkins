@@ -727,12 +727,36 @@ Tworzymy drugi jako kopię pierwszego
 Z odpowiednimi modyfikacjami  
 ![Node 5](img/node_5.png)
 ## 8: Globalne narzędzia do konfiguracji
+### 8.1: Managed files
 ``Managed files`` to miejsce, w którym możemy definiować pliki konfiguracyjne dostępne dla wszystkich węzłów  i projektów  
 ![Global 2](img/global_2.png)  
 ![Global 1](img/global_1.png)
 
+### 8.2: Globalne narzędzia do konfiguracji
 Jenkins pozwala zdefiniować narzędzia wykorzystywane w projektach, takie jak maven, java, docker.  
 ``Jenkins -> Zarządzaj Jenkinsem -> Globalne narzędzia do konfiguracji``  
+* Maven Configuration
+* JDK
+```
+Nazwa       jdk8
+JAVA_HOME   /opt/java/jdk8
+
+Nazwa       jdk12
+JAVA_HOME   /opt/java/jdk12
+```
+* Maven
+```
+Name        mvn
+MAVEN_HOME  /opt/tools/maven
+```
+* Docker
+```
+Name                docker
+Installation root   /usr/bin
+```
+
+### 8:3: Ćwiczenie
+Zdefiniować jdk, maven oraz docker zgodnie z powyższym opisem
 
 ## X 9: Konfiguruj ustawienia bezpieczeństwa
 ### 9.1: Jenkins users
