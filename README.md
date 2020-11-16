@@ -755,7 +755,7 @@ Name                docker
 Installation root   /usr/bin
 ```
 
-### 8:3: Ćwiczenie
+### 8.3: Ćwiczenie
 Zdefiniować jdk, maven oraz docker zgodnie z powyższym opisem
 
 ## X 9: Konfiguruj ustawienia bezpieczeństwa
