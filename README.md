@@ -734,9 +734,10 @@ Z odpowiednimi modyfikacjami
 
 ### 8.2: Globalne narzędzia do konfiguracji
 Jenkins pozwala zdefiniować narzędzia wykorzystywane w projektach, takie jak maven, java, docker.  
-``Jenkins -> Zarządzaj Jenkinsem -> Globalne narzędzia do konfiguracji``  
+``Jenkins -> Zarządzaj Jenkinsem -> Globalne narzędzia do konfiguracji``   
 * Maven Configuration
-* JDK  
+* JDK
+
 ```
 Nazwa       jdk8
 JAVA_HOME   /opt/java/jdk8
