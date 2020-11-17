@@ -1395,7 +1395,7 @@ node {
 }
 ```
 ### 15.8: Condition
-Dodać ``Global properties`` ``STAGE_1: false``
+Dodać ``Global properties`` ``STAGE_1: false``  
 ``Jenkins -> Nowy Projekt -> Pipeline (P_11)``
 ```grovy
 pipeline {
