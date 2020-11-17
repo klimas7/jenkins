@@ -754,7 +754,8 @@ MAVEN_HOME  /opt/tools/maven
 Name                docker
 Installation root   /usr/bin
 ```
-
+### 8.2: Globalne narzędzia do konfiguracji dla węzłów
+![Global 3](img/node_11.png)
 ### 8.3: Ćwiczenie
 Zdefiniować jdk, maven oraz docker zgodnie z powyższym opisem
 
