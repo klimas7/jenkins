@@ -1246,7 +1246,7 @@ pipeline {
     }
 }
 ```
-### 15.5: tools
+### 15.5: Tools
 ``Jenkins -> Nowy Projekt -> Pipeline (P_8)``
 ```groovy
 pipeline {
@@ -1308,8 +1308,60 @@ node {
 ```
 ### 15.6: Options
 ``Jenkins -> Nowy Projekt -> Pipeline (P_9)``
-
-### 15.y: In-process Script Approval
+```groovy
+pipeline {
+    agent any
+    tools {
+        jdk 'jdk8'
+    }
+    options {
+        timestamps()
+        buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '2')
+        timeout(time: 15, unit: 'SECONDS')
+    }
+    stages {
+        stage('Stag1'){
+            options {
+                timeout(time: 10, unit: 'SECONDS')
+            }
+            steps {
+                sleep 9
+            }
+        }
+        stage('Stag2'){
+            steps {
+                sleep 15
+            }
+        }
+    }
+}
+```
+``Jenkins -> Nowy Projekt -> Pipeline (P_9_a)``
+```groovy
+properties([
+    buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '2'))
+])
+node {
+    timestamps {
+        timeout(time: 15, unit: 'SECONDS') {
+            stage("Stage 1") {
+                def javaHome = tool name: 'jdk12', type: 'jdk'
+                sh "${javaHome}/bin/java -version"
+                timeout(time: 10, unit: 'SECONDS') {
+                    sleep 9
+                }
+            }
+            stage("Stage 2") {
+                echo "Stage 2"
+                sleep 3
+            }
+        }   
+    }
+}
+```
+### 15.7: Triggers
+### 15.8: Condition
+### 15.9: In-process Script Approval
 ``Jenkins -> Nowy Projekt -> Pipeline (P_X)``
 ```groovy
 pipeline {
@@ -1342,7 +1394,7 @@ Scripts not permitted to use new java.io.File java.lang.String. Administrators c
 ![In approval 1](img/in_approval_1.png)
 ![In approval 2](img/in_approval_2.png)
 ![In approval 3](img/in_approval_3.png)
-### 15.z: Walidacja
+### 15.10: Walidacja
 ```
 ssh -l admin -p 8081 localhost declarative-linter < Jenkinsfile
 ```
