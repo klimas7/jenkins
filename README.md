@@ -1395,10 +1395,54 @@ node {
 }
 ```
 ### 15.8: Condition
+Dodać ``Global properties`` ``STAGE_1: false"
 ``Jenkins -> Nowy Projekt -> Pipeline (P_11)``
 ```grovy
+pipeline {
+    agent any
+    stages {
+        stage('Stage 1') {
+            when {
+              environment name: 'STAGE_1', value: 'true'
+            }
+            steps {
+                echo 'Stage 1'
+                sleep 10
+            }
+        }
+    }
+}
 ```
-
+``Jenkins -> Nowy Projekt -> Pipeline (P_11_a)``
+```
+pipeline {
+    agent any
+    parameters {
+        booleanParam defaultValue: false, description: 'Czy coś ma się deployować', name: 'deploy'
+    }
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building ...'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Test ...'
+                unstable 'Cos poszło nie najlepiej'
+            }
+        }
+        stage('Deploy') {
+            when {
+                expression {params.deploy && currentBuild.currentResult == "SUCCESS" }
+            }
+            steps {
+                echo 'Deploying ...'
+            }
+        }
+    }
+}
+```
 ### 15.9: Parallel
 ``Jenkins -> Nowy Projekt -> Pipeline (P_12)``
 ```groovy
@@ -1424,6 +1468,54 @@ pipeline {
                         echo "Test on linux"
                         sleep 30
                     }
+                }
+            }
+        }
+    }
+}
+```
+``Jenkins -> Nowy Projekt -> Pipeline (P_12_a)``
+```groovy
+pipeline {
+    agent none
+    stages {
+        stage('Run Tests') {
+            parallel {
+                stage('Test On Windows') {
+                    agent any
+                    steps {
+                        echo "Test on windows"
+                        sleep 2
+                        echo "currentResult: " + currentBuild.currentResult
+                        echo "result: " + currentBuild.result
+                    }
+                }
+                stage('Test On Linux') {
+                    agent {
+                        label "linux"
+                    }
+                    steps {
+                        echo "Test on linux"
+                        sleep 5
+                        echo "currentResult: " + currentBuild.currentResult
+                        echo "result: " + currentBuild.result
+                        //error 'error'
+                        //unstable 'unstable'
+                    }
+                }
+            }
+        }
+        stage('Deploy') {
+            agent any
+            steps {
+                echo 'Deploy ...'
+                echo "currentResult: " + currentBuild.currentResult
+                echo "result: " + currentBuild.result
+            }
+            post {
+                always {
+                    echo "currentResult: " + currentBuild.currentResult
+                    echo "result: " + currentBuild.result
                 }
             }
         }
