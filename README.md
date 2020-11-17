@@ -1360,9 +1360,47 @@ node {
 }
 ```
 ### 15.7: Triggers
+``Jenkins -> Nowy Projekt -> Pipeline (P_10)``
+```groovy
+pipeline {
+    agent any
+    triggers {
+      cron '* * * * *'
+      upstream 'p_9'
+    }
+    stages {
+        stage('Stage 1') {
+            steps {
+                echo 'Stage 1'
+                sleep 10
+            }
+        }
+    }
+}
+```
+``Jenkins -> Nowy Projekt -> Pipeline (P_10_a)``
+```groovy
+properties([
+    pipelineTriggers([
+        cron('* * * * *'), 
+        upstream('p_9')
+    ])
+])
+node {
+    stage('Stage 1') {
+        echo "Stage 1"
+        sleep 10
+    }
+}
+```
 ### 15.8: Condition
-### 15.9: In-process Script Approval
-``Jenkins -> Nowy Projekt -> Pipeline (P_X)``
+``Jenkins -> Nowy Projekt -> Pipeline (P_11)``
+
+
+### 15.9: Parallel
+
+### 15.10: In-process Script Approval
+``Jenkins -> Nowy Projekt -> Pipeline (P_12)``
 ```groovy
 pipeline {
     agent {
@@ -1394,7 +1432,7 @@ Scripts not permitted to use new java.io.File java.lang.String. Administrators c
 ![In approval 1](img/in_approval_1.png)
 ![In approval 2](img/in_approval_2.png)
 ![In approval 3](img/in_approval_3.png)
-### 15.10: Walidacja
+### 15.11: Walidacja
 ```
 ssh -l admin -p 8081 localhost declarative-linter < Jenkinsfile
 ```
