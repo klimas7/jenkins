@@ -713,8 +713,8 @@ Odnośniki: [java11-preview-availability](https://jenkins.io/blog/2018/12/14/jav
 ![Node 6](img/node_6.png)
 ### 7.4 Uruchomienie via SSH, Ćwiczenie
 Utworzyć 2 dodatkowe węzły na naszej wirtualnej maszynie przy wykorzystaniu ssh
-* **Linux_1**; etykiety: linux, big_ram; katalog: /work/node1
-* **Windows**, etykiety: windows, katalog: /work/node2
+* **Linux_1**; etykiety: linux big_ram; katalog: /work/node1
+* **Windows**, etykiety: windows; katalog: /work/node2
 
 ```bash
 #Tworzymy katalogi dla naszych węzłów
@@ -1395,10 +1395,40 @@ node {
 ```
 ### 15.8: Condition
 ``Jenkins -> Nowy Projekt -> Pipeline (P_11)``
-
+```grovy
+```
 
 ### 15.9: Parallel
-
+``Jenkins -> Nowy Projekt -> Pipeline (P_12)``
+```groovy
+pipeline {
+    agent none
+    stages {
+        stage('Run Tests') {
+            parallel {
+                stage('Test On Windows') {
+                    agent {
+                        label 'windows'
+                    }
+                    steps {
+                        echo "Test on windows"
+                        sleep 30
+                    }
+                }
+                stage('Test On Linux') {
+                    agent {
+                        label "linux"
+                    }
+                    steps {
+                        echo "Test on linux"
+                        sleep 30
+                    }
+                }
+            }
+        }
+    }
+}
+```
 ### 15.10: In-process Script Approval
 ``Jenkins -> Nowy Projekt -> Pipeline (P_12)``
 ```groovy
