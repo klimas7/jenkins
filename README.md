@@ -655,7 +655,34 @@ Miejsce w Jenkinsie gdzie znajdziemy globalne ustawienia samego Jenkinsa oraz wt
 * Shell
 * E-mail Notification
 
-
+### 6.1: Ćwiczenie, Jenkins Location
+Zdefiniować System Admin e-mail addres ``jenkins.klimas7@gmail.com``
+![Admin Email](img/global_3.png)  
+### 6.2: Ćwiczenie, Global properties
+Dodać kilka zmiennych środowiskowych
+```
+STAGE_1:false
+TEST_BRANCH:master
+TEST_SCRIPT:Test_script
+```
+![Properties](img/global_4.png)  
+### 6.3: Ćwiczenie, Global Build Discarders
+Ustawić globalny log Rotation ``Maksymalna ilość zadań do przechowania: 5``
+![Properties](img/global_5.png)  
+### 6.4: Ćwiczenie, E-mail Notification
+Powiadomienia e-mail z wykorzystaniem konta google
+```
+SMTP server:                smtp.gmail.com
+Use SMTP Authentication:    true
+User Name:                  jenkins.klimas7@gmail.com
+Password:                   <?>
+Use SSL:                    true
+Use TLS:                    true
+SMTP Port:                  465
+```
+![e-mail](img/global_6.png)  
+Konto Google 
+![Google Account](img/global_7.png) 
 ## 7: Zarządzanie węzłami (nodes)
 Dobre praktyki:
 * Węzeł będący masterem powinien myć jak najmniej obciążony
