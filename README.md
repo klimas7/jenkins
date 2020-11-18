@@ -1558,8 +1558,29 @@ pipeline {
     }
 }
 ```
+``Jenkins -> Nowy Projekt -> Pipeline (P_12_b)``
+```groovy
+stage('Run Tests') {
+    parallel linux: {
+        node('linux') {
+            stage('Test On Linux') {
+                echo "Test on linux"
+                sleep 30
+            }
+        }
+    },
+    windows: {
+        node('windows') {
+            stage('Test On Windows') {
+                echo "Test on windows"
+                sleep 30
+            }
+        }
+    }
+}
+```
 ### 15.10: In-process Script Approval
-``Jenkins -> Nowy Projekt -> Pipeline (P_12)``
+``Jenkins -> Nowy Projekt -> Pipeline (P_13)``
 ```groovy
 pipeline {
     agent {
