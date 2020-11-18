@@ -631,7 +631,7 @@ Restart.
 ### 5.1: Ćwiczenie Wykonać powyższy przykład.
 [//]: # Komentarz
 ## 6: Skonfiguruj system
-Miejsce w Jenkinsie gdzie znajdziemy globalne ustawienia samego Jenkinsa oraz wtyczek, zmienne środowiskowe ...
+Miejsce w Jenkinsie gdzie znajdziemy globalne ustawienia samego Jenkinsa oraz wtyczek, zmienne środowiskowe ...  
 ``Jenkins -> Zarządzaj Jenkinsem -> Skonfiguruj system``
 * Globalne ustawienia Maven
 * Konfiguracja węzła głównego (liczba wykonawców, etykiety, plan wykorzystania)
