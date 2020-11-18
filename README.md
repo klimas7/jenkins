@@ -654,6 +654,8 @@ Miejsce w Jenkinsie gdzie znajdziemy globalne ustawienia samego Jenkinsa oraz wt
 * Global Pipeline Libraries [Shared Library](#shared-library)
 * Shell
 * E-mail Notification
+
+
 ## 7: Zarządzanie węzłami (nodes)
 Dobre praktyki:
 * Węzeł będący masterem powinien myć jak najmniej obciążony
