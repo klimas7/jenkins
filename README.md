@@ -810,7 +810,7 @@ Installation root   /usr/bin
 ### 8.3: Ćwiczenie
 Zdefiniować jdk, maven oraz docker zgodnie z powyższym opisem
 
-## X 9: Konfiguruj ustawienia bezpieczeństwa
+## 9: Konfiguruj ustawienia bezpieczeństwa
 ``Jenkins -> Zarządzaj Jenkinsem -> (Security) -> Konfiguruj ustawienia bezpieczeństwa``
 ### 9.1 Authentication
 * Własna baza danych Jenkinsa
