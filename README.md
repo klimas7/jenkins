@@ -681,8 +681,8 @@ Use TLS:                    true
 SMTP Port:                  465
 ```
 ![e-mail](img/global_6.png)  
-Konto Google 
-![Google Account](img/global_7.png) 
+Konto Google  
+![Google Account](img/global_7.png)  
 ## 7: Zarządzanie węzłami (nodes)
 Dobre praktyki:
 * Węzeł będący masterem powinien myć jak najmniej obciążony
