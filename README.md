@@ -1414,7 +1414,7 @@ pipeline {
 }
 ```
 ``Jenkins -> Nowy Projekt -> Pipeline (P_11_a)``
-```
+```groovy
 pipeline {
     agent any
     parameters {
