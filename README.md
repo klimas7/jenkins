@@ -1443,6 +1443,42 @@ pipeline {
     }
 }
 ```
+``Jenkins -> Nowy Projekt -> Pipeline (P_11_b)``
+```groovy
+node {
+    stage('Stage 0') {
+        echo env.STAGE_1
+    }
+    if (env.STAGE_1 == "true") {
+        stage('Stage 1') {
+            echo "Stage 1"
+            sleep 10
+        }
+    }
+}
+```
+``Jenkins -> Nowy Projekt -> Pipeline (P_11_c)``
+```groovy
+properties([
+    parameters([
+        booleanParam(defaultValue: false, description: 'Czy coś ma się deployować', name: 'deploy')
+    ])
+])
+node {
+    stage('Build') {
+        echo 'Building ...'
+    }
+    stage('Test') {
+        echo 'Test ...'
+        //unstable 'Cos poszło nie najlepiej'
+    }
+    if (params.deploy && currentBuild.currentResult == "SUCCESS") {
+        stage('Deploy') {
+            echo 'Deploying ...'
+        }
+    }
+}
+```
 ### 15.9: Parallel
 ``Jenkins -> Nowy Projekt -> Pipeline (P_12)``
 ```groovy
