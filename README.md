@@ -642,12 +642,18 @@ Miejsce w Jenkinsie gdzie znajdziemy globalne ustawienia samego Jenkinsa oraz wt
 * Globalne zmienne (Global properties)
     * Lokalizacja narzędzi, duplikat ``Jenkins -> Zarządzaj Jenkinsem -> Globalne narzędzia do konfiguracji``
     * Zmienne środowiskowe, możemy zdefiniować pary klucz-wartość dostępne w każdym projekcie
-* Pipeline Speed/Durability Settings
+* Pipeline Speed/Durability Settings [Scaling Pipelines](https://www.jenkins.io/doc/book/pipeline/scaling-pipeline/)
     * None: use pipeline default (MAX_SURVIVABILITY)
     * Performance-optimized: much faster (requires clean shutdown to save running pipelines)
     * Less durability, a bit faster (specialty use only)
     * Maximum durability but slowest (previously the only option)
-    
+* Usage Statistics
+* Timestamper
+* Global Build Discarders (news) 
+    * Specific Build Discarder
+* Global Pipeline Libraries [Shared Library](#shared-library)
+* Shell
+* E-mail Notification
 ## 7: Zarządzanie węzłami (nodes)
 Dobre praktyki:
 * Węzeł będący masterem powinien myć jak najmniej obciążony
