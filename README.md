@@ -630,8 +630,24 @@ Restart.
 ![Old Data 4](img/oldData_4.png)  
 ### 5.1: Ćwiczenie Wykonać powyższy przykład.
 [//]: # Komentarz
-## X 6: Skonfiguruj system
-
+## 6: Skonfiguruj system
+Miejsce w Jenkinsie gdzie znajdziemy globalne ustawienia samego Jenkinsa oraz wtyczek, zmienne środowiskowe ...
+``Jenkins -> Zarządzaj Jenkinsem -> Skonfiguruj system``
+* Globalne ustawienia Maven
+* Konfiguracja węzła głównego (liczba wykonawców, etykiety, plan wykorzystania)
+* Okres ponowienia projektu (Quiet period)
+* Liczba powtórzeń przy próbie z systemu kontroli wersji (SCM checkout retry count)
+* Jenkins Location (jenkins URL, System Admin e-mail addres)
+* Serve resource files from another domain - wskazujemy adres zasobów z które Jenkins traktuje jako zaufane
+* Globalne zmienne (Global properties)
+    * Lokalizacja narzędzi, duplikat ``Jenkins -> Zarządzaj Jenkinsem -> Globalne narzędzia do konfiguracji``
+    * Zmienne środowiskowe, możemy zdefiniować pary klucz-wartość dostępne w każdym projekcie
+* Pipeline Speed/Durability Settings
+    * None: use pipeline default (MAX_SURVIVABILITY)
+    * Performance-optimized: much faster (requires clean shutdown to save running pipelines)
+    * Less durability, a bit faster (specialty use only)
+    * Maximum durability but slowest (previously the only option)
+    
 ## 7: Zarządzanie węzłami (nodes)
 Dobre praktyki:
 * Węzeł będący masterem powinien myć jak najmniej obciążony
