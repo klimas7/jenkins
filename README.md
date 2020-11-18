@@ -1614,7 +1614,7 @@ Scripts not permitted to use new java.io.File java.lang.String. Administrators c
 ![In approval 3](img/in_approval_3.png)
 ### 15.11: Walidacja
 ```
-ssh -l admin -p 8081 localhost declarative-linter < Jenkinsfile
+ssh -l admin -p 8081 192.168.0.178 declarative-linter < Jenkinsfile
 ```
 ## 16: Shared Library
 Pozwalają wyodrębnić oraz współdzielić wspólne części pomiędzy wieloma potokami.
