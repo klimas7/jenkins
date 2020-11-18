@@ -815,23 +815,27 @@ Zdefiniować jdk, maven oraz docker zgodnie z powyższym opisem
 ### 9.1 Authentication
 * Własna baza danych Jenkinsa
 * LDAP
+
 ### 9.2 Authorization
 * Każdy użytkownik może wszystko
 * Logged-in users can do anything
 * Matrix-based security
 * Project-based Matrix Authorization Strategy
+
 ### 9.3 Agents
 Definicja portu, z którego będą korzystać agenci do komunikacji z Jenkinsem  
 ![Agents port](img/security_3.png)  
 [Uruchomienie via JNLP](#71-uruchomienie-via-jnlp)
 ### 9.4 SSH Server
 Definicja portu dla serwera ssh wbudowanego w Jenkinsa wykorzystywany do Jenkins CLI  
-![SSH port](img/security_4.png)
+![SSH port](img/security_4.png)  
+[SSH](#111-ssh)
+
 ## 10: Konsola skryptów
 Kolejnym z przydatnych narzędzi dostępnych w Jenkinsie jest konsola skryptów.  
 ``Jenkins -> Zarządzaj Jenkinsem -> (Tools and Actions) -> Konsola skryptów``
 ![Groovy 1](img/groovy_1.png)  
-[SSH](#111-ssh)
+
 ```groovy
 // Wyświetlenie dostępnych wtyczek 
 println(Jenkins.instance.pluginManager.plugins)
