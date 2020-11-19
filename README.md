@@ -831,7 +831,7 @@ Definicja portu dla serwera ssh wbudowanego w Jenkinsa wykorzystywany do Jenkins
 ![SSH port](img/security_4.png)  
 [SSH](#111-ssh)
 
-### 9.5 Ćwiczenie,
+### 9.5 Ćwiczenie 1
 Autentykacja za pomocą LDAP (Lightweight Directory Access Protocol). [Nasz LDAP UI](http://ovh.klimas7.pl/ldap/)
 ```
 Server:                         ovh.klimas7.pl
@@ -846,10 +846,13 @@ Email Address LDAP attribute:   mail
 ![LDAP Configuration](img/ldap_1.png)  
 ![LDAP Configuration 2](img/ldap_2.png) 
 
-### 9.6 Ćwiczenie 2,
+### 9.6 Ćwiczenie 2
 Zalogowany użytkownik może wszystko, ananimowy użytkownik ma mieć możliwość odczytu  
 ``Authorization -> Logged-in users can do anything -> Allow anonymous read access``  
 ![Authorization 1](img/security_5.png)
+
+### 9.7 Ćwiczenie 3
+### 9.8 Ćwiczenie 4
 
 ## 10: Konsola skryptów
 Kolejnym z przydatnych narzędzi dostępnych w Jenkinsie jest konsola skryptów.  
