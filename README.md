@@ -844,14 +844,27 @@ Display Name LDAP attribute:    displayname
 Email Address LDAP attribute:   mail  
 ```
 ![LDAP Configuration](img/ldap_1.png)  
-![LDAP Configuration 2](img/ldap_2.png) 
+![LDAP Configuration 2](img/ldap_2.png)  
 
+LDAP Hints! 
+* użytkownicy: jadmin, bklimas, jwajda, jzmarz, pkocot, rpaliga, mrawski, gwawryk, amarchut, pzadrozny, akalynovska, asemenkov, mkajdanska, mchernetskyi, upietrusa
+* każdy ma hasło ``12345678``
+* grupy: admin, dev, git, qa
+* jadmin (Jenkins Administrator) należy tylko do grupy admin
+* bklimas (Boguslaw Klimas) nie należy do grupy admin
+* Pozostali użytkownicy należą do wszystkich grup  
+
+Test: Test LDAP settings  
+![LDAP Test](img/ldap_3.png)
+![LDAP Test](img/ldap_4.png)
 ### 9.6 Ćwiczenie 2
 Zalogowany użytkownik może wszystko, ananimowy użytkownik ma mieć możliwość odczytu  
 ``Authorization -> Logged-in users can do anything -> Allow anonymous read access``  
 ![Authorization 1](img/security_5.png)
 
 ### 9.7 Ćwiczenie 3
+Przykład z ćwiczenia 2 zrealizować za pomocą ``Matrix-based security``  
+![Matrix configuration](img/matrix_1.png)
 ### 9.8 Ćwiczenie 4
 
 ## 10: Konsola skryptów
