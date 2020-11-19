@@ -881,7 +881,7 @@ Hint!
 ### 9.9 Ćwiczenie 5
 Wykujemy ćwiczenie 4 w kontekście ``Project-based Matrix Authorization Strategy``  
 ![Matrix configuration 2](img/matrix_3.png)  
-Dodajemy nowy projekty (nie musi robić nic)
+Dodajemy nowy projekty (nie musi robić nic)  
 ``Jenkins -> Nowy Projekt -> Ogólny projekt (Matrix_1)``  
 Przy aktywowanym ``Project-based Matrix Authorization Strategy`` w każdym nowym projekcie mamy dostępną opcję ``Enable project-based security``
 gdzie możemy określić konkretne uprawnienia w donośnie do konkretnego projektu  
