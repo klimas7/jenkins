@@ -878,6 +878,10 @@ Hint!
 
 ![Matrix configuration](img/matrix_2.png)
 
+### 9.9 Ćwiczenie 5
+Wykujemy ćwiczenie 4 w kontekście ``Project-based Matrix Authorization Strategy``  
+![Matrix configuration 2](img/matrix_3.png)  
+Dodatkowo 
 ## 10: Konsola skryptów
 Kolejnym z przydatnych narzędzi dostępnych w Jenkinsie jest konsola skryptów.  
 ``Jenkins -> Zarządzaj Jenkinsem -> (Tools and Actions) -> Konsola skryptów``
