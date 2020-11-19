@@ -881,7 +881,21 @@ Hint!
 ### 9.9 Ćwiczenie 5
 Wykujemy ćwiczenie 4 w kontekście ``Project-based Matrix Authorization Strategy``  
 ![Matrix configuration 2](img/matrix_3.png)  
-Dodatkowo 
+Dodajemy nowy projekty (nie musi robić nic)
+``Jenkins -> Nowy Projekt -> Ogólny projekt (Matrix_1)``  
+Przy aktywowanym ``Project-based Matrix Authorization Strategy`` w każdym nowym projekcie mamy dostępną opcję ``Enable project-based security``
+gdzie możemy określić konkretne uprawnienia w donośnie do konkretnego projektu  
+
+Hint!
+* Mamy możliwość określenia strategi dziedziczenia uprawnień ``Inheritance Strategy``
+
+Dla projektu ``matrix_1`` zdefiniować następujące zasady bezpieczeństwa
+* Anonimowy użytkownik powinien mieć odczyt
+* Inny zalogowany użytkownik powinien mieć możliwość odczyt, jak i uruchomienia
+* użytkownik bklimas powinien mieć pełen dostęp do tego projektu
+
+![Project Matrix configuration](img/matrix_4.png) 
+
 ## 10: Konsola skryptów
 Kolejnym z przydatnych narzędzi dostępnych w Jenkinsie jest konsola skryptów.  
 ``Jenkins -> Zarządzaj Jenkinsem -> (Tools and Actions) -> Konsola skryptów``
