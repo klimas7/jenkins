@@ -1088,8 +1088,8 @@ $ java -jar jenkins-cli.jar -s http://192.168.0.178:8080/ -ssh -user admin get-j
 ```
 tworzymy nowy job ``CLI_Invoke`` na podstawie pustego szablonu (tworzymy plik template_job.xml) 
 ```xml
-<!-- template_job.xml -->
 <?xml version='1.1' encoding='UTF-8'?>
+<!-- template_job.xml -->
 <project>
   <description></description>
   <keepDependencies>false</keepDependencies>
@@ -1114,8 +1114,8 @@ $ java -jar jenkins-cli.jar -s http://192.168.0.178:8080/ -auth admin:116f410f45
 $ java -jar jenkins-cli.jar -s http://192.168.0.178:8080/ -auth admin:116f410f45f00c7b533ddc889e978fec37 console CLI_Invoke 1
 ```
 ```xml
-<!-- update_job.xml -->
 <?xml version='1.1' encoding='UTF-8'?>
+<!-- update_job.xml -->
 <project>
   <actions/>
   <description></description>
