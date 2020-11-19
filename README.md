@@ -1179,7 +1179,43 @@ Najbardziej podstawowy typ projektu dostępny w Jenkinsie. Możemy w nim wykona�
 Oficjalny opis: _To jest podstawowa funkcja Jenkinsa. Jenkins stworzy projekt łączący dowolny SCM z dowolnym systemem budującym, może to być również wykorzystane do czegoś innego niż budowanie oprogramowania._ 
 najtrafniej oddaje istotę projektu.
 
-### 13.1 Lockable resources
+### 13.1 Istotne opcje
+* Enable project-based security, omawiane w punkcie [Project-based Matrix Authorization Strategy](#99-wiczenie-5)
+* Porzuć stare zadania, ``Strategi -> Log Rotation -> Maksymalna ilość zadań do przechowania -> 5`` decydujemy ile **prawidłowych** wykonań jest przechowywane wstecz.
+  Należy pamiętać, że wykonania usuwane są dopiero po skończonym wykonaniu projektu.
+* This build requires lockable resources **TODO**
+* Throttle builds **TODO**
+* To zadanie jest sparametryzowane
+    * Tekst
+    * Wartość logiczna
+    * Lista wyboru
+    * ...
+    * Active Choice*
+    * Git parameter*
+* Zablokuj zadania, oznacza, że zadanie nie będzie mogło być uruchomione przez użytkownika ani wyzwolone przez zmiany w repozytorium
+* Wykonuj zadania współbieżnie, jeśli zajdzie potrzeba
+* Restrict where this project can be run, określa etykiety agentów, na których dany projekt może być wykonany
+* Cichy okres, możliwość nadpisania ustawień globalnych [Skonfiguruj system](6-skonfiguruj-system) 
+* Liczba ponowień, możliwość nadpisania ustawień globalnych [Skonfiguruj system](6-skonfiguruj-system)
+### 13.2 Repozytorium kodu
+* Git
+    * Additional Behaviours, Advanced checkout behaviours, Advanced clone behaviours
+### 13.3 Wyzwalacze zadania
+* Buduj cyklicznie
+* Pobierz z repozytorium kodu (Pool SCM)
+* Uruchamiaj, gdy inne zadania zostaną zakończone
+### 13.4 Budowanie
+* Invoke top-level Maven targets
+* Uruchom powłokę
+* Run with timeout
+### 13.5 Akcje po zadaniu
+* Zachowaj artefakty
+* E-mail Notification
+* Publish JUnit test result report
+
+### 13.6 Cwiczenie 1
+### 13.6 Cwiczenie 2
+### 13.6 Cwiczenie 3
 
 ## X 14: Maven project
 ## 15: Pipelines
