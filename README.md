@@ -1197,21 +1197,26 @@ najtrafniej oddaje istotę projektu.
 * Restrict where this project can be run, określa etykiety agentów, na których dany projekt może być wykonany
 * Cichy okres, możliwość nadpisania ustawień globalnych [Skonfiguruj system](6-skonfiguruj-system) 
 * Liczba ponowień, możliwość nadpisania ustawień globalnych [Skonfiguruj system](6-skonfiguruj-system)
+
 ### 13.2 Repozytorium kodu
 * Git
     * Additional Behaviours, Advanced checkout behaviours, Advanced clone behaviours
+    
 ### 13.3 Wyzwalacze zadania
 * Buduj cyklicznie
 * Pobierz z repozytorium kodu (Pool SCM)
 * Uruchamiaj, gdy inne zadania zostaną zakończone
+
 ### 13.4 Budowanie
 * Invoke top-level Maven targets
 * Uruchom powłokę
 * Run with timeout
+
 ### 13.5 Akcje po zadaniu
 * Zachowaj artefakty
 * E-mail Notification
 * Publish JUnit test result report
+* Uruchom inne zadania
 
 ### 13.6 Cwiczenie 1
 ### 13.6 Cwiczenie 2
