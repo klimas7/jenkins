@@ -866,6 +866,17 @@ Zalogowany użytkownik może wszystko, ananimowy użytkownik ma mieć możliwoś
 Przykład z ćwiczenia 2 zrealizować za pomocą ``Matrix-based security``  
 ![Matrix configuration](img/matrix_1.png)
 ### 9.8 Ćwiczenie 4
+Hint!
+* Uprawnienia są sumą uprawnień danego użytkownika i grup, do których należy  
+
+Ćwiczenie:
+* użytkownik bklimas powinien mieć dostęp tylko do projektów (uruchomienie i podgląd)
+* użytkownik jadmin powinien mieć uprawnienia administratora
+* wasz użytkownik (np. jzmarz) powinien mieć uprawnienia administratora 
+* Anonimowy użytkownik nie powinien mieć dostępu
+* Inny zalogowany użytkownik powinien mieć tylko odczyt
+
+![Matrix configuration](img/matrix_2.png)
 
 ## 10: Konsola skryptów
 Kolejnym z przydatnych narzędzi dostępnych w Jenkinsie jest konsola skryptów.  
