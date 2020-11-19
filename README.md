@@ -846,6 +846,11 @@ Email Address LDAP attribute:   mail
 ![LDAP Configuration](img/ldap_1.png)  
 ![LDAP Configuration 2](img/ldap_2.png) 
 
+### 9.6 Ćwiczenie 2,
+Zalogowany użytkownik może wszystko, ananimowy użytkownik ma mieć możliwość odczytu  
+``Authorization -> Logged-in users can do anything -> Allow anonymous read access``  
+![Authorization 1](img/security_5.png)
+
 ## 10: Konsola skryptów
 Kolejnym z przydatnych narzędzi dostępnych w Jenkinsie jest konsola skryptów.  
 ``Jenkins -> Zarządzaj Jenkinsem -> (Tools and Actions) -> Konsola skryptów``
