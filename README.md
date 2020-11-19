@@ -1174,7 +1174,13 @@ Przykłady
 
 [Dokumentacja](https://www.jenkins.io/doc/book/using/remote-access-api/)  
 ![Api](img/api_1.png)
-## X 13: Ogólny projekt (Freestyle project)
+## 13: Ogólny projekt (Freestyle project)
+Najbardziej podstawowy typ projektu dostępny w Jenkinsie. Możemy w nim wykonać cokolwiek.  
+Oficjalny opis: _To jest podstawowa funkcja Jenkinsa. Jenkins stworzy projekt łączący dowolny SCM z dowolnym systemem budującym, może to być również wykorzystane do czegoś innego niż budowanie oprogramowania._ 
+najtrafniej oddaje istotę projektu.
+
+### 13.1 Lockable resources
+
 ## X 14: Maven project
 ## 15: Pipelines
 
