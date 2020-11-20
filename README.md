@@ -41,9 +41,9 @@ or
 ssh jenkins@192.168.0.178
 ```
 ## 0: Środowisko
-[//]: * \[LDAP]\(http://ovh.klimas7.pl/ldap/cmd.php)
-[//]: * \[Bitbucket](http://ovh.klimas7.pl/bitbucket)
-[//]: * \[Jenkins](http://ovh.klimas7.pl/jenkins) (tylko do integracji z bitbucket)
+* [LDAP](http://ovh.klimas7.pl/ldap/cmd.php)
+* [Bitbucket](http://ovh.klimas7.pl/bitbucket)
+* [Jenkins](http://ovh.klimas7.pl/jenkins) (tylko do integracji z bitbucket)
 * Każdy z uczestników dzięki LDAP ma konta na Bitbucket oraz Jenkins.
 * Konwencja nazw użytkowników: pierwsza litera imienia + nazwisko bez polskich znaków diakrytycznych. Bogusław Klimas -> bklimas
 
@@ -2350,4 +2350,9 @@ Należy zainstalować wtyczki `Bitbucket Server Integration`, `Bitbucket Server 
 ![Bitbucket 2](img/Bitbucket_2.png)  
 ![Bitbucket 3](img/Bitbucket_3.png)  
 
+### 17.2 Bitbucket Server Integration
+#### Konfiguracja po stronie Jenkinsa
+![Bitbucket 4](img/Bitbucket_4.png)  
+![Bitbucket 5](img/Bitbucket_5.png)  
+![Bitbucket 6](img/Bitbucket_6.png)  
 ## Koniec
