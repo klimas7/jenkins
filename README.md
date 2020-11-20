@@ -43,7 +43,7 @@ ssh jenkins@192.168.0.178
 ## 0: Środowisko
 * [LDAP](http://ovh.klimas7.pl/ldap/cmd.php)
 * [Bitbucket](http://ovh.klimas7.pl/bitbucket)
-* ~~[Jenkins](http://ovh.klimas7.pl/jenkins) (tylko do integracji z bitbucket)~~
+[//]: # * ~~[Jenkins](http://ovh.klimas7.pl/jenkins) (tylko do integracji z bitbucket)~~
 * Każdy z uczestników dzięki LDAP ma konta na Bitbucket oraz Jenkins.
 * Konwencja nazw użytkowników: pierwsza litera imienia + nazwisko bez polskich znaków diakrytycznych. Bogusław Klimas -> bklimas
 
