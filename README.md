@@ -2224,7 +2224,8 @@ pipeline {
 }
 ```
 Sprawdzamy wynik [http://192.168.0.178:8088/api/count/xyz](http://192.168.0.178:8088/api/count/xyz)
-## 16: Shared Library
+## 16: Multibranch Pipeline
+## 17: Shared Library
 Pozwalają wyodrębnić oraz współdzielić wspólne części pomiędzy wieloma potokami.
 Elementy takie mogą być zamknięte w bibliotece przechowywanej w repozytorium kodu.
 
@@ -2336,13 +2337,13 @@ pipeline {
     }
 }
 ```
-### 16.1: Ćwiczenie 
+### 17.1: Ćwiczenie 
 Wykorzystać przygotowaną bibliotekę w przykładowym potoku, prosty skrypt bez parametrów.
-### 16.2: Ćwiczenie*
+### 17.2: Ćwiczenie*
 Wykorzystać przygotowaną bibliotekę w przykładowym potoku, pełen skrypt z użyciem konwencji potoku i parametrów.
-## 17: Bitbucket integration
+## 18: Bitbucket integration
 Należy zainstalować wtyczki `Bitbucket Server Integration`, `Bitbucket Server Notifier` 
-### 17.1 Hook oraz notyfikacja
+### 18.1 Hook oraz notyfikacja
 #### Konfiguracja po stronie repozytorium
 ![Bitbucket 1](img/Bitbucket_1.png)  
 #### Konfiguracja po stronie Jenkinsa oraz projektu
@@ -2350,7 +2351,7 @@ Należy zainstalować wtyczki `Bitbucket Server Integration`, `Bitbucket Server 
 ![Bitbucket 2](img/Bitbucket_2.png)  
 ![Bitbucket 3](img/Bitbucket_3.png)  
 
-### 17.2 Bitbucket Server Integration
+### 18.2 Bitbucket Server Integration
 #### Konfiguracja po stronie Jenkinsa
 ![Bitbucket 4](img/Bitbucket_4.png)  
 ![Bitbucket 5](img/Bitbucket_5.png)  
