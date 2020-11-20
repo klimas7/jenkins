@@ -669,7 +669,6 @@ Restart.
 ![Old Data 3](img/oldData_3.png)  
 ![Old Data 4](img/oldData_4.png)  
 ### 5.1: Ćwiczenie Wykonać powyższy przykład.
-[//]: # Komentarz
 ## 6: Skonfiguruj system
 Miejsce w Jenkinsie gdzie znajdziemy globalne ustawienia samego Jenkinsa oraz wtyczek, zmienne środowiskowe ...  
 ``Jenkins -> Zarządzaj Jenkinsem -> Skonfiguruj system``
@@ -2341,5 +2340,5 @@ pipeline {
 Wykorzystać przygotowaną bibliotekę w przykładowym potoku, prosty skrypt bez parametrów.
 ### 16.2: Ćwiczenie*
 Wykorzystać przygotowaną bibliotekę w przykładowym potoku, pełen skrypt z użyciem konwencji potoku i parametrów.
-## X 17: Bitbucket integration
+[//]: # Komentarz ## X 17: Bitbucket integration
 ## Koniec
