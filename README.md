@@ -40,6 +40,10 @@ ssh root@192.168.0.178
 or
 ssh jenkins@192.168.0.178
 ```
+## 0: Środowisko
+* [Bitbucket](http://ovh.klimas7.pl/bitbucket)
+* [LDAP](http://ovh.klimas7.pl/ldap/cmd.php)
+* ~~Jenkins http://ovh.klimas7.pl/jenkins (tylko do integracji z bitbucket)~~
 ## 1: Uruchomienie 
 ### Instalacja via dnf
 Definicja repozytorium i import klucza
