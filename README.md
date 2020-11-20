@@ -1264,7 +1264,7 @@ Instalujemy wtyczki: ``Active Choices, Git Parameter, Conditional BuildStep, Par
     * Repozytorium kodu: Git, Repository URL `ssh://git@ovh.klimas7.pl:7999/lab/learn.git` (waga musimy mieć wygenerowany klucz i dodany klucz publiczny do bitbucketa)
     * Branch Specifier odczytywany z parametru `branch`
     * Repository browser: `bitbucketweb` URL `http://ovh.klimas7.pl/bitbucket/projects/LAB/repos/learn`
-    * Projekt powinien sprawdzać zmiany w kodzie co 5 minut i wykonywać kompilację, jeśli zmiany zostały wprowadzone
+    * Projekt powinien sprawdzać zmiany w kodzie co 5 minut `*/5 * * * *` i wykonywać kompilację, jeśli zmiany zostały wprowadzone
     * Post-commit hooks powinny być ignorowane
     * Krokiem budowania powinien być `Invoke top-level Maven targets` z wersją mavena `mvn` oraz celami `clean install`
     * Wygenerowany artefakt (Learn.*.jar) powinien być archiwizowany
@@ -1331,7 +1331,16 @@ Na podstawie zdefiniowanego repozytorium git wtyczka umożliwia wybranie ``tag, 
 ![Git Parameter 1](img/git_parameter_1.png)  
 ![Git Parameter 2](img/git_parameter_2.png)  
 ![Git Parameter 3](img/git_parameter_3.png)  
-## X 14: Maven project
+## 14: Maven project
+W porównaniu z ogólnym projektem `Maven project` ma odgórnie zdefiniowany główny krok budowania oraz kroki, które można wykonać przed (pre) jako i po (post).
+
+### 14.1 Ćwiczenie
+Dla projektu typu maven wykonać [13.7 Ćwiczenie 2](#137-wiczenie-2)
+
+Hint!
+* Wyniki testów są dostępne automatycznie 
+* W projekcie typu maven mamy dostępne moduły, w których przetrzymywane są artefakty
+
 ## 15: Pipelines
 
 **_Your Job is Your Code_**
