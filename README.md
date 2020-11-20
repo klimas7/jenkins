@@ -1240,6 +1240,7 @@ Instalujemy wtyczki: ``Active Choices, Git Parameter, Conditional BuildStep, Par
     * powinien mieć parametr tekstowy o nazwie `info` (domyślnie pusty)
     * jako krok wykonania powinien wypisać wartość parametru `info`, nazwę projektu, numer kompilacji oraz build tag
     * w kolejnym kroku powinien poczekać `10 s`
+    
 ### 13.6 Ćwiczenie 2
 
 ### 13.7 lockable resources*
