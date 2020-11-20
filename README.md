@@ -1183,7 +1183,7 @@ najtrafniej oddaje istotę projektu.
 * Enable project-based security, omawiane w punkcie [Project-based Matrix Authorization Strategy](#99-wiczenie-5)
 * Porzuć stare zadania, ``Strategi -> Log Rotation -> Maksymalna ilość zadań do przechowania -> 5`` decydujemy ile **prawidłowych** wykonań jest przechowywane wstecz.
   Należy pamiętać, że wykonania usuwane są dopiero po skończonym wykonaniu projektu.
-* This build requires lockable resources **TODO**
+* This build requires [lockable resources](#137-lockable-resources)
 * Throttle builds **TODO**
 * To zadanie jest sparametryzowane
     * Tekst
@@ -1218,10 +1218,32 @@ najtrafniej oddaje istotę projektu.
 * Publish JUnit test result report
 * Uruchom inne zadania
 
-### 13.6 Cwiczenie 1
-### 13.6 Cwiczenie 2
-### 13.6 Cwiczenie 3
-
+### 13.6 Ćwiczenie 1
+### 13.6 Ćwiczenie 2
+### 13.6 Ćwiczenie 3
+### 13.7 lockable resources*
+Definicja ``Jenkins -> Zarządzaj Jenkinsem -> (System Configuration) -> Skonfiguruj system -> Lockable Resources Manager``
+```
+Resource:
+  Name: Test_Resources
+  Description: Example Test Resources
+  Labels: test_resouce
+  Reserved by: 
+```
+![Lockable Resources 1](img/resource_1.png)  
+Monitoring ``Jenkins -> Lockable Resources``  
+![Lockable Resources 2](img/resource_2.png)  
+Dodajemy konfiguracje w projekcie  
+![Lockable Resources 4](img/resource_4.png)  
+```
+Uruchomiono przez użytkownika Jenkins Administrator
+Running as SYSTEM
+[lockable-resources] acquired lock on [Test_Resources]
+Building on master in workspace /opt/tools/jenkins/workspace/Job_A
+```
+![Lockable Resources 3](img/resource_3.png)  
+Jeżeli zasoby będą zablokowane to przy uruchomieniu projektu otrzymamy następujący komunikat  
+![Lockable Resources 5](img/resource_5.png)  
 ## X 14: Maven project
 ## 15: Pipelines
 
