@@ -1184,7 +1184,7 @@ najtrafniej oddaje istotę projektu.
 * Porzuć stare zadania, ``Strategi -> Log Rotation -> Maksymalna ilość zadań do przechowania -> 5`` decydujemy ile **prawidłowych** wykonań jest przechowywane wstecz.
   Należy pamiętać, że wykonania usuwane są dopiero po skończonym wykonaniu projektu.
 * This build requires [lockable resources](#137-lockable-resources)
-* Throttle builds **TODO**
+* Throttle builds, określenie jak często dany projekt może być wykonany np. nie częściej niż raz na godzinę [Throttle builds](#138-Throttle-builds)
 * To zadanie jest sparametryzowane
     * Tekst
     * Wartość logiczna
@@ -1244,6 +1244,11 @@ Building on master in workspace /opt/tools/jenkins/workspace/Job_A
 ![Lockable Resources 3](img/resource_3.png)  
 Jeżeli zasoby będą zablokowane to przy uruchomieniu projektu otrzymamy następujący komunikat  
 ![Lockable Resources 5](img/resource_5.png)  
+### 13.8 Throttle builds*
+Definiujemy w projekcie  
+![Throttle 1](img/throttle_1.png)  
+Przy próbie wcześniejszego uruchomienia projektu lub jego wyzwolenia otrzymamy
+![Throttle 2](img/throttle_2.png)  
 ## X 14: Maven project
 ## 15: Pipelines
 
