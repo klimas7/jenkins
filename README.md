@@ -1942,6 +1942,249 @@ pipeline {
     }
 }
 ```
+### 15.13: RestCounter project
+W pierwszej kolejności na naszej wirtualnej maszynie musimy otworzyć port `8088` w zaporze sieciowej
+```bash
+# as root
+firewall-cmd --permanent --zone=public --add-port=8088/tcp
+systemctl restart firewalld
+firewall-cmd --list-all
+```
+
+``Jenkins -> Nowy Projekt -> Pipeline (RestCounter_pipeline)``
+```groovy
+pipeline {
+    agent any
+    tools {
+        maven 'mvn'
+        jdk 'jdk8'
+    }
+    stages {
+        stage('Git'){
+            steps {
+                git branch: 'master', url: 'ssh://git@ovh.klimas7.pl:7999/lab/restcounter.git'
+            }
+        }
+
+        stage ('Build') {
+            steps {
+                sh 'mvn clean install'
+            }
+            post {
+                success {
+                    archive 'target/*.jar'
+                    junit 'target/surefire-reports/*.xml'
+                }
+            }
+        }
+    }
+}
+```
+Dodajemy opcje `deploy` wraz z etapem `Deploy`
+```groovy
+pipeline {
+    agent any
+    parameters {
+        booleanParam defaultValue: true, description: 'Deploy and run application', name: 'deploy'
+    }
+    tools {
+        maven 'mvn'
+        jdk 'jdk8'
+    }
+    stages {
+        stage('Git'){
+            steps {
+                git branch: 'master', url: 'ssh://git@ovh.klimas7.pl:7999/lab/restcounter.git'
+            }
+        }
+
+        stage ('Build') {
+            steps {
+                sh 'mvn clean install'
+            }
+            post {
+                success {
+                    archive 'target/*.jar'
+                    junit 'target/surefire-reports/*.xml'
+                }
+            }
+        }
+        
+        stage ('Deply') {
+            when {
+                expression { params.deploy }
+            }
+            steps {
+                echo "Deploy application"
+            }
+        }
+    }
+}
+```
+Rozbudowujemy etap `Deploy`
+```groovy
+def applicationDir = '/opt/tools/restCounter'
+
+pipeline {
+    parameters {
+      booleanParam defaultValue: true, description: 'Deploy and run application', name: 'deploy'
+    }
+    agent any
+    tools {
+        maven 'maven'
+        jdk 'java8'
+    }
+    stages {
+        stage('Git'){
+            steps {
+                git branch: 'master', url: 'ssh://git@ovh.klimas7.pl:7999/lab/restcounter.git'
+            }
+        }
+
+        stage ('Build') {
+            steps {
+                sh 'mvn clean install'
+            }
+            post {
+                success {
+                    archive 'target/*.jar'
+                    junit 'target/surefire-reports/*.xml'
+                }
+            }
+        }
+        stage ('Deply') {
+            when {
+                expression { params.deploy }
+            }
+            steps {
+                echo "Deploy application"
+                sh "mkdir -p ${applicationDir}"
+                sh "cp target/*.jar ${applicationDir}"
+                sh "cp restCounter.sh ${applicationDir}"
+            }
+        }
+    }
+}
+```
+```bash
+$ ll restCounter/
+razem 17516
+-rw-rw-r--. 1 jenkins jenkins 17928440 11-20 14:15 restCounter.jar
+-rwxrwxr-x. 1 jenkins jenkins      556 11-20 14:15 restCounter.sh
+```
+Startujemy naszą aplikację
+```groovy
+def applicationDir = '/opt/tools/restCounter'
+
+pipeline {
+    agent any
+    parameters {
+        booleanParam defaultValue: true, description: 'Deploy and run application', name: 'deploy'
+    }
+    tools {
+        maven 'mvn'
+        jdk 'jdk8'
+    }
+    stages {
+        stage('Git'){
+            steps {
+                git branch: 'master', url: 'ssh://git@ovh.klimas7.pl:7999/lab/restcounter.git'
+            }
+        }
+
+        stage ('Build') {
+            steps {
+                sh 'mvn clean install'
+            }
+            post {
+                success {
+                    archive 'target/*.jar'
+                    junit 'target/surefire-reports/*.xml'
+                }
+            }
+        }
+        
+        stage ('Deply') {
+            when {
+                expression { params.deploy }
+            }
+            steps {
+                echo "Deploy application"
+                sh "mkdir -p ${applicationDir}"
+                sh "cp target/*.jar ${applicationDir}"
+                sh "cp restCounter.sh ${applicationDir}"
+                dir("${applicationDir}") {
+                    sh "${applicationDir}/restCounter.sh stop"
+                    sh "${applicationDir}/restCounter.sh start &"
+                    sleep 120
+                }
+            }
+        }
+    }
+}
+```
+Sprawdzamy wynik [http://192.168.0.178:8088/api/count/xyz](http://192.168.0.178:8088/api/count/xyz)  
+Niestety nasza aplikacja będzie działała tylko przez 2 minuty! [ProcessTreeKiller](https://wiki.jenkins.io/display/JENKINS/ProcessTreeKiller)
+Rozwiążmy ten problem i dodajmy sprawdzanie budowania
+```groovy
+def applicationDir = '/opt/tools/restCounter'
+
+pipeline {
+    agent any
+    
+    parameters {
+        booleanParam defaultValue: true, description: 'Deploy and run application', name: 'deploy'
+    }
+    
+    tools {
+        maven 'mvn'
+        jdk 'jdk8'
+    }
+    
+    triggers {
+        pollSCM '*/5 * * * *', ignorePostCommitHooks: true
+    }
+    
+    stages {
+        stage('Git'){
+            steps {
+                git branch: 'master', url: 'ssh://git@ovh.klimas7.pl:7999/lab/restcounter.git'
+            }
+        }
+
+        stage ('Build') {
+            steps {
+                sh 'mvn clean install'
+            }
+            post {
+                success {
+                    archive 'target/*.jar'
+                    junit 'target/surefire-reports/*.xml'
+                }
+            }
+        }
+        
+        stage ('Deply') {
+            when {
+                expression { params.deploy }
+            }
+            steps {
+                echo "Deploy application"
+                sh "mkdir -p ${applicationDir}"
+                sh "cp target/*.jar ${applicationDir}"
+                sh "cp restCounter.sh ${applicationDir}"
+                dir("${applicationDir}") {
+                    //sh "${applicationDir}/restCounter.sh stop"
+                    //sh "${applicationDir}/restCounter.sh start &"
+                    //sleep 120
+                    sh "export JENKINS_NODE_COOKIE=REST_COUNTER; ${applicationDir}/restCounter.sh start &"
+                }
+            }
+        }
+    }
+}
+```
+Sprawdzamy wynik [http://192.168.0.178:8088/api/count/xyz](http://192.168.0.178:8088/api/count/xyz)
 ## 16: Shared Library
 Pozwalają wyodrębnić oraz współdzielić wspólne części pomiędzy wieloma potokami.
 Elementy takie mogą być zamknięte w bibliotece przechowywanej w repozytorium kodu.
