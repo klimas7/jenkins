@@ -1267,9 +1267,14 @@ Script:         Groovy Script
 Groovy Script:  def map = ['a': ['a1','a2','a3'],'b': ['b1','b2','b3'],'c': ['c1','c2','c3']]
                 return map[param_a]
 Choice Type:    Single Select
-Referenced parameters:  params_a	
+Referenced parameters:  param_a	
 ```
-![Active 1](img/active_1.png) 
+![Active 1](img/active_1.png)  
+#### Git Parameter
+Na podstawie zdefiniowanego repozytorium git wtyczka umożliwia wybranie ``tag, branch, branch lub tag, Revision, Pull Request``
+![Git Parameter 1](img/git_parameter_1.png)  
+![Git Parameter 2](img/git_parameter_2.png)  
+![Git Parameter 3](img/git_parameter_3.png)  
 ## X 14: Maven project
 ## 15: Pipelines
 
