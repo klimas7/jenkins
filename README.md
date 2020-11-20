@@ -41,9 +41,45 @@ or
 ssh jenkins@192.168.0.178
 ```
 ## 0: Środowisko
-* [Bitbucket](http://ovh.klimas7.pl/bitbucket)
 * [LDAP](http://ovh.klimas7.pl/ldap/cmd.php)
+* [Bitbucket](http://ovh.klimas7.pl/bitbucket)
 * ~~Jenkins http://ovh.klimas7.pl/jenkins (tylko do integracji z bitbucket)~~
+* Każdy z uczestników dzięki LDAP ma konta na Bitbucket oraz Jenkins.
+* Konwencja nazw użytkowników: pierwsza litera imienia + nazwisko bez polskich znaków diakrytycznych. Bogusław Klimas -> bklimas
+
+Zanim przejdziemy do dalszych działań, należy wygenerować klucze ssh na naszej wirtualnej maszynie.
+Następnie klucz publiczny przypisać do swojego konta w Bitbuckecie.
+```bash
+$ ssh-keygen -t rsa -C bklimas@acme.com
+
+$ ll ~/.ssh/
+razem 12
+-rw-------. 1 jenkins jenkins 1843 11-15 10:08 id_rsa
+-rw-r--r--. 1 jenkins jenkins  411 11-15 10:08 id_rsa.pub
+-rw-r--r--. 1 jenkins jenkins  571 11-15 09:55 known_hosts
+
+$ cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCzsDiyJ+4WZAwaYDVz43Zrm6RCxPTzFWXnUfuBdAx6BmM98gxnveU0k+AbiiF739ZTDKxmWHyBmgGKVMzrSYoldKAPvTii4X/FtQfdsUrvl3gL9E+UM2MJ3k+yaYS88RmfDH7TTYBAwvFYqP3+F7F9tX+Te2Purf/ZwU+r5ekPMP4gtkO9Pi1XtzdOAW2vDHrXm2QJqOQPa8Ppx6SalrLOnlCjo5RtpEIBhjTN3WkwhRYHxDZedTZE0YFyn8fNna4UlZiEhPaLRu6utykDTyfOOhFiONYj9naNzv0/wIAYgYAFreD5CCNZEVMKIYwuKlS9Tb0gyzpDQYBjNGAvks2v jenkins@localhost.localdomain
+```
+Bitbucket [SSH keys](http://ovh.klimas7.pl/bitbucket/plugins/servlet/ssh/account/keys)
+![Keys 1](img/keys_1.png)
+Dodatkowo na wirtualnej maszynie, jak i na naszym komputerze (zapis hosta do ~/.known_hosts)
+
+Bardzo pomocnym będzie także wgranie swojego klucza (z konta, którego teraz używacie) 
+publicznego do Bitbucketa (nie ma się co obawiać to klucz publiczny!)
+
+```bash
+cd /tmp
+git clone ssh://git@ovh.klimas7.pl:7999/lab/learn.git
+
+$ git clone ssh://git@ovh.klimas7.pl:7999/lab/learn.git
+Cloning into 'learn'...
+The authenticity of host '[ovh.klimas7.pl]:7999 ([51.89.23.232]:7999)' can't be established.
+RSA key fingerprint is SHA256:N9yD+ozjLANIDbEfFL/zuqv1smd1sBY58NJOSakHjuo.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '[ovh.klimas7.pl]:7999,[51.89.23.232]:7999' (RSA) to the list of known hosts
+```
+
 ## 1: Uruchomienie 
 ### Instalacja via dnf
 Definicja repozytorium i import klucza
