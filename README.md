@@ -1185,9 +1185,9 @@ Instalujemy wtyczki: ``Active Choices, Git Parameter, Conditional BuildStep, Par
 * Enable project-based security, omawiane w punkcie [Project-based Matrix Authorization Strategy](#99-wiczenie-5)
 * Porzuć stare zadania, ``Strategi -> Log Rotation -> Maksymalna ilość zadań do przechowania -> 5`` decydujemy, ile wykonań jest przechowywane wstecz.
   Jenkins pozostawi jedno prawidłowe wykonanie, jeżeli istnieje. Należy pamiętać, że wykonania usuwane są dopiero po skończonym wykonaniu projektu.
-* This build requires [lockable resources](#137-lockable-resources)
-* Throttle builds, określenie jak często dany projekt może być wykonany np. nie częściej niż raz na godzinę [Throttle builds](#138-Throttle-builds)
-* To zadanie jest sparametryzowane [Warto zwrócić uwagę](#139-dodatkowe-parametry)
+* This build requires [lockable resources](#138-lockable-resources)
+* Throttle builds, określenie jak często dany projekt może być wykonany np. nie częściej niż raz na godzinę [Throttle builds](#139-Throttle-builds)
+* To zadanie jest sparametryzowane [Warto zwrócić uwagę](#1310-dodatkowe-parametry)
     * Tekst
     * Wartość logiczna
     * Lista wyboru
@@ -1222,6 +1222,11 @@ Instalujemy wtyczki: ``Active Choices, Git Parameter, Conditional BuildStep, Par
 
 ### 13.6 Ćwiczenie 1
 * Tworzymy dwa ogólne projekty ``Build, Deploy``
+* Projekt ``Deploy``
+    * powinien przetrzymywać 10 ostatnich wykonań
+    * powinien mieć parametr tekstowy o nazwie `info` (domyślnie pusty)
+    * jako krok wykonania powinien wypisać wartość parametru `info`, nazwę projektu, numer kompilacji oraz build tag
+    * w kolejnym kroku powinien poczekać `10 s`
 * Projekt ``Build`` 
     * powinien przetrzymywać 10 ostatnich wykonań
     * powinien zablokować dedykowany sobie zasób 
@@ -1235,15 +1240,23 @@ Instalujemy wtyczki: ``Active Choices, Git Parameter, Conditional BuildStep, Par
     * jeżeli zaznaczono ``deploy`` to powinna być wypisana informacja `Deploy will be invoke` oraz wartość parametru info
     * jeżeli zaznaczono ``deploy`` powinien zostać wywołany projekt ``Deploy`` z przekazaniem wszystkich parametrów
     * Należy poczekać na zakończenie projektu `deploy`
-* Projekt ``Deploy``
-    * powinien przetrzymywać 10 ostatnich wykonań
-    * powinien mieć parametr tekstowy o nazwie `info` (domyślnie pusty)
-    * jako krok wykonania powinien wypisać wartość parametru `info`, nazwę projektu, numer kompilacji oraz build tag
-    * w kolejnym kroku powinien poczekać `10 s`
-    
-### 13.6 Ćwiczenie 2
 
-### 13.7 lockable resources*
+* `Deploy`
+![Job Deploy 1](img/job_deploy_1.png)   
+![Job Deploy 2](img/job_deploy_2.png)   
+
+* `Build`
+![Job Build 1](img/job_build_1.png)   
+![Job Build 2](img/job_build_2.png)  
+![Job Build 3](img/job_build_3.png)  
+![Job Build 4](img/job_build_4.png)  
+![Job Build 5](img/job_build_5.png)  
+![Job Build 6](img/job_build_6.png)  
+![Job Build 7](img/job_build_7.png)  
+
+### 13.7 Ćwiczenie 2
+
+### 13.8 lockable resources*
 Definicja ``Jenkins -> Zarządzaj Jenkinsem -> (System Configuration) -> Skonfiguruj system -> Lockable Resources Manager``
 ```
 Resource:
@@ -1266,12 +1279,12 @@ Building on master in workspace /opt/tools/jenkins/workspace/Job_A
 ![Lockable Resources 3](img/resource_3.png)  
 Jeżeli zasoby będą zablokowane to przy uruchomieniu projektu otrzymamy następujący komunikat  
 ![Lockable Resources 5](img/resource_5.png)  
-### 13.8 Throttle builds*
+### 13.9 Throttle builds*
 Definiujemy w projekcie  
 ![Throttle 1](img/throttle_1.png)  
 Przy próbie wcześniejszego uruchomienia projektu lub jego wyzwolenia otrzymamy
 ![Throttle 2](img/throttle_2.png)  
-### 13.9 Dodatkowe parametry*
+### 13.10 Dodatkowe parametry*
 #### Active Choices
 ``To zadanie jest sparametryzowane -> Active Choices Parameter``
 ```
