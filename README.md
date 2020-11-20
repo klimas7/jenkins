@@ -1255,6 +1255,29 @@ Instalujemy wtyczki: ``Active Choices, Git Parameter, Conditional BuildStep, Par
 ![Job Build 7](img/job_build_7.png)  
 
 ### 13.7 Ćwiczenie 2
+* Tworzymy ogólne projekty ``Build_Learn``
+* Projekt ``Build_Learn``
+    * powinien przetrzymywać 10 ostatnich wykonań 
+    * powinna być możliwość wyboru gałęzi, z której będzie kompilowany projekt, nazwa parametru `branch` typ `Branch` wartość domyślna `origin/master`
+    * z cichym okresem `60 s`
+    * liczba prób pobrania z repozytorium `3`
+    * Repozytorium kodu: Git, Repository URL `ssh://git@ovh.klimas7.pl:7999/lab/learn.git` (waga musimy mieć wygenerowany klucz i dodany klucz publiczny do bitbucketa)
+    * Branch Specifier odczytywany z parametru `branch`
+    * Repository browser: `bitbucketweb` URL `http://ovh.klimas7.pl/bitbucket/projects/LAB/repos/learn`
+    * Projekt powinien sprawdzać zmiany w kodzie co 5 minut i wykonywać kompilację, jeśli zmiany zostały wprowadzone
+    * Post-commit hooks powinny być ignorowane
+    * Krokiem budowania powinien być `Invoke top-level Maven targets` z wersją mavena `mvn` oraz celami `clean install`
+    * Wygenerowany artefakt (Learn.*.jar) powinien być archiwizowany
+    * Powinny być zachowywane wyniki testów 
+    * Prawidłowy build powinien zostać zachowany i oznaczony jako `RC #1`
+    
+* ``Build_Learn``
+![Job Build Learn 1](img/job_build_learn_1.png)
+![Job Build Learn 2](img/job_build_learn_2.png)
+![Job Build Learn 3](img/job_build_learn_3.png)
+![Job Build Learn 4](img/job_build_learn_4.png)
+![Job Build Learn 5](img/job_build_learn_5.png)
+![Job Build Learn 6](img/job_build_learn_6.png)
 
 ### 13.8 lockable resources*
 Definicja ``Jenkins -> Zarządzaj Jenkinsem -> (System Configuration) -> Skonfiguruj system -> Lockable Resources Manager``
