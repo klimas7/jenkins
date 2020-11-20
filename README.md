@@ -2340,5 +2340,14 @@ pipeline {
 Wykorzystać przygotowaną bibliotekę w przykładowym potoku, prosty skrypt bez parametrów.
 ### 16.2: Ćwiczenie*
 Wykorzystać przygotowaną bibliotekę w przykładowym potoku, pełen skrypt z użyciem konwencji potoku i parametrów.
-[//]: # Komentarz ## X 17: Bitbucket integration
+## 17: Bitbucket integration
+Należy zainstalować wtyczki `Bitbucket Server Integration`, `Bitbucket Server Notifier` 
+### 17.1 Hook oraz notyfikacja
+#### Konfiguracja po stronie repozytorium
+![Bitbucket 1](img/Bitbucket_1.png)  
+#### Konfiguracja po stronie Jenkinsa oraz projektu
+``Dashboard -> Zarządzaj Jenkinsem -> Skonfiguruj system -> Bitbucket Server Notifier``
+![Bitbucket 2](img/Bitbucket_2.png)  
+![Bitbucket 3](img/Bitbucket_3.png)  
+
 ## Koniec
