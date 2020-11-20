@@ -1179,6 +1179,8 @@ Najbardziej podstawowy typ projektu dostępny w Jenkinsie. Możemy w nim wykona�
 Oficjalny opis: _To jest podstawowa funkcja Jenkinsa. Jenkins stworzy projekt łączący dowolny SCM z dowolnym systemem budującym, może to być również wykorzystane do czegoś innego niż budowanie oprogramowania._ 
 najtrafniej oddaje istotę projektu.
 
+Instalujemy wtyczki: ``Active Choices, Git Parameter, Conditional BuildStep, Parameterized Trigger``
+
 ### 13.1 Istotne opcje
 * Enable project-based security, omawiane w punkcie [Project-based Matrix Authorization Strategy](#99-wiczenie-5)
 * Porzuć stare zadania, ``Strategi -> Log Rotation -> Maksymalna ilość zadań do przechowania -> 5`` decydujemy, ile wykonań jest przechowywane wstecz.
@@ -1209,9 +1211,8 @@ najtrafniej oddaje istotę projektu.
 
 ### 13.4 Budowanie
 * Invoke top-level Maven targets
-* Uruchom powłokę
-* Run with timeout
-* 
+* Uruchom powłokę (list of available environment variables)
+* Conditional step
 
 ### 13.5 Akcje po zadaniu
 * Zachowaj artefakty
@@ -1220,8 +1221,27 @@ najtrafniej oddaje istotę projektu.
 * Uruchom inne zadania
 
 ### 13.6 Ćwiczenie 1
+* Tworzymy dwa ogólne projekty ``Build, Deploy``
+* Projekt ``Build`` 
+    * powinien przetrzymywać 10 ostatnich wykonań
+    * powinien zablokować dedykowany sobie zasób 
+    * powinna być możliwość uruchomienia projektu współbieżnie 
+    * powinien mieć parametr logiczny o nazwie `deploy` (domyślnie `false`)
+    * powinien mieć parametr tekstowy o nazwie `info` (domyślnie `deploy information`)
+    * powinien być uruchomiony na agencie z etykietą `linux`
+    * powinien być uruchomiany cyklicznie co godzinę
+    * jako krok wykonania powinien wypisać wartość parametru `deploy`, nazwę projektu, numer wykonania oraz build tag
+    * w kolejnym kroku powinien poczekać `10 s`
+    * jeżeli zaznaczono ``deploy`` to powinna być wypisana informacja `Deploy will be invoke` oraz wartość parametru info
+    * jeżeli zaznaczono ``deploy`` powinien zostać wywołany projekt ``Deploy`` z przekazaniem wszystkich parametrów
+    * Należy poczekać na zakończenie projektu `deploy`
+* Projekt ``Deploy``
+    * powinien przetrzymywać 10 ostatnich wykonań
+    * powinien mieć parametr tekstowy o nazwie `info` (domyślnie pusty)
+    * jako krok wykonania powinien wypisać wartość parametru `info`, nazwę projektu, numer kompilacji oraz build tag
+    * w kolejnym kroku powinien poczekać `10 s`
 ### 13.6 Ćwiczenie 2
-### 13.6 Ćwiczenie 3
+
 ### 13.7 lockable resources*
 Definicja ``Jenkins -> Zarządzaj Jenkinsem -> (System Configuration) -> Skonfiguruj system -> Lockable Resources Manager``
 ```
@@ -1251,7 +1271,6 @@ Definiujemy w projekcie
 Przy próbie wcześniejszego uruchomienia projektu lub jego wyzwolenia otrzymamy
 ![Throttle 2](img/throttle_2.png)  
 ### 13.9 Dodatkowe parametry*
-Instalujemy wtyczki: ``Active Choices, Git Parameter, Conditional BuildStep``
 #### Active Choices
 ``To zadanie jest sparametryzowane -> Active Choices Parameter``
 ```
