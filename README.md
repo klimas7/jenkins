@@ -1185,7 +1185,7 @@ najtrafniej oddaje istotę projektu.
   Należy pamiętać, że wykonania usuwane są dopiero po skończonym wykonaniu projektu.
 * This build requires [lockable resources](#137-lockable-resources)
 * Throttle builds, określenie jak często dany projekt może być wykonany np. nie częściej niż raz na godzinę [Throttle builds](#138-Throttle-builds)
-* To zadanie jest sparametryzowane
+* To zadanie jest sparametryzowane [Warto zwrócić uwagę](#139-dodatkowe-parametry)
     * Tekst
     * Wartość logiczna
     * Lista wyboru
@@ -1211,6 +1211,7 @@ najtrafniej oddaje istotę projektu.
 * Invoke top-level Maven targets
 * Uruchom powłokę
 * Run with timeout
+* 
 
 ### 13.5 Akcje po zadaniu
 * Zachowaj artefakty
@@ -1249,6 +1250,26 @@ Definiujemy w projekcie
 ![Throttle 1](img/throttle_1.png)  
 Przy próbie wcześniejszego uruchomienia projektu lub jego wyzwolenia otrzymamy
 ![Throttle 2](img/throttle_2.png)  
+### 13.9 Dodatkowe parametry*
+Instalujemy wtyczki: ``Active Choices, Git Parameter, Conditional BuildStep``
+#### Active Choices
+``To zadanie jest sparametryzowane -> Active Choices Parameter``
+```
+Name:           param_a
+Script:         Groovy Script
+Groovy Script:  return ['a','b','c']
+Choice Type:    Single Select
+```
+``To zadanie jest sparametryzowane -> Active Choices Reactive Parameter``
+```
+Name:           param_b
+Script:         Groovy Script
+Groovy Script:  def map = ['a': ['a1','a2','a3'],'b': ['b1','b2','b3'],'c': ['c1','c2','c3']]
+                return map[param_a]
+Choice Type:    Single Select
+Referenced parameters:  params_a	
+```
+![Active 1](img/active_1.png) 
 ## X 14: Maven project
 ## 15: Pipelines
 
