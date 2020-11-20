@@ -1181,8 +1181,8 @@ najtrafniej oddaje istotę projektu.
 
 ### 13.1 Istotne opcje
 * Enable project-based security, omawiane w punkcie [Project-based Matrix Authorization Strategy](#99-wiczenie-5)
-* Porzuć stare zadania, ``Strategi -> Log Rotation -> Maksymalna ilość zadań do przechowania -> 5`` decydujemy ile **prawidłowych** wykonań jest przechowywane wstecz.
-  Należy pamiętać, że wykonania usuwane są dopiero po skończonym wykonaniu projektu.
+* Porzuć stare zadania, ``Strategi -> Log Rotation -> Maksymalna ilość zadań do przechowania -> 5`` decydujemy, ile wykonań jest przechowywane wstecz.
+  Jenkins pozostawi jedno prawidłowe wykonanie, jeżeli istnieje. Należy pamiętać, że wykonania usuwane są dopiero po skończonym wykonaniu projektu.
 * This build requires [lockable resources](#137-lockable-resources)
 * Throttle builds, określenie jak często dany projekt może być wykonany np. nie częściej niż raz na godzinę [Throttle builds](#138-Throttle-builds)
 * To zadanie jest sparametryzowane [Warto zwrócić uwagę](#139-dodatkowe-parametry)
