@@ -1333,6 +1333,7 @@ Na podstawie zdefiniowanego repozytorium git wtyczka umożliwia wybranie ``tag, 
 ![Git Parameter 3](img/git_parameter_3.png)  
 ## 14: Maven project
 W porównaniu z ogólnym projektem `Maven project` ma odgórnie zdefiniowany główny krok budowania oraz kroki, które można wykonać przed (pre) jako i po (post).
+![Maven project 1](img/maven_project_1.png)  
 
 ### 14.1 Ćwiczenie
 Dla projektu typu maven wykonać [13.7 Ćwiczenie 2](#137-wiczenie-2)
@@ -1340,6 +1341,7 @@ Dla projektu typu maven wykonać [13.7 Ćwiczenie 2](#137-wiczenie-2)
 Hint!
 * Wyniki testów są dostępne automatycznie 
 * W projekcie typu maven mamy dostępne moduły, w których przetrzymywane są artefakty
+* Jeżeli projekt się kompiluje, ale w testy wykazują błędy wykonanie oznaczane jest jako niestabilne
 
 ## 15: Pipelines
 
