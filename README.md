@@ -1915,6 +1915,33 @@ Scripts not permitted to use new java.io.File java.lang.String. Administrators c
 ```
 ssh -l admin -p 8081 192.168.0.178 declarative-linter < Jenkinsfile
 ```
+### 15.12: try-catch
+``Jenkins -> Nowy Projekt -> Pipeline (P_14)``
+```groovy
+pipeline {
+
+    agent any
+
+    stages {
+        stage ('Build & Test') {
+            steps {
+                sh 'echo Building... Failure here will fail the build'
+                script {
+                    try {
+                        echo 'Running tests...'
+                        sh 'exit 1'
+                    }
+                    catch (exc) {
+                        echo "Message: " + exc.getMessage()
+                        echo 'Testing failed!'
+                        currentBuild.result = 'UNSTABLE'
+                    }
+                }
+            }
+        }
+    }
+}
+```
 ## 16: Shared Library
 Pozwalają wyodrębnić oraz współdzielić wspólne części pomiędzy wieloma potokami.
 Elementy takie mogą być zamknięte w bibliotece przechowywanej w repozytorium kodu.
