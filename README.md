@@ -905,6 +905,9 @@ Zdefiniować jdk, maven oraz docker zgodnie z powyższym opisem
 * Matrix-based security
 * Project-based Matrix Authorization Strategy
 
+**Uwaga** W przypadku `Matrix-based security` oraz `Project-based Matrix Authorization Strategy` nie jest możliwe permanentnie 
+odebrać roli Administrator, jest ona przywracana ostatniej grupie lub użytkownikowi, który ją posiadał.
+
 ### 9.3 Agents
 Definicja portu, z którego będą korzystać agenci do komunikacji z Jenkinsem  
 ![Agents port](img/security_3.png)  
