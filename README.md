@@ -674,7 +674,7 @@ Miejsce w Jenkinsie gdzie znajdziemy globalne ustawienia samego Jenkinsa oraz wt
 ``Jenkins -> Zarządzaj Jenkinsem -> Skonfiguruj system``
 * Globalne ustawienia Maven
 * Konfiguracja węzła głównego (liczba wykonawców, etykiety, plan wykorzystania)
-* Okres ponowienia projektu (Quiet period)
+* Okres ponowienia projektu, okres spokoju [Quiet period](#65-quiet-period) 
 * Liczba powtórzeń przy próbie z systemu kontroli wersji (SCM checkout retry count)
 * Jenkins Location (jenkins URL, System Admin e-mail addres)
 * Serve resource files from another domain - wskazujemy adres zasobów z które Jenkins traktuje jako zaufane
@@ -722,6 +722,50 @@ SMTP Port:                  465
 ![e-mail](img/global_6.png)  
 Konto Google  
 ![Google Account](img/global_7.png)  
+
+### 6.5: Quiet period
+Okres spokoju, cichy okres czas określony w sekundach gdzie określamy ile projekt czeka z uruchomieniem po wyzwoleniu przez
+* inny projekt
+* zmiany w repozytorium
+
+#### Przykład 1: inny projekt
+``Jenkins -> Nowy Projekt -> Ogólny projekt (QP_Parent)``
+* `Budowanie -> Uruchom powłokę`
+```bash
+echo "Test" ${JOB_NAME}
+sleep 4
+``` 
+* `Akcje po zadaniu -> Uruchom inne zadania`
+Projects to build `QP_Child`  
+
+![Quiet period 1](img/qp_1.png)    
+![Quiet period 2](img/qp_2.png)  
+
+``Jenkins -> Nowy Projekt -> Ogólny projekt (QP_Child)``
+* `Zaawansowane (Opcje) -> Cichy okres -> 60`
+![Quiet period 3](img/qp_3.png)
+
+Uruchamiamy projekt ``QP_Parent``  
+![Quiet period 4](img/qp_4.png)  
+Jeżeli w tym czasie uruchomimy `QP_Parent` kilka razy to projekt podrzędny z cichym okresem nie będzie uruchomiony, w informacji o wystartowaniu otrzymamy
+```
+Started by upstream project "QP_Parent" build number 6
+originally caused by:
+ Uruchomiono przez użytkownika Jenkins Administrator
+Started by upstream project "QP_Parent" build number 7
+originally caused by:
+ Uruchomiono przez użytkownika Jenkins Administrator
+Started by upstream project "QP_Parent" build number 8
+originally caused by:
+ Uruchomiono przez użytkownika Jenkins Administrator
+Started by upstream project "QP_Parent" build number 9
+originally caused by:
+ Uruchomiono przez użytkownika Jenkins Administrator
+```
+#### Przykład 2: zmiany w repozytorium
+![Quiet period 6](img/qp_6.png)  
+![Quiet period 5](img/qp_5.png)  
+
 ## 7: Zarządzanie węzłami (nodes)
 Dobre praktyki:
 * Węzeł będący masterem powinien myć jak najmniej obciążony
@@ -1236,8 +1280,8 @@ Instalujemy wtyczki: ``Active Choices, Git Parameter, Conditional BuildStep, Par
 * Zablokuj zadania, oznacza, że zadanie nie będzie mogło być uruchomione przez użytkownika ani wyzwolone przez zmiany w repozytorium
 * Wykonuj zadania współbieżnie, jeśli zajdzie potrzeba
 * Restrict where this project can be run, określa etykiety agentów, na których dany projekt może być wykonany
-* Cichy okres, możliwość nadpisania ustawień globalnych [Skonfiguruj system](6-skonfiguruj-system) 
-* Liczba ponowień, możliwość nadpisania ustawień globalnych [Skonfiguruj system](6-skonfiguruj-system)
+* Cichy okres, możliwość nadpisania ustawień globalnych [Skonfiguruj system](#6-skonfiguruj-system) 
+* Liczba ponowień, możliwość nadpisania ustawień globalnych [Skonfiguruj system](#6-skonfiguruj-system)
 
 ### 13.2 Repozytorium kodu
 * Git
