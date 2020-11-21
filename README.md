@@ -2272,6 +2272,12 @@ pipeline {
 ```
 Sprawdzamy wynik [http://192.168.0.178:8088/api/count/xyz](http://192.168.0.178:8088/api/count/xyz)
 ## 16: Multibranch Pipeline
+``Jenkins -> Nowy Projekt -> Multibranch Pipeline (LearnMB)``
+* Branch Sources `Bitbucket server`  
+![multi_branch 1](img/multi_branch_1.png)  
+![multi_branch 2](img/multi_branch_2.png)  
+![multi_branch 3](img/multi_branch_3.png)  
+ 
 ## 17: Shared Library
 Pozwalają wyodrębnić oraz współdzielić wspólne części pomiędzy wieloma potokami.
 Elementy takie mogą być zamknięte w bibliotece przechowywanej w repozytorium kodu.
