@@ -2306,7 +2306,7 @@ Struktura
 ```
 ``src`` Standardowy katalog znany z projektów javy. Jest dodawany do classpath w trakcie wykonania potoku.  
 ``vars`` Definicje zmiennych, które są dostępne w potoku.  
-Przykład [jenkins-shared-lib](https://github.com/klimas7/jenkins-shared-lib).  
+Przykład [jenkins-shared-lib](http://ovh.klimas7.pl/bitbucket/projects/LAB/repos/jenkins-shared-lib).  
 Dodanie nowej biblioteki do Jenkinsa.  
 ``Jenkins -> Zarządzaj Jenkinsem -> Skonfiguruj system -> Global Pipeline Libraries``
 ![Shared lib](img/shared-lib-1.png)  
@@ -2314,7 +2314,7 @@ Dodanie nowej biblioteki do Jenkinsa.
 * Default version: master
 * Retrieval method: Modern SCM
 * Select the Git type
-* Project repository: https://github.com/klimas7/jenkins-shared-lib.git
+* Project repository: ssh://git@ovh.klimas7.pl:7999/lab/jenkins-shared-lib.git
 * Credentials: (leave blank)
 
 Nowy projekt wykorzystujący przygotowaną bibliotekę.  
