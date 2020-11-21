@@ -724,7 +724,7 @@ Konto Google
 ![Google Account](img/global_7.png)  
 
 ### 6.5: Quiet period
-Okres spokoju, cichy okres czas określony w sekundach gdzie określamy ile projekt czeka z uruchomieniem po wyzwoleniu przez
+Okres spokoju, cichy okres, czas w sekundach gdzie określamy ile projekt czeka z uruchomieniem po wyzwoleniu przez
 * inny projekt
 * zmiany w repozytorium
 
@@ -735,18 +735,18 @@ Okres spokoju, cichy okres czas określony w sekundach gdzie określamy ile proj
 echo "Test" ${JOB_NAME}
 sleep 4
 ``` 
+![Quiet period 1](img/qp_1.png)
 * `Akcje po zadaniu -> Uruchom inne zadania`
 Projects to build `QP_Child`  
-
-![Quiet period 1](img/qp_1.png)    
 ![Quiet period 2](img/qp_2.png)  
 
 ``Jenkins -> Nowy Projekt -> Ogólny projekt (QP_Child)``
-* `Zaawansowane (Opcje) -> Cichy okres -> 60`
+* `Zaawansowane (Opcje) -> Cichy okres -> 60`  
 ![Quiet period 3](img/qp_3.png)
 
 Uruchamiamy projekt ``QP_Parent``  
 ![Quiet period 4](img/qp_4.png)  
+
 Jeżeli w tym czasie uruchomimy `QP_Parent` kilka razy to projekt podrzędny z cichym okresem nie będzie uruchomiony, w informacji o wystartowaniu otrzymamy
 ```
 Started by upstream project "QP_Parent" build number 6
